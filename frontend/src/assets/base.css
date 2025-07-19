@@ -1,5 +1,11 @@
 :root {
   background-color: #222222;
+  --blanco: #f3ece9;
+  --coral: #c7b7a6;
+  --dawn: #b4a99c;
+  --soya: #6a6052;
+  --mocha: #3f3a34;
+  --onyx: #161513;
 }
 *,
 *::before,
