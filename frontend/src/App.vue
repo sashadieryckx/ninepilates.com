@@ -19,11 +19,11 @@ import { useRoute } from 'vue-router'
 // Unhead
 import { useHead } from '@unhead/vue'
 useHead({
-  title: '982studios Default Techstack',
+  title: 'Nine Pilates | Home',
   meta: [
     {
       name: 'description',
-      content: '982studios Vue 3 starter kit.',
+      content: 'Nine Pilates is a modern pilates studio offering classes and workshops to enhance your fitness journey.',
     },
     {
       name: 'viewport',
