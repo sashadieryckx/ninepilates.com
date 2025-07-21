@@ -1,24 +1,24 @@
 <template>
   <div id="header">
-    <div id="logo">
+    <router-link to="/" id="logo">
       <img src="" alt="LogoMark" id="logomark" />
-      <div id="logo-txt">Company Name ®</div>
-    </div>
+      <h1 id="logo-txt" class="roman">Nine Pilates</h1>
+    </router-link>
     <div id="mobile-nav">
       <div class="menu">
         <div class="mobile-list">
           <ul>
             <li>
-              <RouterLink to="/" class="mobile-link">Home</RouterLink>
+              <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
             </li>
             <li>
-              <RouterLink to="/about" class="mobile-link">About</RouterLink>
+              <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
             </li>
             <li>
-              <RouterLink to="/portfolio" class="mobile-link">Portfolio</RouterLink>
+              <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
             </li>
             <li>
-              <a class="mobile-link">Contact</a>
+              <a class="mobile-link roman">Contact</a>
             </li>
           </ul>
         </div>
@@ -56,8 +56,8 @@
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/portfolio" class="desktop-link">
-              Portfolio
+            <RouterLink to="/schedule" class="desktop-link">
+              Schedule
               <div class="menu-underline"></div>
             </RouterLink>
           </li>
@@ -70,17 +70,13 @@
         </ul>
       </div>
       <div id="menu-btn">
-        <span class="one click-fx"></span>
-        <span class="two click-fx"></span>
-        <span class="three click-fx"></span>
+        <span class="roman">Menu</span>
       </div>
     </div>
   </div>
 </template>
 <script>
-// IMPORTS
 import { gsap, Expo } from 'gsap'
-// MENU ANIMATION
 export default {
   name: 'MobileNav',
   mounted() {
@@ -94,34 +90,6 @@ export default {
         opacity: '100%',
       },
       0,
-    )
-    dropMenu.to(
-      '.one',
-      {
-        ease: Expo.easeInOut,
-        y: 6,
-        rotation: 45,
-      },
-      0.1,
-    )
-    dropMenu.to(
-      '.two',
-      {
-        ease: Expo.easeInOut,
-        y: -1.5,
-        rotation: -45,
-      },
-      0.1,
-    )
-    dropMenu.to(
-      '.three',
-      {
-        ease: Expo.easeInOut,
-        y: 0,
-        top: -6,
-        opacity: 0,
-      },
-      0.1,
     )
     dropMenu.to(
       '.menu',
@@ -196,18 +164,14 @@ export default {
   position: fixed;
   width: 100vw;
   max-width: 100vw;
-  height: 14vh;
-  background-image: linear-gradient(
-    rgba(16, 16, 16, 0.8) 0%,
-    rgba(16, 16, 16, 0.5) 50%,
-    rgba(0, 0, 0, 0) 100%
-  );
+  height: 5vh;
   will-change: transform;
   overflow: visible;
   padding-left: 1em;
   padding-right: 1em;
   display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: space-between;
   font-family: sans-serif;
 }
@@ -243,9 +207,8 @@ export default {
   position: relative;
   z-index: 101;
   width: fit-content;
-  height: 5.5em;
+  height: 100%;
   display: flex;
-  flex-direction: column;
   align-items: flex-end;
   justify-content: center;
 }

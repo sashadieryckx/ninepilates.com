@@ -1,16 +1,22 @@
-<script setup></script>
+<script setup>
+import HeroSection from '@/components/home/HeroSection.vue'
+import StatementSection from '@/components/home/StatementSection.vue'
+</script>
 
 <template>
   <div id="main-content" class="main-content">
     <section class="section">
-      <h1>Welcome to the Home Page</h1>
-      <p>This is the main content area of the home page.</p>
+      <HeroSection />
+    </section>
+    <section class="section">
+      <StatementSection/>
     </section>
   </div>
 </template>
 <style scoped>
 #main-content {
-  height: 100vh;
+  position: relative;
+  height: 100%;
 }
 .section {
   display: flex;
