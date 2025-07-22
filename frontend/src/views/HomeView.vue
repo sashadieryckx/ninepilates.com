@@ -18,6 +18,7 @@ import StatementSection from '@/components/home/StatementSection.vue'
 <style scoped>
 #main-content {
   position: relative;
+  z-index: 1;
   width: 100vw;
   height: 100%;
   min-height: 100vh;
@@ -31,6 +32,7 @@ import StatementSection from '@/components/home/StatementSection.vue'
 }
 .c2a {
   position: fixed;
+  z-index: 10;
   bottom: 1rem;
   left: 0;
 }

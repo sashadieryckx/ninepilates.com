@@ -15,7 +15,7 @@
   width: 100%;
 }
 .c2a-container button {
-  background-color: #c7b7a650;
+  background-color: #714b3b99;
   backdrop-filter: blur(5px);
   color: var(--blanco);
   border: none;

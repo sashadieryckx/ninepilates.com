@@ -1,5 +1,9 @@
 <template>
   <div id="hero-section">
+    <div class="hero-bg">
+      <div class="overlay"></div>
+      <img src="../../assets/content/placeholder01.jpg" alt="Hero Background" class="hero-img" />
+    </div>
     <div class="hero-content df-mar">
       <h1 class="roman">Find your balance with Nine Pilates</h1>
       <h5 class="light">
@@ -11,9 +15,35 @@
 </template>
 <style scoped>
 #hero-section {
-  min-height: 100vh;
+  height: 100vh;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+}
+.overlay {
+  background-color: #1615134a;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 .hero-content {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;

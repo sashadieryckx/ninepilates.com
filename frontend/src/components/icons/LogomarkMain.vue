@@ -30,9 +30,9 @@
   width: 10em;
   height: auto;
   scale: 1;
-  fill: #f8f8f8;
+  fill: var(--coral);
 }
 .cls-1 {
-  fill: #f8f8f8;
+  fill: var(--coral);
 }
 </style>

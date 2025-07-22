@@ -1,14 +1,11 @@
-<script setup>
-import ContactButton from '@/components/ContactButton.vue'
-</script>
+<script setup></script>
 <template>
   <div id="footer">
     <div id="divider" class=""></div>
     <img id="default-background" src="" />
     <div id="footer-title">
-      <h6>Minimal by Design. Memorable by Nature.</h6>
+      <h6>Movement with Intention.</h6>
     </div>
-    <ContactButton id="button" class="contact-open" />
     <div id="bottom-bar">
       <div id="contact">
         <h6>982studios@gmail.com</h6>
@@ -23,11 +20,11 @@ import ContactButton from '@/components/ContactButton.vue'
         </div>
       </div>
       <div id="column-1">
+        <router-link to="/">Home</router-link>
         <router-link to="/">About</router-link>
-        <router-link to="/">Services</router-link>
       </div>
       <div id="column-2">
-        <router-link to="/">Contact</router-link>
+        <router-link to="/">Book</router-link>
         <router-link to="/">FAQ</router-link>
       </div>
       <div id="column-3">
@@ -35,7 +32,7 @@ import ContactButton from '@/components/ContactButton.vue'
         <router-link to="/">Legal</router-link>
       </div>
       <div id="credits">
-        <p>© 2025 982studios® | All rights reserved</p>
+        <p>© 2025 Nine Pilates® | All rights reserved</p>
         <p>Website by — <a href="https://www.982studios.ca/">982studios®</a></p>
       </div>
       <div id="logos">

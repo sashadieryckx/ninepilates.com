@@ -73,6 +73,7 @@ onBeforeUnmount(() => {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 4rem 0rem;
 }
 #statement {
   text-align: center;

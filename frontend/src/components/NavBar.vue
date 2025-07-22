@@ -14,29 +14,20 @@
               <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
             </li>
             <li>
+              <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
+            </li>
+            <li>
               <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
             </li>
             <li>
               <a class="mobile-link roman">Contact</a>
             </li>
-          </ul>
-        </div>
-        <div id="mobile-socials">
-          <ul>
             <li>
-              <a href="https://www.behance.net/sashadieryckx">BE</a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/sashadieryckx">IG</a>
-            </li>
-            <li>
-              <a href="https://www.threads.net/@sashadieryckx">TT</a>
-            </li>
-            <li>
-              <a href="https://www.youtube.com/@sashadieryckx">YT</a>
+              <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
             </li>
           </ul>
         </div>
+        <LangButton class="lang-btn" />
       </div>
     </div>
     <div id="nav">
@@ -78,6 +69,7 @@
 import { gsap, Expo } from 'gsap'
 import { onMounted } from 'vue'
 import Logomark from '@/components/icons/LogomarkMain.vue'
+import LangButton from '@/components/LanguageButton.vue'
 
 onMounted(() => {
   const dropMenu = new gsap.timeline({
@@ -98,17 +90,14 @@ onMounted(() => {
     },
     0.1,
   )
-  dropMenu.staggerFrom(
-    '.menu ul li',
-    1,
-    {
-      ease: Expo.easeInOut,
-      opacity: 0,
-      x: 100,
-      delay: -0.5,
-    },
-    0.1,
-  )
+  dropMenu.from('.menu ul li', {
+    ease: Expo.easeInOut,
+    opacity: 0,
+    x: 100,
+    delay: -0.5,
+    duration: 1,
+    stagger: 0.1,
+  })
   dropMenu.totalDuration(2.25)
   dropMenu.reverse(1)
 
@@ -197,7 +186,7 @@ onMounted(() => {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid var(--blanco);
+  border: 1px solid var(--coral);
   border-radius: 50px;
   padding: 0.5rem 1rem;
   backdrop-filter: blur(5px);
@@ -208,6 +197,7 @@ onMounted(() => {
   height: 1em;
   pointer-events: none;
   transform: translateY(-42%);
+  color: var(--coral);
 }
 .menu {
   position: fixed;
@@ -215,7 +205,7 @@ onMounted(() => {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: #0d0d0d;
+  background: var(--onyx);
   opacity: 0%;
   transform: translateY(-100%);
 }
@@ -233,26 +223,25 @@ onMounted(() => {
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  align-items: left;
-  padding: 0;
+  align-items: flex-start;
+  padding: 2rem 0rem;
 }
 .mobile-list ul li {
   list-style: none;
-  line-height: 2.5em;
+  line-height: 2em;
   animation: linkUnHover 1s forwards;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   animation-play-state: running;
   margin-top: 0.25em;
 }
 .mobile-link {
-  font-size: 4em;
-  color: #0d0d0d;
+  font-size: 3rem;
+  color: var(--onyx);
   text-shadow:
-    1px 1px 0px #f8f8f8,
-    -1px -1px 0px #f8f8f8,
-    -1px 1px 0px #f8f8f8,
-    1px -1px 0px #f8f8f8;
-  text-transform: uppercase;
+    1px 1px 0px var(--coral),
+    -1px -1px 0px var(--coral),
+    -1px 1px 0px var(--coral),
+    1px -1px 0px var(--coral);
   text-decoration: none;
 }
 /* Link Hover Animation */
@@ -313,9 +302,13 @@ onMounted(() => {
   position: relative;
   display: none;
 }
+.lang-btn {
+  position: relative;
+  z-index: 100;
+}
 /* Router Link active Styles */
 .router-link-exact-active {
-  color: #f8f8f8 !important;
+  color: var(--coral) !important;
   text-shadow: none !important;
 }
 /* TABLET 1 [GLOBAL] */
