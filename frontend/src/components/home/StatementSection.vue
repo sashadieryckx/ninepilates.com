@@ -39,14 +39,19 @@ onMounted(() => {
 })
 
 onBeforeUnmount(() => {
-  splitTypeInstances.forEach(instance => {
+  splitTypeInstances.forEach((instance) => {
     if (instance && instance.revert) {
       instance.revert()
     }
   })
 
-  ScrollTrigger.getAll().forEach(trigger => {
-    if (trigger.vars && trigger.vars.trigger && trigger.vars.trigger.classList && trigger.vars.trigger.classList.contains('split-type')) {
+  ScrollTrigger.getAll().forEach((trigger) => {
+    if (
+      trigger.vars &&
+      trigger.vars.trigger &&
+      trigger.vars.trigger.classList &&
+      trigger.vars.trigger.classList.contains('split-type')
+    ) {
       trigger.kill()
     }
   })
@@ -54,14 +59,10 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <div id="statement-section" class="df-mar">
-      <h1
-        id="statement"
-        class="split-type"
-        data-bg-color="#222222"
-        data-fg-color="#f8f8f8"
-      >
-        <span class="roman">D</span>iscover the transformative power of Pilates. Whether you're a beginner or an experienced practitioner.
-      </h1>
+    <h2 id="statement" class="split-type light" data-bg-color="#222222" data-fg-color="#f8f8f8">
+      <span>D</span>iscover the transformative power of Pilates. Whether you're a beginner or an
+      experienced practitioner.
+    </h2>
   </div>
 </template>
 <style scoped>
@@ -75,9 +76,9 @@ onBeforeUnmount(() => {
 }
 #statement {
   text-align: center;
-  font-size: 2.5em;
+  font-size: 3rem;
   line-height: 1em;
-  width: 90%;
+  width: 100%;
   font-variant-alternates: stylistic(1);
   will-change: color;
 }

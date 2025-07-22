@@ -1,9 +1,12 @@
 @import './base.css';
-
 #app {
   max-width: 100vw;
   min-height: 100vh;
   overflow: hidden;
+  color: var(--blanco);
+}
+.interactive {
+  pointer-events: auto!important;
 }
 .main-content {
   position: relative;
@@ -13,6 +16,7 @@
   max-width: 100vw;
   overflow: hidden;
   font-family: sans-serif;
+  background-color: var(--soya);
 }
 ::-webkit-scrollbar {
   display: none;
@@ -22,10 +26,10 @@ a {
   color: inherit;
 }
 h1{
-  font-family: helvetica-neue-world, sans-serif;
+  font-size: 3.5rem;
 }
 h2 {
-
+  font-size: 3rem;
 }
 h3 {
 
@@ -43,34 +47,63 @@ h6 {
   font-family: helvetica-neue-world, sans-serif;
   font-weight: 300;
   font-style: normal;
+  letter-spacing: normal;
 }
 .light-italic {
   font-family: helvetica-neue-world, sans-serif;
   font-weight: 300;
   font-style: italic;
+  letter-spacing: normal;
 }
 .roman {
   font-family: helvetica-neue-world, sans-serif;
   font-weight: 400;
   font-style: normal;
+  letter-spacing: normal;
 }
 .italic {
   font-family: helvetica-neue-world, sans-serif;
   font-weight: 400;
   font-style: italic;
+  letter-spacing: normal;
 }
 .bold {
   font-family: helvetica-neue-world, sans-serif;
   font-weight: 700;
   font-style: normal;
+  letter-spacing: normal;
 }
 .bold-italic {
   font-family: helvetica-neue-world, sans-serif;
   font-weight: 700;
   font-style: italic;
+  letter-spacing: normal;
 }
-
 .df-mar {
   margin-left: 1rem;
   margin-right: 1rem;
+}
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  #app {
+    pointer-events: none;
+  }
+}
+/* DESKTOP 2 [GLOBAL] */
+@media (min-width: 1440px) {
+}
+/* DESKTOP 3 [GLOBAL] */
+@media (min-width: 1728px) {
+}
+/* DESKTOP 4 (Standard pc Monitor) */
+@media only screen and (min-width: 1920px) {
+}
+/* DESKTOP 5 (4k Monitor) */
+@media only screen and (min-width: 2160px) {
 }

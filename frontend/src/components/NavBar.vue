@@ -1,8 +1,7 @@
 <template>
-  <div id="header">
+  <div id="header" class="interactive">
     <router-link to="/" id="logo">
-      <img src="" alt="LogoMark" id="logomark" />
-      <h1 id="logo-txt" class="roman">Nine Pilates</h1>
+      <Logomark id="logomark" />
     </router-link>
     <div id="mobile-nav">
       <div class="menu">
@@ -70,92 +69,91 @@
         </ul>
       </div>
       <div id="menu-btn">
-        <span class="roman">Menu</span>
+        <p class="roman">Menu</p>
       </div>
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import { gsap, Expo } from 'gsap'
-export default {
-  name: 'MobileNav',
-  mounted() {
-    // GSAP ANIMATION FOR THE MENU
-    const dropMenu = new gsap.timeline({
-      paused: true,
-    })
-    dropMenu.to(
-      '.menu',
-      {
-        opacity: '100%',
-      },
-      0,
-    )
-    dropMenu.to(
-      '.menu',
-      {
-        ease: Expo.easeInOut,
-        yPercent: 100,
-      },
-      0.1,
-    )
-    dropMenu.staggerFrom(
-      '.menu ul li',
-      1,
-      {
-        ease: Expo.easeInOut,
-        opacity: 0,
-        x: 100,
-        delay: -0.5,
-      },
-      0.1,
-    )
-    dropMenu.totalDuration(2.25)
-    dropMenu.reverse(1)
+import { onMounted } from 'vue'
+import Logomark from '@/components/icons/LogomarkMain.vue'
 
-    document.addEventListener('click', function (event) {
-      if (event.target.matches('#menu-btn')) {
-        dropMenu.reversed(!dropMenu.reversed())
-      }
-    })
-    document.addEventListener('click', function (event) {
-      if (event.target.matches('.mobile-link')) {
-        dropMenu.reversed(!dropMenu.reversed())
-      }
-    })
-    // GSAP ANIMATION FOR THE MENU HOVER
-    const underLineWrapper = document.querySelectorAll('#desktop-menu li')
-    underLineWrapper.forEach((el) => {
-      const thisUnderline = el.querySelector('.menu-underline')
+onMounted(() => {
+  const dropMenu = new gsap.timeline({
+    paused: true,
+  })
+  dropMenu.to(
+    '.menu',
+    {
+      opacity: '100%',
+    },
+    0,
+  )
+  dropMenu.to(
+    '.menu',
+    {
+      ease: Expo.easeInOut,
+      yPercent: 100,
+    },
+    0.1,
+  )
+  dropMenu.staggerFrom(
+    '.menu ul li',
+    1,
+    {
+      ease: Expo.easeInOut,
+      opacity: 0,
+      x: 100,
+      delay: -0.5,
+    },
+    0.1,
+  )
+  dropMenu.totalDuration(2.25)
+  dropMenu.reverse(1)
 
-      if (thisUnderline) {
-        const mouseEnter = () => {
-          gsap.to(thisUnderline, {
-            width: '100%',
-            duration: 0.5,
-            ease: 'power4.out',
-          })
-        }
-        const mouseLeave = () => {
-          gsap.to(thisUnderline, {
-            width: '100%',
-            duration: 0.5,
-            x: '110%',
-            ease: 'power4.out',
-            onComplete: () => {
-              gsap.set(thisUnderline, {
-                x: '0%',
-                width: '0%',
-              })
-            },
-          })
-        }
-        el.addEventListener('mouseenter', mouseEnter)
-        el.addEventListener('mouseleave', mouseLeave)
+  document.addEventListener('click', function (event) {
+    if (event.target.matches('#menu-btn')) {
+      dropMenu.reversed(!dropMenu.reversed())
+    }
+  })
+  document.addEventListener('click', function (event) {
+    if (event.target.matches('.mobile-link')) {
+      dropMenu.reversed(!dropMenu.reversed())
+    }
+  })
+  // GSAP ANIMATION FOR THE MENU HOVER
+  const underLineWrapper = document.querySelectorAll('#desktop-menu li')
+  underLineWrapper.forEach((el) => {
+    const thisUnderline = el.querySelector('.menu-underline')
+
+    if (thisUnderline) {
+      const mouseEnter = () => {
+        gsap.to(thisUnderline, {
+          width: '100%',
+          duration: 0.5,
+          ease: 'power4.out',
+        })
       }
-    })
-  },
-}
+      const mouseLeave = () => {
+        gsap.to(thisUnderline, {
+          width: '100%',
+          duration: 0.5,
+          x: '110%',
+          ease: 'power4.out',
+          onComplete: () => {
+            gsap.set(thisUnderline, {
+              x: '0%',
+              width: '0%',
+            })
+          },
+        })
+      }
+      el.addEventListener('mouseenter', mouseEnter)
+      el.addEventListener('mouseleave', mouseLeave)
+    }
+  })
+})
 </script>
 <style scoped>
 /* NAVBAR STYLES */
@@ -164,14 +162,15 @@ export default {
   position: fixed;
   width: 100vw;
   max-width: 100vw;
-  height: 5vh;
+  height: fit-content;
   will-change: transform;
   overflow: visible;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-top: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   font-family: sans-serif;
 }
@@ -187,51 +186,28 @@ export default {
   z-index: 99;
   position: relative;
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-}
-#logo-txt {
-  letter-spacing: normal;
-  font-size: 1.25em;
-  margin-left: 1em;
-  display: none;
-}
-#logomark {
-  width: 2em;
-  height: 2em;
-  mix-blend-mode: difference;
-  margin-right: 0.5em;
+  width: fit-content;
 }
 #menu-btn {
   position: relative;
   z-index: 101;
-  width: fit-content;
-  height: 100%;
+  width: auto;
+  height: auto;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
+  border: 1px solid var(--blanco);
+  border-radius: 50px;
+  padding: 0.5rem 1rem;
+  backdrop-filter: blur(5px);
 }
-span.one {
-  position: relative;
-  width: 25px;
-  height: 2px;
-  background: #f8f8f8;
-}
-span.two {
-  position: relative;
-  width: 25px;
-  height: 2px;
-  background: #f8f8f8;
-  top: 0%;
-  margin-top: 6px;
-}
-span.three {
-  position: relative;
-  width: 16px;
-  height: 2px;
-  background: #f8f8f8;
-  margin-top: 6px;
+#menu-btn p {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  height: 1em;
+  pointer-events: none;
+  transform: translateY(-42%);
 }
 .menu {
   position: fixed;
