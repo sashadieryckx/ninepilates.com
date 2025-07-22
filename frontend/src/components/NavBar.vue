@@ -69,7 +69,7 @@
         </ul>
       </div>
       <div id="menu-btn">
-        <p class="roman">Menu</p>
+        <p class="light">Menu</p>
       </div>
     </div>
   </div>

@@ -59,7 +59,7 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <div id="statement-section" class="df-mar">
-    <h2 id="statement" class="split-type light" data-bg-color="#222222" data-fg-color="#f8f8f8">
+    <h2 id="statement" class="split-type light" data-bg-color="#6f1a0722" data-fg-color="#f8f8f8">
       <span>D</span>iscover the transformative power of Pilates. Whether you're a beginner or an
       experienced practitioner.
     </h2>

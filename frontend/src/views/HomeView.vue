@@ -1,4 +1,5 @@
 <script setup>
+import BookClass from '@/components/actions/C2ABookClass.vue'
 import HeroSection from '@/components/home/HeroSection.vue'
 import StatementSection from '@/components/home/StatementSection.vue'
 </script>
@@ -11,12 +12,15 @@ import StatementSection from '@/components/home/StatementSection.vue'
     <section class="section">
       <StatementSection />
     </section>
+    <BookClass class="c2a" />
   </div>
 </template>
 <style scoped>
 #main-content {
   position: relative;
+  width: 100vw;
   height: 100%;
+  min-height: 100vh;
 }
 .section {
   display: flex;
@@ -24,6 +28,11 @@ import StatementSection from '@/components/home/StatementSection.vue'
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+.c2a {
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
