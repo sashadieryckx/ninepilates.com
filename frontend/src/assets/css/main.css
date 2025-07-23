@@ -101,6 +101,10 @@ p {
     margin-left: 4rem;
     margin-right: 4rem;
   }
+  .df-pad {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {
