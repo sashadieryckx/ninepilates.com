@@ -33,15 +33,14 @@
       </div>
       <div id="column-1">
         <router-link to="/" class="roman">Home</router-link>
-        <router-link to="/" class="roman">About</router-link>
-      </div>
+        <router-link to="/classes" class="roman">Classes</router-link>      </div>
       <div id="column-2">
-        <router-link to="/" class="roman">Book</router-link>
-        <router-link to="/" class="roman">FAQ</router-link>
+        <router-link to="/about" class="roman">About</router-link>
+        <router-link to="/schedule" class="roman">Schedule</router-link>
       </div>
       <div id="column-3">
-        <router-link to="/" class="roman">Shop</router-link>
-        <router-link to="/" class="roman">Legal</router-link>
+        <router-link to="/" class="roman">Contact</router-link>
+        <router-link to="/faq" class="roman">FAQ</router-link>
       </div>
       <div id="credits">
         <p class="light">© 2025 Nine Pilates® | All rights reserved</p>
