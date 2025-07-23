@@ -46,6 +46,12 @@
             </RouterLink>
           </li>
           <li>
+            <RouterLink to="/classes" class="desktop-link">
+              Classes
+              <div class="menu-underline"></div>
+            </RouterLink>
+          </li>
+          <li>
             <RouterLink to="/schedule" class="desktop-link">
               Schedule
               <div class="menu-underline"></div>
@@ -60,7 +66,7 @@
         </ul>
       </div>
       <div id="menu-btn">
-        <p class="light">Menu</p>
+        <p class="roman">Menu</p>
       </div>
     </div>
   </div>
@@ -327,12 +333,8 @@ onMounted(() => {
 @media (min-width: 1280px) {
   #header {
     height: 10vh;
-    padding-left: 4em;
-    padding-right: 4em;
-  }
-  #logomark {
-    width: 2em;
-    height: 2em;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
   .mobile-list {
     align-items: start;
@@ -355,6 +357,7 @@ onMounted(() => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-top: .5rem;
   }
   #desktop-menu {
     display: contents;
@@ -365,7 +368,7 @@ onMounted(() => {
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
-    margin-right: 4em;
+    margin-right: 4rem;
   }
   #desktop-menu li {
     margin-left: 3em;
@@ -373,7 +376,7 @@ onMounted(() => {
   }
   #desktop-menu a {
     font-size: 1.25em;
-    color: #f8f8f8;
+    color: var(--coral);
     text-decoration: none;
     letter-spacing: normal;
     mix-blend-mode: difference;
@@ -384,7 +387,7 @@ onMounted(() => {
   .menu-underline {
     width: 0%;
     height: 2px;
-    background-color: #f8f8f8;
+    background-color: var(--coral);
     will-change: width;
   }
 }

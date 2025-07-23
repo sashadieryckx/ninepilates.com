@@ -1,7 +1,7 @@
 <template>
   <div id="main-content" class="main-content">
     <section class="section">
-      <h1>This is a portfolio page.</h1>
+      <h1>This is a Schedule page.</h1>
     </section>
   </div>
 </template>
