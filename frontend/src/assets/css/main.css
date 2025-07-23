@@ -94,6 +94,10 @@ h6 {
   #app {
     pointer-events: none;
   }
+  .df-pad {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {
