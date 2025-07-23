@@ -7,22 +7,22 @@
       <div class="menu">
         <div class="mobile-list">
           <ul>
-            <li>
+            <li style="z-index: 6;">
               <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
             </li>
-            <li>
+            <li style="z-index: 5;">
               <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
             </li>
-            <li>
+            <li style="z-index: 4;">
               <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
             </li>
             <li>
               <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
             </li>
-            <li>
+            <li style="z-index: 3;">
               <a class="mobile-link roman">Contact</a>
             </li>
-            <li>
+            <li style="z-index: 2;">
               <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
             </li>
           </ul>
@@ -301,10 +301,9 @@ onMounted(() => {
 .mobile-list ul li {
   list-style: none;
   line-height: 2em;
-  animation: linkUnHover 1s forwards;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-play-state: running;
   margin-top: 0.25em;
+  overflow: hidden;
 }
 .mobile-link {
   font-size: 3rem;
@@ -325,26 +324,6 @@ onMounted(() => {
 .mobile-list li {
   animation: linkUnHover 1.5s forwards;
   animation-play-state: running;
-}
-@keyframes linkHover {
-  0% {
-    scale: 1;
-    margin-left: 0em;
-  }
-  100% {
-    scale: 1.01;
-    margin-left: 2em;
-  }
-}
-@keyframes linkUnHover {
-  0% {
-    scale: 1.01;
-    margin-left: 2em;
-  }
-  100% {
-    scale: 1;
-    margin-left: 0em;
-  }
 }
 #mobile-socials {
   position: relative;
@@ -411,11 +390,12 @@ onMounted(() => {
     display: unset;
   }
   .mobile-list ul li {
-    line-height: 5em;
+    line-height: 3.5em;
     margin: 0;
+    cursor: pointer;
   }
   .mobile-link {
-    font-size: 8em;
+    font-size: 6rem;
   }
   #nav {
     position: relative;
@@ -441,7 +421,7 @@ onMounted(() => {
     overflow: hidden;
   }
   #desktop-menu a {
-    font-size: 1.25em;
+    font-size: 1.25rem;
     color: var(--coral);
     text-decoration: none;
     letter-spacing: normal;
