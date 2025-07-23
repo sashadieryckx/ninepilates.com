@@ -65,7 +65,7 @@
           </li>
         </ul>
       </div>
-      <div id="menu-btn">
+      <div id="menu-btn" class="interactive">
         <div id='top-line' class="line"></div>
         <div id='bottom-line' class="line"></div>
       </div>
@@ -86,6 +86,23 @@ onMounted(() => {
     '.menu',
     {
       opacity: '100%',
+    },
+    0,
+  )
+  dropMenu.to(
+    '#top-line',
+    {
+      rotate: 45,
+      y: '8px',
+      width: '2rem',
+    },
+    0,
+  )
+  dropMenu.to(
+    '#bottom-line',
+    {
+      rotate: 135,
+      width: '2rem',
     },
     0,
   )
@@ -115,10 +132,16 @@ onMounted(() => {
   })
   document.addEventListener('click', function (event) {
     if (event.target.matches('.mobile-link')) {
-      dropMenu.reversed(!dropMenu.reversed())
+      setTimeout(() => {
+        dropMenu.reversed(!dropMenu.reversed())
+        // Reverse the menu button timeline when menu is closed
+        if (dropMenu.reversed()) {
+          btnTl.reverse()
+        }
+      }, 1000)
     }
   })
-  // GSAP ANIMATION FOR THE MENU HOVER
+  // GSAP ANIMATION FOR THE NAV ITEMS HOVER
   const underLineWrapper = document.querySelectorAll('#desktop-menu li')
   underLineWrapper.forEach((el) => {
     const thisUnderline = el.querySelector('.menu-underline')
@@ -147,6 +170,39 @@ onMounted(() => {
       }
       el.addEventListener('mouseenter', mouseEnter)
       el.addEventListener('mouseleave', mouseLeave)
+    }
+  })
+  // MENU BUTTON ANIMATION
+  const menuBtn = document.querySelector('#menu-btn')
+  const btnTl = gsap.timeline({
+    paused: true,
+  })
+  btnTl.to('#top-line', {
+    width: '3rem',
+    duration: 0.3,
+    ease: 'power2.out'
+  }, 0)
+  btnTl.set('#menu-btn', {
+    alignItems: 'flex-start',
+  }, 0.3)
+  btnTl.to('#top-line', {
+    width: '2rem',
+    duration: 0.5,
+    ease: 'power2.out'
+  }, 0.3)
+  btnTl.to('#bottom-line', {
+    width: '2rem',
+    duration: 0.5,
+    ease: 'power2.out'
+  }, 0.4)
+  menuBtn.addEventListener('mouseenter', () => {
+    if (dropMenu.reversed()) {
+      btnTl.play()
+    }
+  })
+  menuBtn.addEventListener('mouseleave', () => {
+    if (dropMenu.reversed()) {
+      btnTl.reverse()
     }
   })
 })
@@ -188,12 +244,13 @@ onMounted(() => {
 #menu-btn {
   position: relative;
   z-index: 101;
-  width: 100%;
+  width: 3rem;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+  cursor: pointer;
 }
 .line {
   height: 2px;
@@ -204,7 +261,7 @@ onMounted(() => {
   margin-bottom: .5rem;
 }
 #bottom-line {
-  width: 2rem;
+  width: 3rem;
 }
 #menu-btn p {
   font-size: 1rem;
@@ -404,7 +461,7 @@ onMounted(() => {
     margin-bottom: .5rem;
   }
   #bottom-line {
-    width: 2.5rem;
+    width: 3rem;
   }
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */
