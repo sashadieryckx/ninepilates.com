@@ -2,17 +2,21 @@
 import BookClass from '@/components/actions/C2ABookClass.vue'
 import HeroSection from '@/components/home/HeroSection.vue'
 import StatementSection from '@/components/home/StatementSection.vue'
+import ClassesSection from '@/components/home/ClassesSection.vue'
 </script>
 
 <template>
   <div id="main-content" class="main-content">
+    <BookClass class="c2a" />
     <section class="section">
       <HeroSection />
     </section>
     <section class="section">
       <StatementSection />
     </section>
-    <BookClass class="c2a" />
+    <section class="section">
+      <ClassesSection />
+    </section>
   </div>
 </template>
 <style scoped>
