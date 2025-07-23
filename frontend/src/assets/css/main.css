@@ -97,9 +97,9 @@ p {
   #app {
     pointer-events: none;
   }
-  .df-pad {
-    padding-left: 4rem;
-    padding-right: 4rem;
+  .df-mar {
+    margin-left: 4rem;
+    margin-right: 4rem;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

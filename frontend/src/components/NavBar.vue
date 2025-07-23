@@ -66,7 +66,8 @@
         </ul>
       </div>
       <div id="menu-btn">
-        <p class="roman">Menu</p>
+        <div id='top-line' class="line"></div>
+        <div id='bottom-line' class="line"></div>
       </div>
     </div>
   </div>
@@ -187,15 +188,23 @@ onMounted(() => {
 #menu-btn {
   position: relative;
   z-index: 101;
-  width: auto;
+  width: 100%;
   height: auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
-  border: 1px solid var(--coral);
-  border-radius: 50px;
-  padding: 0.5rem 1rem;
-  backdrop-filter: blur(5px);
+}
+.line {
+  height: 2px;
+  background-color: var(--coral);
+}
+#top-line {
+  width: 1rem;
+  margin-bottom: .5rem;
+}
+#bottom-line {
+  width: 2rem;
 }
 #menu-btn p {
   font-size: 1rem;
@@ -389,6 +398,13 @@ onMounted(() => {
     height: 2px;
     background-color: var(--coral);
     will-change: width;
+  }
+  #top-line {
+    width: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  #bottom-line {
+    width: 2.5rem;
   }
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */
