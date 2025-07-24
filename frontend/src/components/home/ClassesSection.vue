@@ -6,7 +6,7 @@ const classesStore = useClassesStore()
 <template>
   <div id="classes-section">
     <div id="classes-heading">
-      <h1 class="roman">Pilates for every body and every mind</h1>
+      <h2 class="roman">Pilates for every body and every mind</h2>
       <h5 class="light">Join us in transforming your body and mind through our comprehensive yoga and fitness programs.</h5>
     </div>
     <div id="classes-cards">
@@ -44,7 +44,7 @@ const classesStore = useClassesStore()
     flex-direction: column;
     align-items: center;
   }
-  h1 {
+  h2 {
     font-size: 3rem;
   }
   h5 {
@@ -60,11 +60,11 @@ const classesStore = useClassesStore()
 }
 /* DESKTOP 3 [GLOBAL] */
 @media (min-width: 1728px) {
-  h1 {
+  h2 {
     font-size: 4rem;
   }
   h5 {
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 1.5rem;
   }
 }

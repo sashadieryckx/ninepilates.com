@@ -107,12 +107,22 @@ p {
     padding-left: 4rem;
     padding-right: 4rem;
   }
+  h2 {
+    font-size: 3rem;
+  }
+  h5 {
+    font-size: 1.25rem;
+    line-height: 1.2em;
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {
 }
 /* DESKTOP 3 [GLOBAL] */
 @media (min-width: 1728px) {
+  h5 {
+    font-size: 1.5rem;
+  }
 }
 /* DESKTOP 4 (Standard pc Monitor) */
 @media only screen and (min-width: 1920px) {

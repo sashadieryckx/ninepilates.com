@@ -14,9 +14,9 @@ defineProps({
       <h3 class="card-title roman">{{ classesInfo.name }}</h3>
       <p class="card-description light">{{ classesInfo.description }}</p>
     </div>
-    <div class="c2a">
+    <router-link to="/classes" class="c2a interactive">
       <LearnMore />
-    </div>
+    </router-link>
   </div>
 </template>
 <style scoped>
