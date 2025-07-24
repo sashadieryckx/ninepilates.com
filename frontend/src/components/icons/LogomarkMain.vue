@@ -31,6 +31,7 @@
   height: auto;
   scale: 1;
   fill: var(--coral);
+  transform: translateX(-14px);
 }
 .cls-1 {
   fill: var(--coral);

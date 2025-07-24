@@ -2,17 +2,28 @@
 import BookClass from '@/components/actions/C2ABookClass.vue'
 import HeroSection from '@/components/home/HeroSection.vue'
 import StatementSection from '@/components/home/StatementSection.vue'
+import AccoladesSection from '@/components/home/AccoladesSection.vue'
+import ClassesSection from '@/components/home/ClassesSection.vue'
 </script>
 
 <template>
   <div id="main-content" class="main-content">
+    <BookClass class="c2a" />
     <section class="section">
       <HeroSection />
     </section>
     <section class="section">
       <StatementSection />
     </section>
-    <BookClass class="c2a" />
+    <section class="section">
+      <AccoladesSection />
+    </section>
+    <div class="img-container">
+      <img src="" alt="Alt" class="img" />
+    </div>
+    <section class="section">
+      <ClassesSection />
+    </section>
   </div>
 </template>
 <style scoped>
@@ -35,6 +46,26 @@ import StatementSection from '@/components/home/StatementSection.vue'
   z-index: 10;
   bottom: 1rem;
   left: 0;
+}
+.img-container {
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 2rem);
+  height: 40em;
+  overflow: hidden;
+  margin: 4rem 1rem;
+  border-radius: 20px;
+}
+.img {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+  background-color: var(--onyx);
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

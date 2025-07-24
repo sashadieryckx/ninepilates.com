@@ -1,14 +1,67 @@
 <template>
-  <div id="accolades-section">
+  <div id="accolades-section" class="df-mar">
     <div class="accolade">
-      <h4>Accolade 1</h4>
+      <div class="icon"></div>
+      <h4 class="roman">Accolade 1</h4>
     </div>
     <div class="accolade">
-      <h4>Accolade 2</h4>
+      <div class="icon"></div>
+      <h4 class="roman">Accolade 2</h4>
     </div>
     <div class="accolade">
-      <h4>Accolade 3</h4>
+      <div class="icon"></div>
+      <h4 class="roman">Accolade 3</h4>
     </div>
   </div>
 </template>
-<style scoped></style>
+<style scoped>
+#accolades-section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 2rem 0rem;
+}
+.accolade {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.5rem;
+}
+.accolade h4 {
+  font-size: 1rem;
+  color: var(--blanco);
+}
+.icon {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  border: 1px solid var(--coral);
+}
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+}
+/* DESKTOP 2 [GLOBAL] */
+@media (min-width: 1440px) {
+}
+/* DESKTOP 3 [GLOBAL] */
+@media (min-width: 1728px) {
+}
+/* DESKTOP 4 (Standard pc Monitor) */
+@media only screen and (min-width: 1920px) {
+}
+/* DESKTOP 5 (4k Monitor) */
+@media only screen and (min-width: 2160px) {
+}
+</style>
