@@ -1,4 +1,5 @@
 <script setup>
+import LearnMore from '@/components/actions/C2ALearnMore.vue'
 defineProps({
   classesInfo: {
     type: Object,
@@ -9,12 +10,44 @@ defineProps({
 <template>
   <div class="classes-card">
     <div class="card-content">
-      <h3 class="card-title">{{ classesInfo.name }}</h3>
-      <p class="card-description">{{ classesInfo.description }}</p>
+      <div class="circle">{{ classesInfo.id }}</div>
+      <h3 class="card-title roman">{{ classesInfo.name }}</h3>
+      <p class="card-description light">{{ classesInfo.description }}</p>
+    </div>
+    <div class="c2a">
+      <LearnMore />
     </div>
   </div>
 </template>
 <style scoped>
+.classes-card {
+  position: relative;
+  z-index: 1;
+  background-color: #f3ece932;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: var(--coral);
+}
+.circle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--coral);
+  background-color: var(--mocha);
+  color: var(--blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
