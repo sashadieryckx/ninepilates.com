@@ -6,37 +6,37 @@ export const usePrinciplesStore = defineStore('principles', () => {
     {
       id: '1',
       name: 'Breathing',
-      description: 'At Nine, we believe in a purposeful approach to movement — one that fosters deep connection between mind and body, cultivates inner strength, and creates lasting change through consistency, control, and care.',
+      description: 'The breath is the essential link between the mind and the body. It draws our wandering mind back into our bodies and back to the task at hand. It is the foundation of our existence and the rhythm that accompanies us from birth to death. In Pilates the breath is integrated into every movement in order to focus our awareness on what we are doing, to improve the flow of oxygen through our bodies and to improve the capacity of our lungs.',
     },
     {
       id: '2',
       name: 'Concentration',
-      description: 'A traditional Pilates workout performed on a mat, focusing on core strength and flexibility.',
+      description: 'To concentrate is to pay attention to what you are doing. To be present with and in control of the task at hand. Without concentration the exercises lose their form and their purpose. When teaching it is important to have a client do only as many repetitions as they can without losing their concentration. As Joe often said, “It is better to do five repetitions perfectly than 20 without paying attention.',
     },
     {
       id: '3',
       name: 'Control',
-      description: 'A modern approach to Pilates, incorporating elements from various styles to create a unique workout.',
+      description: 'To be in control is to understand and maintain the proper form, alignment and effort during an entire exercise. Pilates exercises are never done without engaging the mind to control the movements and the efforts that the body is making.',
     },
     {
       id: '4',
       name: 'Centering',
-      description: 'A high-intensity Pilates class that combines traditional exercises with cardio and strength training.',
+      description: 'In Pilates all movement radiates outward from the center. Developing a strong, stable and flexible center is one of the defining features of this form of exercise.',
     },
     {
       id: '5',
       name: 'Precision',
-      description: 'A gentle Pilates class designed for relaxation and stress relief, focusing on breath and mindfulness.',
+      description: 'Precision is the ability to perform exercises with optimum alignment, unconscious control and just the right amount of effort. Precision is the end product of concentration, control, centering and practice.',
     },
     {
       id: '6',
       name: 'Balance',
-      description: 'A specialized Pilates class that targets specific muscle groups for rehabilitation or strength building.',
+      description: 'All movements in Pilates are done with a sense of rhythm and flow. Flow creates smooth, graceful and functional movements. It decreases the amount of stress placed on our joints and develops movement patterns that integrate our body into a smoothly flowing whole.',
     },
     {
       id: '7',
       name: 'Rhythum Flow',
-      description: 'A specialized Pilates class that focuses on breath control and awareness, promoting relaxation and mindfulness.',
+      description: 'All movements in Pilates are done with a sense of rhythm and flow. Flow creates smooth, graceful and functional movements. It decreases the amount of stress placed on our joints and develops movement patterns that integrate our body into a smoothly flowing whole.',
     },
     {
       id: '8',
