@@ -42,12 +42,14 @@ defineProps({
   justify-content: center;
   font-size: 1rem;
 }
-
 h3 {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
 }
-
+p {
+  font-size: 1rem;
+  line-height: 1.3em;
+}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
@@ -56,6 +58,9 @@ h3 {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  p {
+    font-size: 1.25rem;
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {
