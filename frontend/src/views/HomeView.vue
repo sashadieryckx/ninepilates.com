@@ -2,7 +2,6 @@
 import BookClass from '@/components/actions/C2ABookClass.vue'
 import HeroSection from '@/components/home/HeroSection.vue'
 import StatementSection from '@/components/home/StatementSection.vue'
-import ClassesSection from '@/components/home/ClassesSection.vue'
 import AccoladesSection from '@/components/home/AccoladesSection.vue'
 import ClassesSection from '@/components/home/ClassesSection.vue'
 </script>
@@ -15,6 +14,12 @@ import ClassesSection from '@/components/home/ClassesSection.vue'
     </section>
     <section class="section">
       <StatementSection />
+    </section>
+    <section class="section">
+      <AccoladesSection />
+    </section>
+    <section class="section">
+      <ClassesSection />
     </section>
     <BookClass class="c2a" />
   </div>
