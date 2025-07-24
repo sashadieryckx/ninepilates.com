@@ -4,6 +4,7 @@ import HeroSection from '@/components/home/HeroSection.vue'
 import StatementSection from '@/components/home/StatementSection.vue'
 import AccoladesSection from '@/components/home/AccoladesSection.vue'
 import ClassesSection from '@/components/home/ClassesSection.vue'
+import PhilosophySection from '@/components/home/PhilosophySection.vue'
 </script>
 
 <template>
@@ -21,7 +22,9 @@ import ClassesSection from '@/components/home/ClassesSection.vue'
     <section class="section">
       <ClassesSection />
     </section>
-    <BookClass class="c2a" />
+    <section class="section">
+      <PhilosophySection />
+    </section>
   </div>
 </template>
 <style scoped>

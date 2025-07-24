@@ -12,7 +12,7 @@
         <h6 class="light">595 Montreal Rd, Unit 204</h6>
         <div id="socials">
           <a
-            href=""
+            href="https://www.instagram.com/ninepilates.studio/"
             target="_blank"
             class="light"
             >Instagram ↗
