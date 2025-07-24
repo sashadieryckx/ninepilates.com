@@ -45,6 +45,9 @@ h5 {
 h6 {
 
 }
+p {
+  letter-spacing: normal;
+}
 .light {
   font-family: helvetica-neue-world, sans-serif;
   font-weight: 300;
@@ -95,6 +98,14 @@ h6 {
 @media (min-width: 1280px) {
   #app {
     pointer-events: none;
+  }
+  .df-mar {
+    margin-left: 4rem;
+    margin-right: 4rem;
+  }
+  .df-pad {
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

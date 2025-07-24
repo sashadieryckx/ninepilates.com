@@ -7,22 +7,22 @@
       <div class="menu">
         <div class="mobile-list">
           <ul>
-            <li>
+            <li style="z-index: 6;">
               <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
             </li>
-            <li>
+            <li style="z-index: 5;">
               <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
             </li>
-            <li>
+            <li style="z-index: 4;">
               <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
             </li>
             <li>
               <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
             </li>
-            <li>
+            <li style="z-index: 3;">
               <a class="mobile-link roman">Contact</a>
             </li>
-            <li>
+            <li style="z-index: 2;">
               <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
             </li>
           </ul>
@@ -46,6 +46,12 @@
             </RouterLink>
           </li>
           <li>
+            <RouterLink to="/classes" class="desktop-link">
+              Classes
+              <div class="menu-underline"></div>
+            </RouterLink>
+          </li>
+          <li>
             <RouterLink to="/schedule" class="desktop-link">
               Schedule
               <div class="menu-underline"></div>
@@ -59,8 +65,9 @@
           </li>
         </ul>
       </div>
-      <div id="menu-btn">
-        <p class="light">Menu</p>
+      <div id="menu-btn" class="interactive">
+        <div id='top-line' class="line"></div>
+        <div id='bottom-line' class="line"></div>
       </div>
     </div>
   </div>
@@ -79,6 +86,23 @@ onMounted(() => {
     '.menu',
     {
       opacity: '100%',
+    },
+    0,
+  )
+  dropMenu.to(
+    '#top-line',
+    {
+      rotate: 45,
+      y: '8px',
+      width: '2rem',
+    },
+    0,
+  )
+  dropMenu.to(
+    '#bottom-line',
+    {
+      rotate: 135,
+      width: '2rem',
     },
     0,
   )
@@ -108,10 +132,16 @@ onMounted(() => {
   })
   document.addEventListener('click', function (event) {
     if (event.target.matches('.mobile-link')) {
-      dropMenu.reversed(!dropMenu.reversed())
+      setTimeout(() => {
+        dropMenu.reversed(!dropMenu.reversed())
+        // Reverse the menu button timeline when menu is closed
+        if (dropMenu.reversed()) {
+          btnTl.reverse()
+        }
+      }, 1000)
     }
   })
-  // GSAP ANIMATION FOR THE MENU HOVER
+  // GSAP ANIMATION FOR THE NAV ITEMS HOVER
   const underLineWrapper = document.querySelectorAll('#desktop-menu li')
   underLineWrapper.forEach((el) => {
     const thisUnderline = el.querySelector('.menu-underline')
@@ -140,6 +170,39 @@ onMounted(() => {
       }
       el.addEventListener('mouseenter', mouseEnter)
       el.addEventListener('mouseleave', mouseLeave)
+    }
+  })
+  // MENU BUTTON ANIMATION
+  const menuBtn = document.querySelector('#menu-btn')
+  const btnTl = gsap.timeline({
+    paused: true,
+  })
+  btnTl.to('#top-line', {
+    width: '3rem',
+    duration: 0.3,
+    ease: 'power2.out'
+  }, 0)
+  btnTl.set('#menu-btn', {
+    alignItems: 'flex-start',
+  }, 0.3)
+  btnTl.to('#top-line', {
+    width: '2rem',
+    duration: 0.5,
+    ease: 'power2.out'
+  }, 0.3)
+  btnTl.to('#bottom-line', {
+    width: '2rem',
+    duration: 0.5,
+    ease: 'power2.out'
+  }, 0.4)
+  menuBtn.addEventListener('mouseenter', () => {
+    if (dropMenu.reversed()) {
+      btnTl.play()
+    }
+  })
+  menuBtn.addEventListener('mouseleave', () => {
+    if (dropMenu.reversed()) {
+      btnTl.reverse()
     }
   })
 })
@@ -181,15 +244,24 @@ onMounted(() => {
 #menu-btn {
   position: relative;
   z-index: 101;
-  width: auto;
+  width: 3rem;
   height: auto;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-end;
   justify-content: center;
-  border: 1px solid var(--coral);
-  border-radius: 50px;
-  padding: 0.5rem 1rem;
-  backdrop-filter: blur(5px);
+  cursor: pointer;
+}
+.line {
+  height: 2px;
+  background-color: var(--coral);
+}
+#top-line {
+  width: 1rem;
+  margin-bottom: .5rem;
+}
+#bottom-line {
+  width: 3rem;
 }
 #menu-btn p {
   font-size: 1rem;
@@ -229,10 +301,9 @@ onMounted(() => {
 .mobile-list ul li {
   list-style: none;
   line-height: 2em;
-  animation: linkUnHover 1s forwards;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-play-state: running;
   margin-top: 0.25em;
+  overflow: hidden;
 }
 .mobile-link {
   font-size: 3rem;
@@ -253,26 +324,6 @@ onMounted(() => {
 .mobile-list li {
   animation: linkUnHover 1.5s forwards;
   animation-play-state: running;
-}
-@keyframes linkHover {
-  0% {
-    scale: 1;
-    margin-left: 0em;
-  }
-  100% {
-    scale: 1.01;
-    margin-left: 2em;
-  }
-}
-@keyframes linkUnHover {
-  0% {
-    scale: 1.01;
-    margin-left: 2em;
-  }
-  100% {
-    scale: 1;
-    margin-left: 0em;
-  }
 }
 #mobile-socials {
   position: relative;
@@ -327,12 +378,8 @@ onMounted(() => {
 @media (min-width: 1280px) {
   #header {
     height: 10vh;
-    padding-left: 4em;
-    padding-right: 4em;
-  }
-  #logomark {
-    width: 2em;
-    height: 2em;
+    padding-left: 4rem;
+    padding-right: 4rem;
   }
   .mobile-list {
     align-items: start;
@@ -343,11 +390,12 @@ onMounted(() => {
     display: unset;
   }
   .mobile-list ul li {
-    line-height: 5em;
+    line-height: 3.5em;
     margin: 0;
+    cursor: pointer;
   }
   .mobile-link {
-    font-size: 8em;
+    font-size: 6rem;
   }
   #nav {
     position: relative;
@@ -355,6 +403,7 @@ onMounted(() => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    padding-top: .5rem;
   }
   #desktop-menu {
     display: contents;
@@ -365,15 +414,15 @@ onMounted(() => {
     justify-content: space-evenly;
     align-items: center;
     padding: 0;
-    margin-right: 4em;
+    margin-right: 4rem;
   }
   #desktop-menu li {
     margin-left: 3em;
     overflow: hidden;
   }
   #desktop-menu a {
-    font-size: 1.25em;
-    color: #f8f8f8;
+    font-size: 1.25rem;
+    color: var(--coral);
     text-decoration: none;
     letter-spacing: normal;
     mix-blend-mode: difference;
@@ -384,8 +433,15 @@ onMounted(() => {
   .menu-underline {
     width: 0%;
     height: 2px;
-    background-color: #f8f8f8;
+    background-color: var(--coral);
     will-change: width;
+  }
+  #top-line {
+    width: 1.5rem;
+    margin-bottom: .5rem;
+  }
+  #bottom-line {
+    width: 3rem;
   }
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */

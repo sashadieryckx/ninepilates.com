@@ -70,6 +70,20 @@
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  .hero-content {
+    width: 70%;
+    align-items: flex-start;
+    padding-top: 12rem;
+  }
+  .hero-content h1 {
+    font-size: 8rem;
+    text-align: left;
+  }
+  .hero-content h5 {
+    font-size: 2rem;
+    text-align: left;
+    width: 75%;
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {

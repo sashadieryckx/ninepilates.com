@@ -1,17 +1,66 @@
+<script setup>
+import ClassesCard from '@/components/classes/ClassesCard.vue'
+import { useClassesStore } from '@/stores/classesStore'
+const classesStore = useClassesStore()
+</script>
 <template>
-  <div id="classes-section" class="df-mar">
-    <div class="heading">
-      <h1 class="roman">Explore our Offerings</h1>
-      <h5 class="light">Find the perfect class for you. Lorem Ipsum dolor sit amet Del Maguaey.</h5>
+  <div id="classes-section">
+    <div id="classes-heading">
+      <h1 class="roman">Pilates for every body and every mind</h1>
+      <h5 class="light">Join us in transforming your body and mind through our comprehensive yoga and fitness programs.</h5>
+    </div>
+    <div id="classes-cards">
+      <ClassesCard v-for="classInfo in classesStore.classesInfo" :key="classInfo.id" :classesInfo="classInfo" />
     </div>
   </div>
 </template>
 <style scoped>
-.heading h1 {
-  text-align: center;
+#classes-section {
+  position: relative;
+  z-index: 1;
 }
-.heading h5 {
-  text-align: center;
-  margin-top: 1rem;
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  #classes-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #classes-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 75%;
+    padding-top: 4rem;
+  }
+  #classes-heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  h5 {
+    margin-top: 1rem;
+    font-size: 1.25rem;
+    line-height: 1.2em;
+    width: 50%;
+    text-align: center;
+  }
+}
+/* DESKTOP 2 [GLOBAL] */
+@media (min-width: 1440px) {
+}
+/* DESKTOP 3 [GLOBAL] */
+@media (min-width: 1728px) {
+}
+/* DESKTOP 4 (Standard pc Monitor) */
+@media only screen and (min-width: 1920px) {
+}
+/* DESKTOP 5 (4k Monitor) */
+@media only screen and (min-width: 2160px) {
 }
 </style>

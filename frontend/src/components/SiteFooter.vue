@@ -1,39 +1,50 @@
 <script setup></script>
 <template>
-  <div id="footer">
+  <div id="footer" class="interactive df-pad">
     <div id="divider" class=""></div>
     <img id="default-background" src="" />
     <div id="footer-title">
-      <h6>Movement with Intention.</h6>
+      <h1 class="roman">Movement with Intention.</h1>
     </div>
     <div id="bottom-bar">
       <div id="contact">
-        <h6>982studios@gmail.com</h6>
-        <h6>45.4006474 - 75.6521784</h6>
+        <h6 class="light">info@ninepilates.com</h6>
+        <h6 class="light">595 Montreal Rd, Unit 204</h6>
         <div id="socials">
-          <a href="" target="_blank">Instagram ↗</a>
           <a
-            href="https://www.cheoresearch.ca/research/find-a-researcher/shawn-beug-phd/"
+            href=""
             target="_blank"
-            >Youtube ↗</a
-          >
+            class="light"
+            >Instagram ↗
+          </a>
+          <a
+            href=""
+            target="_blank"
+            class="light"
+            >Tik Tok ↗
+          </a>
+          <a
+            href=""
+            target="_blank"
+            class="light"
+            >Facebook ↗
+          </a>
         </div>
       </div>
       <div id="column-1">
-        <router-link to="/">Home</router-link>
-        <router-link to="/">About</router-link>
-      </div>
+        <router-link to="/" class="roman">Home</router-link>
+        <router-link to="/classes" class="roman">Classes</router-link>      </div>
       <div id="column-2">
-        <router-link to="/">Book</router-link>
-        <router-link to="/">FAQ</router-link>
+        <router-link to="/about" class="roman">About</router-link>
+        <router-link to="/schedule" class="roman">Schedule</router-link>
       </div>
       <div id="column-3">
-        <router-link to="/">Shop</router-link>
-        <router-link to="/">Legal</router-link>
+        <router-link to="/" class="roman">Contact</router-link>
+        <router-link to="/faq" class="roman">FAQ</router-link>
       </div>
       <div id="credits">
-        <p>© 2025 Nine Pilates® | All rights reserved</p>
-        <p>Website by — <a href="https://www.982studios.ca/">982studios®</a></p>
+        <p class="light">© 2025 Nine Pilates® | All rights reserved</p>
+        <p class="light">Website by — <a href="https://www.982studios.ca/">982studios®</a></p>
       </div>
       <div id="logos">
         <img src="" alt="" id="cheo-logo" />
@@ -48,13 +59,11 @@
   margin: 0;
   width: 100vw;
   height: 100vh;
-  padding-left: 1em;
-  padding-right: 1em;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(12, 1fr);
-  backdrop-filter: blur(10px);
-  background-color: #e9e9e921;
+  background-color: var(--mocha);
+  color: var(--coral);
 }
 #divider {
   z-index: 1;
@@ -90,7 +99,7 @@
   justify-content: center;
   align-items: center;
 }
-#footer-title h6 {
+#footer-title h1 {
   font-size: 2.5em;
   color: var(--font-color-main);
   line-height: 1.1em;
@@ -153,7 +162,7 @@
 }
 #credits a:hover,
 #bottom-bar a:hover {
-  color: var(--font-color-hover);
+  color: var(--soya);
 }
 #logos {
   display: none;
@@ -175,17 +184,17 @@
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   #footer {
-    padding-left: 4em;
-    padding-right: 4em;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(10, 1fr);
   }
   #footer-title {
-    grid-row: 3 / span 3;
+    columns: 1;
+    grid-row: 2 / span 3;
+    justify-content: flex-start;
   }
-  #footer-title h6 {
-    font-size: 4em;
-    text-align: center;
+  #footer-title h1 {
+    font-size: 6rem;
+    text-align: left;
     width: 60%;
   }
   #button {
