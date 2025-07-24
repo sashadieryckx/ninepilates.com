@@ -4,7 +4,7 @@
       <div class="overlay"></div>
       <img src="../../assets/content/placeholder01.jpg" alt="Hero Background" class="hero-img" />
     </div>
-    <div class="hero-content df-mar">
+    <div class="hero-content df-pad">
       <h1 class="roman">Find your balance with Nine Pilates</h1>
       <h5 class="light">
         Join us in transforming your body and mind through our expert-led classes and supportive
@@ -83,6 +83,7 @@
     font-size: 2rem;
     text-align: left;
     width: 75%;
+    padding-top: 1rem;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

@@ -58,8 +58,15 @@ p {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  h3 {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
   p {
     font-size: 1.25rem;
+  }
+  .c2a {
+    margin-top: 2rem;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

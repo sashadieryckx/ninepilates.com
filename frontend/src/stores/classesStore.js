@@ -16,7 +16,7 @@ export const useClassesStore = defineStore('classes', () => {
     {
       id: 'III',
       name: 'Contemporary Pilates',
-      description: 'A modern approach to Pilates, incorporating elements from various styles to create a unique workout experience.',
+      description: 'A modern approach to Pilates, incorporating elements from various styles to create a unique workout.',
     },
   ])
 

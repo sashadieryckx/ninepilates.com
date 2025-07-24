@@ -39,15 +39,19 @@ const classesStore = useClassesStore()
     padding-top: 4rem;
   }
   #classes-heading {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  h1 {
+    font-size: 3rem;
   }
   h5 {
     margin-top: 1rem;
     font-size: 1.25rem;
     line-height: 1.2em;
-    width: 50%;
+    width: 60%;
     text-align: center;
   }
 }
@@ -56,6 +60,13 @@ const classesStore = useClassesStore()
 }
 /* DESKTOP 3 [GLOBAL] */
 @media (min-width: 1728px) {
+  h1 {
+    font-size: 4rem;
+  }
+  h5 {
+    margin-top: 2rem;
+    font-size: 1.5rem;
+  }
 }
 /* DESKTOP 4 (Standard pc Monitor) */
 @media only screen and (min-width: 1920px) {

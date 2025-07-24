@@ -73,6 +73,9 @@ import ClassesSection from '@/components/home/ClassesSection.vue'
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  .c2a {
+    display: none;
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {

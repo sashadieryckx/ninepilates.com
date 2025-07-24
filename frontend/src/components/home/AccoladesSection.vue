@@ -1,14 +1,14 @@
 <template>
   <div id="accolades-section" class="df-mar">
-    <div class="accolade">
+    <div class="accolade one">
       <div class="icon"></div>
       <h4 class="roman">Accolade 1</h4>
     </div>
-    <div class="accolade">
+    <div class="accolade two">
       <div class="icon"></div>
       <h4 class="roman">Accolade 2</h4>
     </div>
-    <div class="accolade">
+    <div class="accolade three">
       <div class="icon"></div>
       <h4 class="roman">Accolade 3</h4>
     </div>
@@ -51,6 +51,24 @@
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  #accolades-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    min-height: 50vh;
+  }
+  .one {
+    grid-column: 3;
+    grid-row: 1;
+  }
+  .two {
+    grid-column: 2;
+    grid-row: 2;
+  }
+  .three {
+    grid-column: 1;
+    grid-row: 3;
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {
