@@ -1,8 +1,16 @@
+<script setup>
+import PhilosophyCard from '@/components/home/PhilosophyCard.vue'
+import { usePrinciplesStore } from '@/stores/philosophyStore'
+const principlesStore = usePrinciplesStore()
+</script>
 <template>
   <div id="philosophy-section">
     <div class="philosophy-heading">
       <h1 class="roman">The <span class="light-italic">"Nine"</span> Philosophy</h1>
       <h5 class="light">Built on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself — inside and out.</h5>
+    </div>
+    <div class="philosophy-track">
+      <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" />
     </div>
   </div>
 </template>
