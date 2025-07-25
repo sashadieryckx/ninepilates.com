@@ -6,7 +6,7 @@ const principlesStore = usePrinciplesStore()
 <template>
   <div id="philosophy-section">
     <div class="philosophy-heading df-pad">
-      <h2 class="roman">The <span class="light-italic">"Nine"</span> Philosophy</h2>
+      <h2 class="roman">Discover the <span class="light-italic">"Nine"</span> Philosophy</h2>
       <h5 class="light">Built on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself — inside and out.</h5>
     </div>
     <div class="philosophy-track">
