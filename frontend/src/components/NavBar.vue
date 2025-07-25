@@ -1,82 +1,47 @@
-<template>
-  <div id="header" class="interactive">
-    <router-link to="/" id="logo">
-      <Logomark id="logomark" />
-    </router-link>
-    <div id="mobile-nav">
-      <div class="menu">
-        <div class="mobile-list">
-          <ul>
-            <li style="z-index: 6;">
-              <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
-            </li>
-            <li style="z-index: 5;">
-              <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
-            </li>
-            <li style="z-index: 4;">
-              <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
-            </li>
-            <li>
-              <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
-            </li>
-            <li style="z-index: 3;">
-              <a class="mobile-link roman">Contact</a>
-            </li>
-            <li style="z-index: 2;">
-              <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
-            </li>
-          </ul>
-        </div>
-        <LangButton class="lang-btn" />
-      </div>
-    </div>
-    <div id="nav">
-      <div id="desktop-menu">
-        <ul>
-          <li>
-            <RouterLink to="/" class="desktop-link">
-              Home
-              <div class="menu-underline"></div>
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/about" class="desktop-link">
-              About
-              <div class="menu-underline"></div>
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/classes" class="desktop-link">
-              Classes
-              <div class="menu-underline"></div>
-            </RouterLink>
-          </li>
-          <li>
-            <RouterLink to="/schedule" class="desktop-link">
-              Schedule
-              <div class="menu-underline"></div>
-            </RouterLink>
-          </li>
-          <li>
-            <a class="desktop-link">
-              Contact
-              <div class="menu-underline"></div>
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div id="menu-btn" class="interactive">
-        <div id='top-line' class="line"></div>
-        <div id='bottom-line' class="line"></div>
-      </div>
-    </div>
-  </div>
-</template>
 <script setup>
 import { gsap, Expo } from 'gsap'
 import { onMounted } from 'vue'
 import Logomark from '@/components/icons/LogomarkMain.vue'
 import LangButton from '@/components/LanguageButton.vue'
+
+import { useViewStore } from '@/stores/useViewStore'
+import { computed, watch } from 'vue'
+import { useRoute } from 'vue-router'
+
+const viewStore = useViewStore()
+const route = useRoute()
+
+// Reset active section when not on home page
+watch(
+  () => route.path,
+  (newPath) => {
+    if (newPath !== '/') {
+      viewStore.setActiveSection(null)
+    }
+  },
+)
+
+const logoColor = computed(() => {
+  // If not on home page or no active section, use default dark logo
+  if (!viewStore.activeSection) {
+    return 'logo-dark'
+  }
+
+  // Footer should use coral color (.logo-dark class)
+  if (viewStore.activeSection === 'footer-section') {
+    return 'logo-dark'
+  }
+
+  // Define other sections with dark backgrounds that need light logo
+  const darkSections = [
+    'statement-section',
+    'accolades-section',
+    'classes-section',
+    'philosophy-section',
+  ]
+
+  return darkSections.includes(viewStore.activeSection) ? 'logo-light' : 'logo-dark'
+})
 
 onMounted(() => {
   const dropMenu = new gsap.timeline({
@@ -177,24 +142,40 @@ onMounted(() => {
   const btnTl = gsap.timeline({
     paused: true,
   })
-  btnTl.to('#top-line', {
-    width: '3rem',
-    duration: 0.3,
-    ease: 'power2.out'
-  }, 0)
-  btnTl.set('#menu-btn', {
-    alignItems: 'flex-start',
-  }, 0.3)
-  btnTl.to('#top-line', {
-    width: '2rem',
-    duration: 0.5,
-    ease: 'power2.out'
-  }, 0.3)
-  btnTl.to('#bottom-line', {
-    width: '2rem',
-    duration: 0.5,
-    ease: 'power2.out'
-  }, 0.4)
+  btnTl.to(
+    '#top-line',
+    {
+      width: '3rem',
+      duration: 0.3,
+      ease: 'power2.out',
+    },
+    0,
+  )
+  btnTl.set(
+    '#menu-btn',
+    {
+      alignItems: 'flex-start',
+    },
+    0.3,
+  )
+  btnTl.to(
+    '#top-line',
+    {
+      width: '2rem',
+      duration: 0.5,
+      ease: 'power2.out',
+    },
+    0.3,
+  )
+  btnTl.to(
+    '#bottom-line',
+    {
+      width: '2rem',
+      duration: 0.5,
+      ease: 'power2.out',
+    },
+    0.4,
+  )
   menuBtn.addEventListener('mouseenter', () => {
     if (dropMenu.reversed()) {
       btnTl.play()
@@ -207,6 +188,80 @@ onMounted(() => {
   })
 })
 </script>
+<template>
+  <div id="header" class="interactive">
+    <router-link to="/" id="logo">
+      <Logomark id="logomark" :color="logoColor" />
+    </router-link>
+    <div id="mobile-nav">
+      <div class="menu">
+        <div class="mobile-list">
+          <ul>
+            <li style="z-index: 6">
+              <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
+            </li>
+            <li style="z-index: 5">
+              <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
+            </li>
+            <li style="z-index: 4">
+              <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
+            </li>
+            <li>
+              <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
+            </li>
+            <li style="z-index: 3">
+              <a class="mobile-link roman">Contact</a>
+            </li>
+            <li style="z-index: 2">
+              <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
+            </li>
+          </ul>
+        </div>
+        <LangButton class="lang-btn" />
+      </div>
+    </div>
+    <div id="nav">
+      <div id="desktop-menu">
+        <ul>
+          <li>
+            <RouterLink to="/" class="desktop-link">
+              Home
+              <div class="menu-underline"></div>
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/about" class="desktop-link">
+              About
+              <div class="menu-underline"></div>
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/classes" class="desktop-link">
+              Classes
+              <div class="menu-underline"></div>
+            </RouterLink>
+          </li>
+          <li>
+            <RouterLink to="/schedule" class="desktop-link">
+              Schedule
+              <div class="menu-underline"></div>
+            </RouterLink>
+          </li>
+          <li>
+            <a class="desktop-link">
+              Contact
+              <div class="menu-underline"></div>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="menu-btn" class="interactive">
+        <div id="top-line" class="line"></div>
+        <div id="bottom-line" class="line"></div>
+      </div>
+    </div>
+  </div>
+</template>
 <style scoped>
 /* NAVBAR STYLES */
 #header {
@@ -258,7 +313,7 @@ onMounted(() => {
 }
 #top-line {
   width: 1rem;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 #bottom-line {
   width: 3rem;
@@ -403,7 +458,7 @@ onMounted(() => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-top: .5rem;
+    padding-top: 0.5rem;
   }
   #desktop-menu {
     display: contents;
@@ -438,7 +493,7 @@ onMounted(() => {
   }
   #top-line {
     width: 1.5rem;
-    margin-bottom: .5rem;
+    margin-bottom: 0.5rem;
   }
   #bottom-line {
     width: 3rem;

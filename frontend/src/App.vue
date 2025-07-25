@@ -25,7 +25,8 @@ useHead({
   meta: [
     {
       name: 'description',
-      content: 'Nine Pilates is a modern pilates studio offering classes and workshops to enhance your fitness journey.',
+      content:
+        'Nine Pilates is a modern pilates studio offering classes and workshops to enhance your fitness journey.',
     },
     {
       name: 'viewport',
@@ -192,7 +193,7 @@ watch(
     </header>
     <div id="loader">
       <div id="logomark-wrapper">
-        <CircleLoader id="circle"/>
+        <CircleLoader id="circle" />
         <LogoMark id="loader-logo" />
       </div>
     </div>
@@ -207,7 +208,7 @@ watch(
         <component :is="Component" :key="route.fullPath" />
       </transition>
     </RouterView>
-    <footer>
+    <footer id="footer-section">
       <Footer> </Footer>
     </footer>
   </VueLenis>

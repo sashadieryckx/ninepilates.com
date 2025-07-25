@@ -1,6 +1,15 @@
+<script setup>
+defineProps({
+  color: {
+    type: String,
+    default: 'logo-light',
+  },
+})
+</script>
 <template>
   <svg
     id="logomark"
+    :class="color"
     data-name="LOGOMARK 2 + WORDMARK"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 5660 1500"
@@ -30,11 +39,14 @@
   width: 10em;
   height: auto;
   scale: 1;
-  fill: var(--mocha);
   transform: translateX(-14px);
+  transition: fill 0.3s ease-in-out;
 }
-.cls-1 {
+.logo-dark {
   fill: var(--coral);
+}
+.logo-light {
+  fill: var(--mocha);
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

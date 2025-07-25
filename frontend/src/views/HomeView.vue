@@ -5,24 +5,64 @@ import StatementSection from '@/components/home/StatementSection.vue'
 import AccoladesSection from '@/components/home/AccoladesSection.vue'
 import ClassesSection from '@/components/home/ClassesSection.vue'
 import PhilosophySection from '@/components/home/PhilosophySection.vue'
+
+import { onMounted, onUnmounted } from 'vue'
+import { useViewStore } from '@/stores/useViewStore'
+
+const viewStore = useViewStore()
+
+onMounted(() => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '-5% 0px -5% 0px', // Trigger when 90% of section is visible
+    threshold: 0.6,
+  }
+
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        viewStore.setActiveSection(entry.target.id)
+      }
+    })
+  }
+  const observer = new IntersectionObserver(callback, observerOptions)
+  const sections = document.querySelectorAll('section')
+  const footer = document.querySelector('#footer-section')
+
+  sections.forEach((section) => observer.observe(section))
+  if (footer) observer.observe(footer)
+
+  // Set initial section on page load
+  setTimeout(() => {
+    const firstSection = document.querySelector('section')
+    if (firstSection && !viewStore.activeSection) {
+      viewStore.setActiveSection(firstSection.id)
+    }
+  }, 100)
+
+  onUnmounted(() => {
+    sections.forEach((section) => observer.unobserve(section))
+    if (footer) observer.unobserve(footer)
+  })
+})
 </script>
 
 <template>
   <div id="main-content" class="main-content">
     <BookClass class="c2a" />
-    <section class="section">
+    <section class="section" id="hero-section">
       <HeroSection />
     </section>
-    <section class="section">
+    <section class="section" id="statement-section">
       <StatementSection />
     </section>
-    <section class="section">
+    <section class="section" id="accolades-section">
       <AccoladesSection />
     </section>
-    <section class="section">
+    <section class="section" id="classes-section">
       <ClassesSection />
     </section>
-    <section class="section">
+    <section class="section" id="philosophy-section">
       <PhilosophySection />
     </section>
   </div>

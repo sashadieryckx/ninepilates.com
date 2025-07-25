@@ -33,7 +33,7 @@
   opacity: 0.75;
 }
 .overlay {
-  background-color: #1615134a;
+  background-color: #1615137e;
   position: absolute;
   z-index: 1;
   top: 0;
@@ -51,6 +51,7 @@
   height: 100%;
   text-align: center;
   padding-top: 8rem;
+  color: var(--coral);
 }
 .hero-content h1 {
   font-size: 3.5rem;
