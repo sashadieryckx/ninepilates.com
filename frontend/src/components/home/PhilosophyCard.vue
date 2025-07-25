@@ -27,6 +27,7 @@ defineProps({
   align-items: flex-start;
   justify-content: flex-end;
   overflow: hidden;
+  color: var(--blanco);
 }
 p {
   font-size: 1rem;
@@ -64,6 +65,6 @@ p {
   border-radius: 50%;
 }
 h6 {
-  color: var(--coral);
+  color: var(--blanco);
 }
 </style>

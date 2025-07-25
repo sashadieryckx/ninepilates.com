@@ -35,13 +35,13 @@
 }
 .accolade h4 {
   font-size: 1rem;
-  color: var(--blanco);
+  color: var(--soya);
 }
 .icon {
   width: 4em;
   height: 4em;
   border-radius: 50%;
-  border: 1px solid var(--coral);
+  border: 1px solid var(--soya);
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

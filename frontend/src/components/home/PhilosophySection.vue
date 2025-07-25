@@ -25,6 +25,7 @@ const principlesStore = usePrinciplesStore()
   align-items: center;
   min-height: 100vh;
   padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 .philosophy-heading {
   display: flex;

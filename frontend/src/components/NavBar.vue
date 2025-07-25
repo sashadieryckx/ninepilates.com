@@ -254,7 +254,7 @@ onMounted(() => {
 }
 .line {
   height: 2px;
-  background-color: var(--coral);
+  background-color: var(--mocha);
 }
 #top-line {
   width: 1rem;

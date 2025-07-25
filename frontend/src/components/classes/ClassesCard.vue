@@ -29,13 +29,17 @@ defineProps({
   margin: 1rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--coral);
+  backdrop-filter: blur(5px);
+}
+.card-content {
+  color: var(--mocha);
 }
 .circle {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  border: 1px solid var(--coral);
-  background-color: var(--mocha);
+  background-color: #3f3a3495;
+  backdrop-filter: blur(5px);
   color: var(--blanco);
   display: flex;
   align-items: center;
@@ -43,12 +47,8 @@ defineProps({
   font-size: 1rem;
 }
 h3 {
-  font-size: 1.5rem;
+  margin-top: .5rem;
   margin-bottom: 0.5rem;
-}
-p {
-  font-size: 1rem;
-  line-height: 1.3em;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

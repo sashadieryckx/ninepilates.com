@@ -30,7 +30,7 @@
   width: 10em;
   height: auto;
   scale: 1;
-  fill: var(--coral);
+  fill: var(--mocha);
   transform: translateX(-14px);
 }
 .cls-1 {

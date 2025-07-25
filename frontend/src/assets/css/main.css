@@ -3,7 +3,7 @@
   max-width: 100vw;
   min-height: 100vh;
   overflow: hidden;
-  color: var(--blanco);
+  color: var(--mocha);
 }
 .interactive {
   pointer-events: auto!important;
@@ -16,7 +16,7 @@
   max-width: 100vw;
   overflow: hidden;
   font-family: sans-serif;
-  background-color: var(--mocha);
+  background-color: var(--coral);
 }
 ::-webkit-scrollbar {
   display: none;
@@ -50,6 +50,8 @@ h6 {
   line-height: 1em;
 }
 p {
+  font-size: 1rem;
+  line-height: 1.5em;
   letter-spacing: normal;
 }
 .light {
