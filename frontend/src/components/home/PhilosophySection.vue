@@ -5,12 +5,14 @@ const principlesStore = usePrinciplesStore()
 </script>
 <template>
   <div id="philosophy-section">
-    <div class="philosophy-heading">
-      <h1 class="roman">The <span class="light-italic">"Nine"</span> Philosophy</h1>
+    <div class="philosophy-heading df-pad">
+      <h2 class="roman">The <span class="light-italic">"Nine"</span> Philosophy</h2>
       <h5 class="light">Built on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself — inside and out.</h5>
     </div>
     <div class="philosophy-track">
-      <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" />
+      <div class="track-wrapper df-mar">
+        <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" />
+      </div>
     </div>
   </div>
 </template>
@@ -31,13 +33,23 @@ const principlesStore = usePrinciplesStore()
   justify-content: center;
   width: 100%;
 }
-h1 {
+h2 {
   text-align: center;
 }
 h5 {
   text-align: center;
-  width: 60%;
-  margin-top: 1rem;
+  margin-top: 2rem;
+}
+.philosophy-track {
+  position: relative;
+  width: 100vw;
+  padding-top: 4rem;
+  overflow: scroll;
+}
+.track-wrapper {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  gap: 2rem;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

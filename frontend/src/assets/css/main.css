@@ -30,20 +30,24 @@ h1{
   line-height: 1em;
 }
 h2 {
-  font-size: 3rem;
+  font-size: 3.25rem;
+  line-height: 1em;
 }
 h3 {
-
+  font-size: 2rem;
+  line-height: 1em;
 }
 h4 {
-
+  font-size: 1.75rem;
+  line-height: 1em;
 }
 h5 {
   font-size: 1.25rem;
   line-height: 1.5em;
 }
 h6 {
-
+  font-size: 1rem;
+  line-height: 1em;
 }
 p {
   letter-spacing: normal;
@@ -87,6 +91,10 @@ p {
 .df-mar {
   margin-left: 1rem!important;
   margin-right: 1rem!important;
+}
+.df-pad {
+  padding-left: 1rem!important;
+  padding-right: 1rem!important;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

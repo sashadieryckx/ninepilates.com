@@ -5,7 +5,7 @@ const classesStore = useClassesStore()
 </script>
 <template>
   <div id="classes-section">
-    <div id="classes-heading">
+    <div id="classes-heading" class="df-pad">
       <h2 class="roman">Pilates for every body and every mind</h2>
       <h5 class="light">Join us in transforming your body and mind through our comprehensive yoga and fitness programs.</h5>
     </div>
@@ -18,6 +18,13 @@ const classesStore = useClassesStore()
 #classes-section {
   position: relative;
   z-index: 1;
+}
+h2 {
+  text-align: center;
+}
+h5 {
+  text-align: center;
+  margin-top: 1rem;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

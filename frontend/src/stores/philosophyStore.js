@@ -1,12 +1,15 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
+import Breathe from '../assets/content/breathe.jpg'
+
 export const usePrinciplesStore = defineStore('principles', () => {
   const principles = ref([
     {
       id: '1',
       name: 'Breathing',
       description: 'The breath is the essential link between the mind and the body. It draws our wandering mind back into our bodies and back to the task at hand. It is the foundation of our existence and the rhythm that accompanies us from birth to death. In Pilates the breath is integrated into every movement in order to focus our awareness on what we are doing, to improve the flow of oxygen through our bodies and to improve the capacity of our lungs.',
+      image: Breathe,
     },
     {
       id: '2',
