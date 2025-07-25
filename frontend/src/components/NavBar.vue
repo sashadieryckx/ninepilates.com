@@ -43,6 +43,60 @@ const logoColor = computed(() => {
   return darkSections.includes(viewStore.activeSection) ? 'logo-light' : 'logo-dark'
 })
 
+const desktopLinkColor = computed(() => {
+  // If not on home page or no active section, use coral
+  if (!viewStore.activeSection) {
+    return 'var(--coral)'
+  }
+
+  // Footer should use coral color
+  if (viewStore.activeSection === 'footer-section') {
+    return 'var(--coral)'
+  }
+
+  // Hero section should use coral color
+  if (viewStore.activeSection === 'hero-section') {
+    return 'var(--coral)'
+  }
+
+  // Define other sections with dark backgrounds that need coral links
+  const darkSections = [
+    'statement-section',
+    'accolades-section',
+    'classes-section',
+    'philosophy-section',
+  ]
+
+  return darkSections.includes(viewStore.activeSection) ? 'var(--mocha)' : 'var(--coral)'
+})
+
+const menuButtonLineColor = computed(() => {
+  // If not on home page or no active section, use coral
+  if (!viewStore.activeSection) {
+    return 'var(--coral)'
+  }
+
+  // Footer should use coral color
+  if (viewStore.activeSection === 'footer-section') {
+    return 'var(--coral)'
+  }
+
+  // Hero section should use coral color
+  if (viewStore.activeSection === 'hero-section') {
+    return 'var(--coral)'
+  }
+
+  // Define other sections with dark backgrounds that need coral lines
+  const darkSections = [
+    'statement-section',
+    'accolades-section',
+    'classes-section',
+    'philosophy-section',
+  ]
+
+  return darkSections.includes(viewStore.activeSection) ? 'var(--mocha)' : 'var(--coral)'
+})
+
 onMounted(() => {
   const dropMenu = new gsap.timeline({
     paused: true,
@@ -224,40 +278,40 @@ onMounted(() => {
       <div id="desktop-menu">
         <ul>
           <li>
-            <RouterLink to="/" class="desktop-link">
+            <RouterLink to="/" class="desktop-link" :style="{ color: desktopLinkColor }">
               Home
-              <div class="menu-underline"></div>
+              <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/about" class="desktop-link">
+            <RouterLink to="/about" class="desktop-link" :style="{ color: desktopLinkColor }">
               About
-              <div class="menu-underline"></div>
+              <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/classes" class="desktop-link">
+            <RouterLink to="/classes" class="desktop-link" :style="{ color: desktopLinkColor }">
               Classes
-              <div class="menu-underline"></div>
+              <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
-            <RouterLink to="/schedule" class="desktop-link">
+            <RouterLink to="/schedule" class="desktop-link" :style="{ color: desktopLinkColor }">
               Schedule
-              <div class="menu-underline"></div>
+              <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
-            <a class="desktop-link">
+            <a class="desktop-link" :style="{ color: desktopLinkColor }">
               Contact
-              <div class="menu-underline"></div>
+              <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </a>
           </li>
         </ul>
       </div>
       <div id="menu-btn" class="interactive">
-        <div id="top-line" class="line"></div>
-        <div id="bottom-line" class="line"></div>
+        <div id="top-line" class="line" :style="{ backgroundColor: menuButtonLineColor }"></div>
+        <div id="bottom-line" class="line" :style="{ backgroundColor: menuButtonLineColor }"></div>
       </div>
     </div>
   </div>
@@ -309,7 +363,7 @@ onMounted(() => {
 }
 .line {
   height: 2px;
-  background-color: var(--mocha);
+  /* background-color now set dynamically via style binding */
 }
 #top-line {
   width: 1rem;
@@ -412,11 +466,6 @@ onMounted(() => {
   position: relative;
   z-index: 100;
 }
-/* Router Link active Styles */
-.router-link-exact-active {
-  color: var(--coral) !important;
-  text-shadow: none !important;
-}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
   #logo-txt {
@@ -477,7 +526,7 @@ onMounted(() => {
   }
   #desktop-menu a {
     font-size: 1.25rem;
-    color: var(--coral);
+    /* color now set dynamically via style binding */
     text-decoration: none;
     letter-spacing: normal;
     mix-blend-mode: difference;
@@ -488,7 +537,7 @@ onMounted(() => {
   .menu-underline {
     width: 0%;
     height: 2px;
-    background-color: var(--coral);
+    /* background-color now set dynamically via style binding */
     will-change: width;
   }
   #top-line {
