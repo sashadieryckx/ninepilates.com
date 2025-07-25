@@ -14,7 +14,7 @@ const viewStore = useViewStore()
 onMounted(() => {
   const observerOptions = {
     root: null,
-    rootMargin: '-5% 0px -5% 0px', // Trigger when 90% of section is visible
+    rootMargin: '-0% 0px -0% 0px',
     threshold: 0.6,
   }
 

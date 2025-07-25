@@ -114,6 +114,7 @@ onMounted(() => {
       rotate: 45,
       y: '8px',
       width: '2rem',
+      transformOrigin: 'center center',
     },
     0,
   )
@@ -122,6 +123,8 @@ onMounted(() => {
     {
       rotate: 135,
       width: '2rem',
+      y: '-8px',
+      transformOrigin: 'center center',
     },
     0,
   )
@@ -143,23 +146,81 @@ onMounted(() => {
   })
   dropMenu.totalDuration(2.25)
   dropMenu.reverse(1)
+  // MENU BUTTON ANIMATION
+  const menuBtn = document.querySelector('#menu-btn')
+
+  const btnTl = gsap.timeline({
+    paused: true,
+  })
+  btnTl.to(
+    '#top-line',
+    {
+      width: '3rem',
+      duration: 0.4,
+      ease: 'power2.out',
+      transformOrigin: 'center center',
+    },
+    0,
+  )
+  btnTl.to(
+    '#bottom-line',
+    {
+      width: '1rem',
+      duration: 0.4,
+      ease: 'power2.out',
+      transformOrigin: 'center center',
+    },
+    0,
+  )
+
+  const clickTl = gsap.timeline({
+    paused: true,
+  })
+  clickTl.to(
+    menuBtn,
+    {
+      scale: 0.9,
+      duration: 0.1,
+      ease: 'power2.out',
+    },
+    0,
+  )
 
   document.addEventListener('click', function (event) {
     if (event.target.matches('#menu-btn')) {
+      // Reset hover animation when menu is clicked
+      if (!dropMenu.reversed()) {
+        btnTl.reverse()
+      }
       dropMenu.reversed(!dropMenu.reversed())
     }
   })
   document.addEventListener('click', function (event) {
     if (event.target.matches('.mobile-link')) {
-      setTimeout(() => {
-        dropMenu.reversed(!dropMenu.reversed())
-        // Reverse the menu button timeline when menu is closed
-        if (dropMenu.reversed()) {
-          btnTl.reverse()
-        }
-      }, 1000)
+      dropMenu.reversed(!dropMenu.reversed())
+      // Reverse the menu button timeline when menu is closed
+      if (dropMenu.reversed()) {
+        btnTl.reverse()
+      }
     }
   })
+
+  menuBtn.addEventListener('mouseenter', () => {
+    if (dropMenu.reversed()) {
+      btnTl.play()
+    }
+  })
+
+  menuBtn.addEventListener('mouseleave', () => {
+    if (dropMenu.reversed()) {
+      btnTl.reverse()
+    }
+  })
+
+  menuBtn.addEventListener('mousedown', () => {
+    clickTl.restart()
+  })
+
   // GSAP ANIMATION FOR THE NAV ITEMS HOVER
   const underLineWrapper = document.querySelectorAll('#desktop-menu li')
   underLineWrapper.forEach((el) => {
@@ -189,55 +250,6 @@ onMounted(() => {
       }
       el.addEventListener('mouseenter', mouseEnter)
       el.addEventListener('mouseleave', mouseLeave)
-    }
-  })
-  // MENU BUTTON ANIMATION
-  const menuBtn = document.querySelector('#menu-btn')
-  const btnTl = gsap.timeline({
-    paused: true,
-  })
-  btnTl.to(
-    '#top-line',
-    {
-      width: '3rem',
-      duration: 0.3,
-      ease: 'power2.out',
-    },
-    0,
-  )
-  btnTl.set(
-    '#menu-btn',
-    {
-      alignItems: 'flex-start',
-    },
-    0.3,
-  )
-  btnTl.to(
-    '#top-line',
-    {
-      width: '2rem',
-      duration: 0.5,
-      ease: 'power2.out',
-    },
-    0.3,
-  )
-  btnTl.to(
-    '#bottom-line',
-    {
-      width: '2rem',
-      duration: 0.5,
-      ease: 'power2.out',
-    },
-    0.4,
-  )
-  menuBtn.addEventListener('mouseenter', () => {
-    if (dropMenu.reversed()) {
-      btnTl.play()
-    }
-  })
-  menuBtn.addEventListener('mouseleave', () => {
-    if (dropMenu.reversed()) {
-      btnTl.reverse()
     }
   })
 })
@@ -358,19 +370,27 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-evenly;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#menu-btn:active {
+  transform: scale(0.95);
 }
 .line {
   height: 2px;
-  /* background-color now set dynamically via style binding */
+  border-radius: 1px;
+  transition: all 0.3s ease;
+  will-change: width, transform, background-color;
 }
 #top-line {
   width: 1rem;
-  margin-bottom: 0.5rem;
+  transform-origin: center center;
 }
+
 #bottom-line {
   width: 3rem;
+  transform-origin: center center;
 }
 #menu-btn p {
   font-size: 1rem;
@@ -466,6 +486,11 @@ onMounted(() => {
   position: relative;
   z-index: 100;
 }
+/* Router Link active Styles */
+.mobile-list .router-link-exact-active {
+  color: var(--coral) !important;
+  text-shadow: none !important;
+}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
   #logo-txt {
@@ -533,6 +558,7 @@ onMounted(() => {
     display: flex;
     flex-direction: column;
     cursor: pointer;
+    transition: color 0.3s ease;
   }
   .menu-underline {
     width: 0%;
@@ -540,12 +566,18 @@ onMounted(() => {
     /* background-color now set dynamically via style binding */
     will-change: width;
   }
+  #menu-btn {
+    height: 2rem;
+  }
+
   #top-line {
     width: 1.5rem;
-    margin-bottom: 0.5rem;
+    transform-origin: right center;
   }
+
   #bottom-line {
     width: 3rem;
+    transform-origin: right center;
   }
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */
