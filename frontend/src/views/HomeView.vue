@@ -53,14 +53,11 @@ onMounted(() => {
         scrollTrigger: {
           trigger: statementSection,
           start: 'top 100%',
-          end: 'bottom 20%',
+          end: 'bottom 60%',
           scrub: 1,
-          onUpdate: () => {
-            // Optional: add any debugging here
-          }
         },
-        width: '95%',
-        borderRadius: '20px',
+        width: '90%',
+        borderRadius: '50px',
         ease: 'power1.inOut',
       })
       ScrollTrigger.refresh()
@@ -70,7 +67,7 @@ onMounted(() => {
   onUnmounted(() => {
     sections.forEach((section) => observer.unobserve(section))
     if (footer) observer.unobserve(footer)
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   })
 })
 </script>
@@ -115,7 +112,7 @@ onMounted(() => {
   height: 100%;
 }
 #hero-section {
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow: hidden;
 }

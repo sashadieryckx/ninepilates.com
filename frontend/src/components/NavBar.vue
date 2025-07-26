@@ -109,29 +109,9 @@ onMounted(() => {
     0,
   )
   dropMenu.to(
-    '#top-line',
-    {
-      rotate: 45,
-      y: '8px',
-      width: '2rem',
-      transformOrigin: 'center center',
-    },
-    0,
-  )
-  dropMenu.to(
-    '#bottom-line',
-    {
-      rotate: 135,
-      width: '2rem',
-      y: '-8px',
-      transformOrigin: 'center center',
-    },
-    0,
-  )
-  dropMenu.to(
     '.menu',
     {
-      ease: Expo.easeInOut,
+      ease: 'power4.inOut',
       yPercent: 100,
     },
     0.1,
@@ -144,10 +124,20 @@ onMounted(() => {
     duration: 1,
     stagger: 0.1,
   })
+  dropMenu.from(
+    '.close-btn',
+    {
+      ease: 'power4.inOut',
+      opacity: 0,
+      duration: 0.5,
+    },
+    0.5,
+  )
   dropMenu.totalDuration(2.25)
   dropMenu.reverse(1)
   // MENU BUTTON ANIMATION
   const menuBtn = document.querySelector('#menu-btn')
+  const closeBtn = document.querySelector('.close-btn')
 
   const btnTl = gsap.timeline({
     paused: true,
@@ -172,53 +162,25 @@ onMounted(() => {
     },
     0,
   )
-
-  const clickTl = gsap.timeline({
-    paused: true,
-  })
-  clickTl.to(
-    menuBtn,
-    {
-      scale: 0.9,
-      duration: 0.1,
-      ease: 'power2.out',
-    },
-    0,
-  )
-
   document.addEventListener('click', function (event) {
     if (event.target.matches('#menu-btn')) {
-      // Reset hover animation when menu is clicked
-      if (!dropMenu.reversed()) {
-        btnTl.reverse()
-      }
       dropMenu.reversed(!dropMenu.reversed())
     }
   })
   document.addEventListener('click', function (event) {
-    if (event.target.matches('.mobile-link')) {
+    if (event.target === closeBtn || closeBtn.contains(event.target)) {
       dropMenu.reversed(!dropMenu.reversed())
-      // Reverse the menu button timeline when menu is closed
-      if (dropMenu.reversed()) {
-        btnTl.reverse()
-      }
     }
   })
-
   menuBtn.addEventListener('mouseenter', () => {
     if (dropMenu.reversed()) {
       btnTl.play()
     }
   })
-
   menuBtn.addEventListener('mouseleave', () => {
     if (dropMenu.reversed()) {
       btnTl.reverse()
     }
-  })
-
-  menuBtn.addEventListener('mousedown', () => {
-    clickTl.restart()
   })
 
   // GSAP ANIMATION FOR THE NAV ITEMS HOVER
@@ -256,36 +218,39 @@ onMounted(() => {
 </script>
 <template>
   <div class="menu">
-        <div class="mobile-list">
-          <ul>
-            <li style="z-index: 6">
-              <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
-            </li>
-            <li style="z-index: 5">
-              <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
-            </li>
-            <li style="z-index: 4">
-              <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
-            </li>
-            <li>
-              <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
-            </li>
-            <li style="z-index: 3">
-              <a class="mobile-link roman">Contact</a>
-            </li>
-            <li style="z-index: 2">
-              <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
-            </li>
-          </ul>
-        </div>
-        <LangButton class="lang-btn" />
+    <div class="mobile-list interactive">
+      <ul>
+        <li style="z-index: 6">
+          <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
+        </li>
+        <li style="z-index: 5">
+          <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
+        </li>
+        <li style="z-index: 4">
+          <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
+        </li>
+        <li>
+          <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
+        </li>
+        <li style="z-index: 3">
+          <a class="mobile-link roman">Contact</a>
+        </li>
+        <li style="z-index: 2">
+          <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
+        </li>
+      </ul>
+      <div class="close-btn">
+        <div class="line"></div>
+        <div class="line"></div>
+      </div>
+    </div>
+    <LangButton class="lang-btn" />
   </div>
   <div id="header" class="interactive">
     <router-link to="/" id="logo">
       <Logomark id="logomark" :color="logoColor" />
     </router-link>
-    <div id="mobile-nav">
-    </div>
+    <div id="mobile-nav"></div>
     <div id="nav">
       <div id="desktop-menu">
         <ul>
@@ -442,40 +407,10 @@ onMounted(() => {
     -1px 1px 0px var(--coral),
     1px -1px 0px var(--coral);
   text-decoration: none;
-}
-/* Link Hover Animation */
-.mobile-list li:hover {
-  animation: linkHover 1.5s forwards;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation-play-state: running;
+  cursor: pointer;
 }
 .mobile-list li {
-  animation: linkUnHover 1.5s forwards;
-  animation-play-state: running;
-}
-#mobile-socials {
-  position: relative;
-  z-index: 100;
-  width: 100%;
-  height: 20%;
-  margin-top: -2em;
-}
-#mobile-socials ul {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  padding: 0;
-}
-#mobile-socials ul li {
-  list-style: none;
-}
-#mobile-socials ul li a {
-  font-size: 1.5em;
-  color: #f8f8f8;
-  text-decoration: none;
-  letter-spacing: normal;
-  mix-blend-mode: difference;
+  cursor: pointer;
 }
 #desktop-menu {
   position: relative;
@@ -485,6 +420,41 @@ onMounted(() => {
   position: relative;
   z-index: 100;
 }
+.close-btn {
+  position: fixed;
+  z-index: 102;
+  top: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 2px solid var(--coral);
+  border-radius: 50%;
+  width: 4rem;
+  height: 4rem;
+  transition: all 0.3s ease;
+}
+.close-btn:hover {
+  background-color: var(--soya);
+  transform: scale(0.98);
+}
+.close-btn .line {
+  position: absolute;
+  width: 2.5rem;
+  height: 3px;
+  border-radius: 15px;
+  background-color: var(--coral);
+  margin: 0.25rem;
+  transition: all 0.3s ease;
+}
+.close-btn :nth-child(1) {
+  transform: rotate(45deg);
+}
+.close-btn :nth-child(2) {
+  transform: rotate(-45deg);
+}
 /* Router Link active Styles */
 .mobile-list .router-link-exact-active {
   color: var(--coral) !important;
@@ -492,12 +462,6 @@ onMounted(() => {
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
-  #logo-txt {
-    display: contents;
-  }
-  #mobile-socials {
-    display: none;
-  }
 }
 /* TABLET 2 [GLOBAL]*/
 @media (min-width: 1000px) {
@@ -579,10 +543,14 @@ onMounted(() => {
     width: 1.5rem;
     transform-origin: right center;
   }
-
   #bottom-line {
     width: 3rem;
     transform-origin: right center;
+  }
+  .close-btn {
+    top: 2rem;
+    right: 2rem;
+    width: 4rem;
   }
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */

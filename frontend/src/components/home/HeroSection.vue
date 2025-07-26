@@ -15,18 +15,23 @@
 </template>
 <style scoped>
 #hero-section {
+  position: relative;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 .hero-bg {
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100%;
+  z-index: 1;
+  width: 100vw;
   height: 100vh;
   overflow: hidden;
 }
 .hero-img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -43,7 +48,7 @@
 }
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
