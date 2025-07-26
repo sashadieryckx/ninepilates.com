@@ -8,6 +8,9 @@ import PhilosophySection from '@/components/home/PhilosophySection.vue'
 
 import { onMounted, onUnmounted } from 'vue'
 import { useViewStore } from '@/stores/useViewStore'
+import { gsap } from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const viewStore = useViewStore()
 
@@ -40,9 +43,34 @@ onMounted(() => {
     }
   }, 100)
 
+  // Setup GSAP animation with proper timing
+  setTimeout(() => {
+    const hero = document.querySelector('#hero-section')
+    const statementSection = document.querySelector('#statement-section')
+
+    if (hero && statementSection) {
+      gsap.to(hero, {
+        scrollTrigger: {
+          trigger: statementSection,
+          start: 'top 100%',
+          end: 'bottom 20%',
+          scrub: 1,
+          onUpdate: () => {
+            // Optional: add any debugging here
+          }
+        },
+        width: '95%',
+        borderRadius: '20px',
+        ease: 'power1.inOut',
+      })
+      ScrollTrigger.refresh()
+    }
+  }, 200)
+
   onUnmounted(() => {
     sections.forEach((section) => observer.unobserve(section))
     if (footer) observer.unobserve(footer)
+    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
   })
 })
 </script>
@@ -74,6 +102,10 @@ onMounted(() => {
   width: 100vw;
   height: 100%;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .section {
   display: flex;
@@ -81,6 +113,11 @@ onMounted(() => {
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+#hero-section {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
 }
 .c2a {
   position: fixed;

@@ -26,7 +26,7 @@ function scrollRight() {
 }
 </script>
 <template>
-  <div id="philosophy-section">
+  <div class="philosophy-section-content">
     <div class="philosophy-heading df-pad">
       <h2 class="roman">Discover the <span class="light-italic">"Nine"</span> Philosophy</h2>
       <h5 class="light">Built on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself — inside and out.</h5>
@@ -43,7 +43,7 @@ function scrollRight() {
   </div>
 </template>
 <style scoped>
-#philosophy-section {
+.philosophy-section-content {
   position: relative;
   z-index: 1;
   display: flex;
