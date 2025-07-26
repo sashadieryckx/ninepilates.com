@@ -31,7 +31,7 @@ function scrollRight() {
       <h2 class="roman">Discover the <span class="light-italic">"Nine"</span> Philosophy</h2>
       <h5 class="light">Built on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself — inside and out.</h5>
     </div>
-    <div class="philosophy-track" ref="scrollContainer">
+    <div class="philosophy-track interactive" ref="scrollContainer">
       <div class="track-wrapper df-mar">
         <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" class="philosophy-card" />
       </div>

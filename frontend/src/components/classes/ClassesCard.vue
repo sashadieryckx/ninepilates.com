@@ -8,7 +8,7 @@ defineProps({
 })
 </script>
 <template>
-  <div class="classes-card">
+  <div class="classes-card interactive">
     <div class="circle">{{ classesInfo.id }}</div>
     <div class="card-content">
       <h3 class="card-title roman">{{ classesInfo.name }}</h3>
@@ -30,6 +30,10 @@ defineProps({
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   color: var(--coral);
   backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+.classes-card:hover {
+  transform: scale(1.01);
 }
 .card-content {
   color: var(--mocha);

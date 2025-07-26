@@ -255,12 +255,7 @@ onMounted(() => {
 })
 </script>
 <template>
-  <div id="header" class="interactive">
-    <router-link to="/" id="logo">
-      <Logomark id="logomark" :color="logoColor" />
-    </router-link>
-    <div id="mobile-nav">
-      <div class="menu">
+  <div class="menu">
         <div class="mobile-list">
           <ul>
             <li style="z-index: 6">
@@ -284,7 +279,12 @@ onMounted(() => {
           </ul>
         </div>
         <LangButton class="lang-btn" />
-      </div>
+  </div>
+  <div id="header" class="interactive">
+    <router-link to="/" id="logo">
+      <Logomark id="logomark" :color="logoColor" />
+    </router-link>
+    <div id="mobile-nav">
     </div>
     <div id="nav">
       <div id="desktop-menu">
@@ -345,6 +345,7 @@ onMounted(() => {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  align-content: center;
   font-family: sans-serif;
   backdrop-filter: blur(10px);
   border-radius: 15px;
@@ -399,8 +400,9 @@ onMounted(() => {
 }
 .menu {
   position: fixed;
-  z-index: 100;
+  z-index: 101;
   top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background: var(--onyx);
@@ -503,11 +505,15 @@ onMounted(() => {
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   #header {
-    height: 10vh;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    background-color: transparent;
-    backdrop-filter: blur(0px);
+    height: 8vh;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    margin: 1rem 1rem;
+    width: 100%;
+    max-width: 98vw;
+  }
+  #logomark {
+    transform: translate(-1rem, -0.25rem);
   }
   .mobile-list {
     align-items: start;

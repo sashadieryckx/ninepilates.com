@@ -86,19 +86,19 @@ onMounted(() => {
       opacity: 0,
       scale: 1.2,
       duration: 0.5,
-      filter: 'blur(10px)',
+      filter: 'blur(5px)',
       ease: 'power2.inOut',
     },
-    1,
+    1.5,
   )
   loaderTimeline.to(
     '#loader',
     {
       duration: 1,
       y: '-100%',
-      ease: 'power2.inOut',
+      ease: 'power1.inOut',
     },
-    1.5,
+    2,
   )
   loaderTimeline.to(
     '#loader-layers div',
@@ -106,9 +106,9 @@ onMounted(() => {
       duration: 1,
       stagger: 0.1,
       y: '-100%',
-      ease: 'power2.inOut',
+      ease: 'power1.inOut',
     },
-    1.5,
+    2,
   )
   loaderTimeline.from(
     '#logo',
@@ -118,7 +118,7 @@ onMounted(() => {
       y: '15%',
       ease: 'power1.inOut',
     },
-    2.5,
+    3,
   )
   loaderTimeline.from(
     '#desktop-menu ul li',
@@ -129,7 +129,7 @@ onMounted(() => {
       y: '15%',
       ease: 'power1.inOut',
     },
-    2.75,
+    3.25,
   )
   loaderTimeline.from(
     '#menu-btn',
@@ -139,7 +139,7 @@ onMounted(() => {
       stagger: 0.1,
       ease: 'power1.inOut',
     },
-    3.25,
+    3.5,
   )
 })
 onUnmounted(() => {
@@ -201,7 +201,6 @@ watch(
       <div id="coral"></div>
       <div id="soya"></div>
       <div id="dawn"></div>
-      <div id="onyx"></div>
     </div>
     <RouterView v-slot="{ Component }">
       <transition>
@@ -273,20 +272,28 @@ footer {
   background-color: var(--dawn);
   z-index: 9996;
 }
-#onyx {
-  background-color: var(--onyx);
-  z-index: 9995;
-}
 #logomark-wrapper {
   width: 12em;
   height: auto;
+}
+#loader-logo {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 #circle {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -52%);
+  transform: translate(-50%, -50%);
   height: 14em;
   width: 14em;
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+
 }
 </style>

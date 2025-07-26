@@ -23,4 +23,7 @@
   font-size: 1rem;
   transform: translateY(-3px);
 }
+#learn-more button:hover {
+  transform: scale(1.03);
+}
 </style>
