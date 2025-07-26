@@ -59,6 +59,8 @@ const desktopLinkColor = computed(() => {
     'accolades-section',
     'classes-section',
     'philosophy-section',
+    'testimonials-section',
+    'memberships-section',
     'about-content',
   ]
 
@@ -87,6 +89,8 @@ const menuButtonLineColor = computed(() => {
     'accolades-section',
     'classes-section',
     'philosophy-section',
+    'testimonials-section',
+    'memberships-section',
     'about-content',
   ]
 

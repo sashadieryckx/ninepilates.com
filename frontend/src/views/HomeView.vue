@@ -6,6 +6,7 @@ import AccoladesSection from '@/components/home/AccoladesSection.vue'
 import ClassesSection from '@/components/home/ClassesSection.vue'
 import PhilosophySection from '@/components/home/PhilosophySection.vue'
 import TestimonialsSection from '@/components/home/TestimonialsSection.vue'
+import MembershipsSection from '@/components/home/MembershipsSection.vue'
 
 import { onMounted, onUnmounted } from 'vue'
 import { useViewStore } from '@/stores/useViewStore'
@@ -91,8 +92,11 @@ onMounted(() => {
     <section class="section" id="philosophy-section">
       <PhilosophySection />
     </section>
-    <section class-="section" id="testimonials-section">
+    <section class="section" id="testimonials-section">
       <TestimonialsSection />
+    </section>
+    <section class="section" id="memberships-section">
+      <MembershipsSection />
     </section>
   </div>
 </template>
