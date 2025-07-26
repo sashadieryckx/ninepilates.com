@@ -22,49 +22,44 @@ watch(
 )
 
 const logoColor = computed(() => {
-  // If not on home page or no active section, use default dark logo
   if (!viewStore.activeSection) {
     return 'logo-dark'
   }
 
-  // Footer should use coral color (.logo-dark class)
   if (viewStore.activeSection === 'footer-section') {
     return 'logo-dark'
   }
 
-  // Define other sections with dark backgrounds that need light logo
   const darkSections = [
     'statement-section',
     'accolades-section',
     'classes-section',
     'philosophy-section',
+    'about-content',
   ]
 
   return darkSections.includes(viewStore.activeSection) ? 'logo-light' : 'logo-dark'
 })
 
 const desktopLinkColor = computed(() => {
-  // If not on home page or no active section, use coral
   if (!viewStore.activeSection) {
     return 'var(--coral)'
   }
 
-  // Footer should use coral color
   if (viewStore.activeSection === 'footer-section') {
     return 'var(--coral)'
   }
 
-  // Hero section should use coral color
   if (viewStore.activeSection === 'hero-section') {
     return 'var(--coral)'
   }
 
-  // Define other sections with dark backgrounds that need coral links
   const darkSections = [
     'statement-section',
     'accolades-section',
     'classes-section',
     'philosophy-section',
+    'about-content',
   ]
 
   return darkSections.includes(viewStore.activeSection) ? 'var(--mocha)' : 'var(--coral)'
@@ -92,6 +87,7 @@ const menuButtonLineColor = computed(() => {
     'accolades-section',
     'classes-section',
     'philosophy-section',
+    'about-content',
   ]
 
   return darkSections.includes(viewStore.activeSection) ? 'var(--mocha)' : 'var(--coral)'

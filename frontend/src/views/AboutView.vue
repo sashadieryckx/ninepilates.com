@@ -1,5 +1,50 @@
+<script setup>
+import { onMounted, onUnmounted } from 'vue'
+import { useViewStore } from '@/stores/useViewStore'
+
+const viewStore = useViewStore()
+
+onMounted(() => {
+  const observerOptions = {
+    root: null,
+    rootMargin: '-0% 0px -0% 0px',
+    threshold: 0.6,
+  }
+
+  const callback = (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        viewStore.setActiveSection(entry.target.id)
+      }
+    })
+  }
+
+  const observer = new IntersectionObserver(callback, observerOptions)
+  const aboutContent = document.querySelector('#about-content')
+  const footer = document.querySelector('#footer-section')
+
+  if (aboutContent) {
+    observer.observe(aboutContent)
+  }
+  if (footer) observer.observe(footer)
+
+  // Set initial section on page load
+  setTimeout(() => {
+    if (aboutContent && !viewStore.activeSection) {
+      viewStore.setActiveSection('about-content')
+    }
+  }, 100)
+
+  onUnmounted(() => {
+    if (aboutContent) {
+      observer.unobserve(aboutContent)
+    }
+  })
+})
+</script>
+
 <template>
-  <div id="main-content" class="main-content">
+  <div id="about-content" class="main-content">
     <section class="section">
       <h1>This is an about page</h1>
     </section>
@@ -7,7 +52,7 @@
 </template>
 
 <style scoped>
-#main-content {
+.main-content {
   height: 100vh;
 }
 .section {
