@@ -4,7 +4,7 @@
     <div id="divider" class=""></div>
     <img id="default-background" src="" />
     <div id="footer-title">
-      <h1 class="roman">Movement with Intention.</h1>
+      <h3 class="roman">Movement with Intention.</h3>
     </div>
     <div id="bottom-bar">
       <div id="contact">
@@ -86,7 +86,7 @@
   z-index: 1;
   position: relative;
   grid-column: 1 / span 4;
-  grid-row: 4 / span 6;
+  grid-row: 5 / span 6;
   display: flex;
   justify-content: center;
 }
@@ -99,18 +99,14 @@
   justify-content: center;
   align-items: center;
 }
-#footer-title h1 {
-  font-size: 2.5em;
-  color: var(--font-color-main);
+#footer-title h3 {
+  font-size: 2.75rem;
   line-height: 1.1em;
   text-align: center;
-  width: 90%;
 }
 #contact h6 {
   font-size: 1.75em;
-  color: var(--font-color-main);
-  font-family: sans-serif;
-  font-weight: 300;
+  line-height: 1.3em;
 }
 #socials {
   margin-top: 1em;
@@ -153,10 +149,7 @@
 }
 #credits p,
 #credits a {
-  color: var(--font-color-main);
   text-decoration: none;
-  font-family: sans-serif;
-  font-weight: 300;
   font-style: normal;
   transition: all 0.5s ease;
 }
@@ -189,10 +182,10 @@
   }
   #footer-title {
     columns: 1;
-    grid-row: 2 / span 3;
+    grid-row: 3 / span 3;
     justify-content: flex-start;
   }
-  #footer-title h1 {
+  #footer-title h3 {
     font-size: 6rem;
     text-align: left;
     width: 60%;

@@ -11,7 +11,7 @@ const principlesStore = usePrinciplesStore()
     </div>
     <div class="philosophy-track">
       <div class="track-wrapper df-mar">
-        <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" />
+        <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" class="philosophy-card" />
       </div>
     </div>
   </div>
@@ -45,12 +45,22 @@ h5 {
   position: relative;
   width: 100vw;
   padding-top: 4rem;
-  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.philosophy-track::-webkit-scrollbar {
+  display: none;
 }
 .track-wrapper {
-  display: grid;
-  grid-template-columns: repeat(9, 1fr);
+  display: flex;
   gap: 2rem;
+}
+.philosophy-card {
+  flex: 0 0 80%;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
@@ -60,8 +70,12 @@ h5 {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
-  .philosophy-heading {
+  h5 {
     width: 75%;
+  }
+  .track-wrapper {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
   }
 }
 /* DESKTOP 2 [GLOBAL] */

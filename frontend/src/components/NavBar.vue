@@ -335,7 +335,7 @@ onMounted(() => {
   position: fixed;
   width: 100vw;
   max-width: 100vw;
-  height: fit-content;
+  height: 9vh;
   will-change: transform;
   overflow: visible;
   padding-top: 1rem;
@@ -346,6 +346,9 @@ onMounted(() => {
   align-items: flex-start;
   justify-content: space-between;
   font-family: sans-serif;
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  background-color: #f3ece925;
 }
 #mobile-nav {
   z-index: 100;
@@ -383,22 +386,16 @@ onMounted(() => {
   transition: all 0.3s ease;
   will-change: width, transform, background-color;
 }
+#menu-btn {
+  height: 2rem;
+}
 #top-line {
   width: 1rem;
   transform-origin: center center;
 }
-
 #bottom-line {
   width: 3rem;
   transform-origin: center center;
-}
-#menu-btn p {
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  height: 1em;
-  pointer-events: none;
-  transform: translateY(-42%);
-  color: var(--coral);
 }
 .menu {
   position: fixed;
@@ -509,6 +506,8 @@ onMounted(() => {
     height: 10vh;
     padding-left: 4rem;
     padding-right: 4rem;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
   }
   .mobile-list {
     align-items: start;

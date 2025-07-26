@@ -9,8 +9,8 @@ defineProps({
 </script>
 <template>
   <div class="classes-card">
+    <div class="circle">{{ classesInfo.id }}</div>
     <div class="card-content">
-      <div class="circle">{{ classesInfo.id }}</div>
       <h3 class="card-title roman">{{ classesInfo.name }}</h3>
       <p class="card-description light">{{ classesInfo.description }}</p>
     </div>
@@ -33,14 +33,15 @@ defineProps({
 }
 .card-content {
   color: var(--mocha);
+  padding: 2rem 0em 1em 0em;
 }
 .circle {
   width: 2rem;
   height: 2rem;
   border-radius: 50%;
-  background-color: #3f3a3495;
+  background-color: var(--mocha);
   backdrop-filter: blur(5px);
-  color: var(--blanco);
+  color: var(--coral);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -63,7 +64,9 @@ h3 {
     padding-top: 1rem;
   }
   p {
+    margin-top: 1.25rem;
     font-size: 1.25rem;
+    line-height: 1.2em;
   }
   .c2a {
     margin-top: 2rem;

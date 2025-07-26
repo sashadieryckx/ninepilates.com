@@ -18,6 +18,10 @@ const classesStore = useClassesStore()
 #classes-section {
   position: relative;
   z-index: 1;
+  padding: 4rem 0em;
+}
+#classes-heading {
+  margin-bottom: 4rem;
 }
 h2 {
   text-align: center;
@@ -51,13 +55,9 @@ h5 {
     flex-direction: column;
     align-items: center;
   }
-  h2 {
-    font-size: 3rem;
-  }
   h5 {
     margin-top: 1rem;
     font-size: 1.25rem;
-    line-height: 1.2em;
     width: 60%;
     text-align: center;
   }

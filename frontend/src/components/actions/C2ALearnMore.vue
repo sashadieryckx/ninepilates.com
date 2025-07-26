@@ -11,7 +11,7 @@
 }
 #learn-more button {
   font-size: 1rem;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
   background-color: var(--mocha);
   color: var(--coral);
   border-radius: 25px;
@@ -20,6 +20,7 @@
   transition: all 0.3s ease;
 }
 #learn-more p {
+  font-size: 1rem;
   transform: translateY(-3px);
 }
 </style>
