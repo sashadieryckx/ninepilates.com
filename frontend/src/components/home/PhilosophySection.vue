@@ -1,7 +1,29 @@
 <script setup>
+import { ref } from 'vue'
 import PhilosophyCard from '@/components/home/PhilosophyCard.vue'
 import { usePrinciplesStore } from '@/stores/philosophyStore'
+
 const principlesStore = usePrinciplesStore()
+
+const scrollContainer = ref(null)
+
+function scrollLeft() {
+  const cardWidth = scrollContainer.value?.querySelector('.philosophy-card')?.offsetWidth || 0
+  const gap = 32 // 2rem gap
+  scrollContainer.value?.scrollBy({
+    left: -(cardWidth + gap),
+    behavior: 'smooth'
+  })
+}
+
+function scrollRight() {
+  const cardWidth = scrollContainer.value?.querySelector('.philosophy-card')?.offsetWidth || 0
+  const gap = 32 // 2rem gap
+  scrollContainer.value?.scrollBy({
+    left: cardWidth + gap,
+    behavior: 'smooth'
+  })
+}
 </script>
 <template>
   <div id="philosophy-section">
@@ -9,10 +31,14 @@ const principlesStore = usePrinciplesStore()
       <h2 class="roman">Discover the <span class="light-italic">"Nine"</span> Philosophy</h2>
       <h5 class="light">Built on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself — inside and out.</h5>
     </div>
-    <div class="philosophy-track">
+    <div class="philosophy-track" ref="scrollContainer">
       <div class="track-wrapper df-mar">
         <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" class="philosophy-card" />
       </div>
+    </div>
+    <div class="buttons interactive">
+      <button class="scroll-btn left" @click="scrollLeft">‹</button>
+      <button class="scroll-btn right" @click="scrollRight">›</button>
     </div>
   </div>
 </template>
@@ -62,6 +88,31 @@ h5 {
 .philosophy-card {
   flex: 0 0 80%;
 }
+.buttons {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-right: 2rem;
+}
+.scroll-btn {
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--onyx);
+}
+.scroll-btn:hover {
+  background: rgba(0, 0, 0, 0.2);
+}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
@@ -74,8 +125,20 @@ h5 {
     width: 75%;
   }
   .track-wrapper {
-    display: grid;
-    grid-template-columns: repeat(9, 1fr);
+    display: flex;
+    gap: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    min-width: max-content;
+  }
+  .philosophy-card {
+    flex: 0 0 30%;
+    max-width: 300px;
+    min-width: 250px;
+  }
+  .buttons {
+    justify-content: center;
+    padding: 0;
   }
 }
 /* DESKTOP 2 [GLOBAL] */
