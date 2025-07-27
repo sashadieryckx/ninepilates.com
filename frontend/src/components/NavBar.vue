@@ -37,6 +37,8 @@ const logoColor = computed(() => {
     'accolades-section',
     'classes-section',
     'philosophy-section',
+    'testimonials-section',
+    'memberships-section',
     'about-content',
   ]
 

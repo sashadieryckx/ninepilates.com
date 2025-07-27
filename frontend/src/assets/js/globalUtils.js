@@ -46,15 +46,6 @@ export function ContactOpen() {
     0,
   )
   contactTimeline.to(
-    '#contact-spline',
-    {
-      opacity: .95,
-      ease: 'power1.out',
-      duration: 1,
-    },
-    0,
-  )
-  contactTimeline.to(
     '#contact-modal h2',
     {
       opacity: '100%',
@@ -92,6 +83,15 @@ export function ContactOpen() {
       yPercent: 0,
       ease: 'power3.out',
       duration: 0.5,
+    },
+    1,
+  )
+  contactTimeline.to(
+    '#contact-spline',
+    {
+      opacity: .95,
+      ease: 'power1.out',
+      duration: 1,
     },
     1,
   )
