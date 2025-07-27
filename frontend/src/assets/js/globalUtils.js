@@ -39,11 +39,20 @@ export function ContactOpen() {
   contactTimeline.to(
     contactWrapper,
     {
-      height: '95%',
+      height: '100%',
       ease: 'power4.out',
       duration: 1.5,
     },
     0,
+  )
+  contactTimeline.to(
+    '#contact-spline',
+    {
+      opacity: .95,
+      ease: 'power1.out',
+      duration: 1,
+    },
+    0.5,
   )
   contactTimeline.to(
     '#contact-form-header',
@@ -54,15 +63,6 @@ export function ContactOpen() {
       duration: 1,
     },
     0.5,
-  )
-  contactTimeline.to(
-    '#contact-spline',
-    {
-      opacity: '55%',
-      ease: 'power1.out',
-      duration: 1,
-    },
-    0.6,
   )
   contactTimeline.to(
     '#description',

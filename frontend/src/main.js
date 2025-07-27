@@ -10,6 +10,8 @@ import LenisVue from 'lenis/vue'
 
 import { createHead } from '@unhead/vue/client'
 
+import '@splinetool/viewer'
+
 const app = createApp(App)
 const pinia = createPinia()
 const head = createHead()

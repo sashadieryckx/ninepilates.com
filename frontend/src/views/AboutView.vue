@@ -41,6 +41,23 @@ onMounted(() => {
     }
   })
 })
+
+// Unhead SEO
+import { useHead } from '@unhead/vue'
+useHead({
+  title: 'Nine Pilates | About',
+  meta: [
+    {
+      name: 'description',
+      content:
+        'Nine Pilates is a modern pilates studio offering classes and workshops to enhance your fitness journey.',
+    },
+    {
+      name: 'viewport',
+      content: 'width=device-width, initial-scale=1.0',
+    },
+  ],
+})
 </script>
 
 <template>

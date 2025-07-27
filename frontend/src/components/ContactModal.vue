@@ -26,77 +26,67 @@ const closeModal = () => {
 </script>
 
 <template>
+  <div id="contact-spline">
+  <spline-viewer
+    url="https://prod.spline.design/Q7G8F76kI4CUqhAr/scene.splinecode"
+    loading="eager">
+  </spline-viewer>
+  </div>
   <div id="contact-modal">
-    <div id="contact-form-header">
-      <button class="contact-close" @click="closeModal">×</button>
-      <h1>Contact Us</h1>
-    </div>
-
-    <div id="contact-spline">
-      <!-- Add your spline/background animation here -->
-    </div>
-
-    <div id="description">
-      <p>Get in touch with us to start your pilates journey.</p>
-    </div>
-
-    <div id="local">
-      <!-- Local info content -->
-    </div>
-
-    <div id="contact-form">
-      <!-- Your contact form will go here -->
-      <h2>Contact Form</h2>
-      <p>Form fields will be added here...</p>
-    </div>
+    <button class="contact-close light" @click="closeModal">
+      close
+    </button>
   </div>
 </template>
 
 <style scoped>
+#contact-spline {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
 #contact-modal {
   position: relative;
   width: 100%;
   height: 100%;
-  background-color: var(--mocha);
-  border-radius: 25px;
-  padding: 2rem;
-  overflow-y: auto;
-}
-#contact-form-header {
-  opacity: 0;
-  transform: translateY(20px);
-  margin-bottom: 2rem;
+  padding: 1rem;
 }
 .contact-close {
   position: absolute;
-  top: 1rem;
-  right: 1.5rem;
-  background: none;
+  top: 0;
+  right: 0;
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: var(--mocha);
+  background: none;
   cursor: pointer;
   opacity: 0;
-  transform: translateY(20px);
   z-index: 10;
+  text-decoration: underline;
 }
 .contact-close:hover {
   opacity: 0.7 !important;
-}
-#contact-spline {
-  opacity: 0;
-  /* Add your spline styling here */
 }
 #description {
   opacity: 0;
   margin-bottom: 2rem;
 }
-
 #local {
   opacity: 0;
   margin-bottom: 2rem;
 }
-
 #contact-form {
   opacity: 0;
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+.contact-close {
+  top: 1rem;
+  right: 2rem;
+}
 }
 </style>

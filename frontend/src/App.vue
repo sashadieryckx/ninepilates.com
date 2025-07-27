@@ -19,10 +19,10 @@ gsap.registerPlugin(ScrollTrigger)
 import { VueLenis, useLenis } from 'lenis/vue'
 import { useRoute } from 'vue-router'
 
-// Unhead
+// Unhead SEO
 import { useHead } from '@unhead/vue'
 useHead({
-  title: 'Nine Pilates | Home',
+  title: 'Nine Pilates | Movement with Intention',
   meta: [
     {
       name: 'description',
@@ -333,16 +333,15 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #16151368;
-  backdrop-filter: blur(5px);
   opacity: 0;
 }
 #contact-wrapper {
   position: relative;
-  width: 95%;
-  height: 0;
+  width: 100%;
+  height: 0%;
   visibility: hidden;
   pointer-events: all;
+  background-color: var(--blanco);
 }
 
 /* DESKTOP 1 [GLOBAL] */
