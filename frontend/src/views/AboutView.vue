@@ -50,7 +50,7 @@ useHead({
     {
       name: 'description',
       content:
-        'Nine Pilates is a modern pilates studio offering classes and workshops to enhance your fitness journey.',
+        'Meet Valerie, the founder of Nine Pilates, and learn about her journey and vision for the studio.',
     },
     {
       name: 'viewport',
