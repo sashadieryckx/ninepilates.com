@@ -4,6 +4,7 @@ import { defineStore } from 'pinia'
 import Breathe from '../assets/content/breathe.png'
 import Concentration from '../assets/content/concentration.png'
 import Control from '../assets/content/control.png'
+import Centering from '../assets/content/centering.png'
 
 export const usePrinciplesStore = defineStore('principles', () => {
   const principles = ref([
@@ -31,6 +32,7 @@ export const usePrinciplesStore = defineStore('principles', () => {
     {
       id: '4',
       name: 'Centering',
+      image: Centering,
       subheading: 'Find strength from within — the core of every motion.',
       description: 'In Pilates all movement radiates outward from the center. Developing a strong, stable and flexible center is one of the defining features of this form of exercise.',
     },
