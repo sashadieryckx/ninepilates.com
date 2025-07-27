@@ -36,9 +36,16 @@ const closeModal = () => {
     <button class="contact-close light" @click="closeModal">
       close
     </button>
+    <h2 class="roman">Contact.</h2>
+    <h5 class="roman">Have a question? Reach out, we'd love to hear from you.</h5>
+    <div class="details">
+      <p class="roman">Email</p>
+      <p class="light">info@ninepilates.com</p>
+      <p class="roman">Phone</p>
+      <p class="light">+1 (613) 555-0199</p>
+    </div>
   </div>
 </template>
-
 <style scoped>
 #contact-spline {
   z-index: 0;
@@ -54,6 +61,10 @@ const closeModal = () => {
   width: 100%;
   height: 100%;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .contact-close {
   position: absolute;
@@ -71,16 +82,22 @@ const closeModal = () => {
 .contact-close:hover {
   opacity: 0.7 !important;
 }
-#description {
+h2 {
+  margin-bottom: 1rem;
   opacity: 0;
-  margin-bottom: 2rem;
 }
-#local {
+h5 {
   opacity: 0;
-  margin-bottom: 2rem;
 }
-#contact-form {
+.details {
+  margin-top: 2rem;
+}
+p {
+  font-size: 1.25rem;
   opacity: 0;
+}
+p.roman {
+  margin-top: 1rem;
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {

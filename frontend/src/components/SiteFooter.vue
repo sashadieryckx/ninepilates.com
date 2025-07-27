@@ -1,4 +1,9 @@
-<script setup></script>
+<script setup>
+import { inject } from 'vue'
+
+const openContactForm = inject('openContactForm')
+
+</script>
 <template>
   <div id="footer" class="interactive df-pad">
     <div id="divider" class=""></div>
@@ -39,7 +44,7 @@
         <router-link to="/schedule" class="roman">Schedule</router-link>
       </div>
       <div id="column-3">
-        <router-link to="/" class="roman">Contact</router-link>
+        <a @click="openContactForm" class="roman">Contact</a>
         <router-link to="/faq" class="roman">FAQ</router-link>
       </div>
       <div id="credits">
@@ -152,6 +157,7 @@
   text-decoration: none;
   font-style: normal;
   transition: all 0.5s ease;
+  cursor: pointer;
 }
 #credits a:hover,
 #bottom-bar a:hover {

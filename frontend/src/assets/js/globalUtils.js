@@ -52,37 +52,40 @@ export function ContactOpen() {
       ease: 'power1.out',
       duration: 1,
     },
-    0.5,
+    0,
   )
   contactTimeline.to(
-    '#contact-form-header',
+    '#contact-modal h2',
     {
       opacity: '100%',
       yPercent: 0,
-      ease: 'power3.out',
-      duration: 1,
+      ease: 'power2.out',
+      duration: 0.5,
     },
     0.5,
   )
   contactTimeline.to(
-    '#description',
+    '#contact-modal h5',
     {
       opacity: '100%',
-      ease: 'power3.out',
-      duration: 1,
+      yPercent: 0,
+      ease: 'power2.out',
+      duration: 0.5,
     },
-    0.75,
+    0.6,
   )
   contactTimeline.to(
-    '#local',
+    '.details p',
     {
       opacity: '100%',
-      ease: 'power3.out',
+      yPercent: 0,
+      ease: 'power2.out',
       duration: 1,
+      stagger: .1,
     },
-    1,
+    0.7,
   )
-    contactTimeline.to(
+  contactTimeline.to(
     '.contact-close',
     {
       opacity: '100%',
@@ -91,15 +94,6 @@ export function ContactOpen() {
       duration: 0.5,
     },
     1,
-  )
-  contactTimeline.to(
-    '#contact-form',
-    {
-      opacity: '100%',
-      ease: 'power3.out',
-      duration: 1,
-    },
-    1.25,
   )
 
   contactTimeline.play(0)

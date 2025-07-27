@@ -15,11 +15,11 @@
   width: 100%;
 }
 .c2a-container button {
-  background-color: #1615137e;
+  background-color: #1615139b;
   backdrop-filter: blur(5px);
   color: var(--blanco);
   border: none;
-  border-radius: 50px;
+  border-radius: 14px;
   border: 1px solid var(--coral);
   padding: 0.75rem 1.5rem;
   font-size: 1.25rem;

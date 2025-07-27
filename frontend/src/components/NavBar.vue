@@ -11,7 +11,6 @@ import { useRoute } from 'vue-router'
 const viewStore = useViewStore()
 const route = useRoute()
 
-// Inject the contact form function from App.vue
 const openContactForm = inject('openContactForm')
 
 // Reset active section when not on home page
