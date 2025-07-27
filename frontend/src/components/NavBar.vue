@@ -172,6 +172,11 @@ onMounted(() => {
       dropMenu.reversed(!dropMenu.reversed())
     }
   })
+  document.addEventListener('click', function (event) {
+    if (event.target.matches('.mobile-link')) {
+      dropMenu.reversed(!dropMenu.reversed())
+    }
+  })
   menuBtn.addEventListener('mouseenter', () => {
     if (dropMenu.reversed()) {
       btnTl.play()
@@ -432,8 +437,8 @@ onMounted(() => {
   cursor: pointer;
   border: 2px solid var(--coral);
   border-radius: 50%;
-  width: 4rem;
-  height: 4rem;
+  width: 2.5rem;
+  height: 2.5rem;
   transition: all 0.3s ease;
 }
 .close-btn:hover {
@@ -442,8 +447,8 @@ onMounted(() => {
 }
 .close-btn .line {
   position: absolute;
-  width: 2.5rem;
-  height: 3px;
+  width: 1.5rem;
+  height: 2px;
   border-radius: 15px;
   background-color: var(--coral);
   margin: 0.25rem;
@@ -551,6 +556,11 @@ onMounted(() => {
     top: 2rem;
     right: 2rem;
     width: 4rem;
+    height: 4rem;
+  }
+  .close-btn .line{
+    width: 2.5rem;
+    height: 3px;
   }
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */
