@@ -5,11 +5,14 @@ import Logomark from '@/components/icons/LogomarkMain.vue'
 import LangButton from '@/components/LanguageButton.vue'
 
 import { useViewStore } from '@/stores/useViewStore'
-import { computed, watch } from 'vue'
+import { computed, watch, inject } from 'vue'
 import { useRoute } from 'vue-router'
 
 const viewStore = useViewStore()
 const route = useRoute()
+
+// Inject the contact form function from App.vue
+const openContactForm = inject('openContactForm')
 
 // Reset active section when not on home page
 watch(
@@ -238,7 +241,7 @@ onMounted(() => {
           <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
         </li>
         <li style="z-index: 3">
-          <a class="mobile-link roman">Contact</a>
+          <a class="mobile-link roman" @click="openContactForm">Contact</a>
         </li>
         <li style="z-index: 2">
           <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
@@ -284,7 +287,7 @@ onMounted(() => {
             </RouterLink>
           </li>
           <li>
-            <a class="desktop-link" :style="{ color: desktopLinkColor }">
+            <a class="desktop-link" :style="{ color: desktopLinkColor }" @click="openContactForm">
               Contact
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </a>

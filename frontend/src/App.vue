@@ -3,10 +3,11 @@ import NavBar from './components/NavBar.vue'
 import Footer from './components/SiteFooter.vue'
 import LogoMark from './components/icons/LogoMark.vue'
 import CircleLoader from './components/icons/CircleLoader.vue'
+import ContactModal from './components/ContactModal.vue'
 
 import { RouterView } from 'vue-router'
 
-import { watch, nextTick, onMounted, onUnmounted } from 'vue'
+import { watch, nextTick, onMounted, onUnmounted, provide } from 'vue'
 
 // Gsap
 import gsap from 'gsap'
@@ -35,14 +36,33 @@ useHead({
   ],
 })
 
+// GSAP and Lenis setup
 let rafCallback = null
-
 const lenis = useLenis(() => {
-  // ?
+  ScrollTrigger.update()
 })
 function updateLenis() {
   lenis.value?.resize()
 }
+
+// Contact
+import { useContactStore } from '@/stores/ContactFormStore.js'
+const contactStore = useContactStore()
+
+provide('openContactForm', () => {
+  contactStore.openContactForm()
+})
+
+provide('closeContactForm', () => {
+  contactStore.closeContactForm()
+})
+
+watch(
+  () => contactStore.contactFormOpen,
+  (open) => {
+    document.body.style.overflow = open ? 'hidden' : ''
+  },
+)
 
 onMounted(() => {
   lenis.value.on('scroll', ScrollTrigger.update())
@@ -207,6 +227,14 @@ watch(
         <component :is="Component" :key="route.fullPath" />
       </transition>
     </RouterView>
+    <div id="contact-container">
+      <div id="contact-wrapper">
+        <ContactModal
+          :isOpen="contactStore.contactFormOpen"
+          @close="contactStore.closeContactForm"
+        />
+      </div>
+    </div>
     <footer id="footer-section">
       <Footer> </Footer>
     </footer>
@@ -292,6 +320,31 @@ footer {
   height: 14em;
   width: 14em;
 }
+
+/* CONTACT MODAL */
+#contact-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  z-index: 1000;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #16151368;
+  backdrop-filter: blur(5px);
+  opacity: 0;
+}
+#contact-wrapper {
+  position: relative;
+  width: 95%;
+  height: 0;
+  visibility: hidden;
+  pointer-events: all;
+}
+
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
 
