@@ -24,5 +24,28 @@ export const useAboutValarieStore = defineStore('abouts', () => {
       content: 'My mission with Nine Pilates is to provide high-quality Pilates instruction that caters to all levels, from beginners to advanced practitioners. I aim to inspire and motivate my clients to lead healthier, happier lives through the practice of Pilates.',
     },
   ])
-  return { aboutValarieInfo }
+  const valeriesTestimonials = ref([
+    {
+      id: 1,
+      statement: 'Valarie is an amazing instructor! Her classes are always challenging and fun.',
+      review: 'Valérie\'s passion for Pilates shines through in every class. I always leave feeling stronger and more centered.',
+      author: 'Vanessa Dorion',
+      date: 'September 5th, 2025',
+    },
+    {
+      id: 2,
+      statement: 'I have seen incredible improvements in my strength and flexibility since joining Valarie\'s classes.',
+      review: 'Valérie\'s attention to detail and personalized approach make her classes truly special. I can\'t recommend her enough!',
+      author: 'Abbey McDonald',
+      date: 'August 12th, 2025',
+    },
+    {
+      id: 3,
+      statement: 'Valérie creates a welcoming and inclusive environment for everyone.',
+      reveiw: 'Her classes are a perfect blend of challenge and support, and I always look forward to them.',
+      author: 'Prosper Junior',
+      date: 'June 17th, 2025',
+    },
+  ])
+  return { aboutValarieInfo, valeriesTestimonials }
 })
