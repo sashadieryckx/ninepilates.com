@@ -7,16 +7,30 @@ import Youtube from '@/components/icons/YoutubeIcon.vue'
 <template>
   <div id="connect-section-content">
     <div class="connect-heading df-pad">
-      <h2 class="roman">Connect & share with us on <span class="light-italic">socials</span>.</h2>
+      <h2 class="roman">Connect & share with us on <span class="light-italic">socials</span></h2>
     </div>
-    <div class="images">
-
+    <div class="images df-mar">
+      <div class="img-container">
+        <img src="@/assets/content/storyPost.jpg" alt="Instagram Story Post" class="img" />
+        <div class="color-box"></div>
+        <div class="color-box-2"></div>
+      </div>
+      <div class="img-container">
+      </div>
     </div>
-    <div class="socials df-mar">
-      <Insta />
-      <Tiktok />
-      <Facebook />
-      <Youtube />
+    <div class="socials df-mar interactive">
+      <a href="https://www.instagram.com/ninepilates.studio/">
+        <Insta />
+      </a>
+      <a href="https://www.tiktok.com/@ninepilates">
+        <Tiktok />
+      </a>
+      <a href="https://www.facebook.com/ninepilatesstudio">
+        <Facebook />
+      </a>
+      <a href="https://www.youtube.com/@ninepilates">
+        <Youtube />
+      </a>
     </div>
   </div>
 </template>
@@ -48,5 +62,44 @@ h5 {
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
+}
+.img-container {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.img {
+  width: 90%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 20px;
+  z-index: 1;
+}
+.color-box {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 98%;
+  height: 100%;
+  background-color: var(--mocha);
+  border-radius: 20px;
+  transform: rotate(-4deg) translateX(2px) translateY(-8px);
+}
+.color-box-2 {
+  position: absolute;
+  top: 0;
+  z-index: 0;
+  width: 98%;
+  height: 100%;
+  background-color: var(--soya);
+  border-radius: 20px;
+  transform: rotate(4deg) translateX(10px) translateY(8px);
+}
+a {
+  cursor: pointer;
 }
 </style>
