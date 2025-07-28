@@ -1,5 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
+import AboutHero from '@/components/about/AboutHero.vue'
+import StorySection from '@/components/about/StorySection.vue'
 import { useViewStore } from '@/stores/useViewStore'
 
 const viewStore = useViewStore()
@@ -62,15 +64,18 @@ useHead({
 
 <template>
   <div id="about-content" class="main-content">
-    <section class="section">
-      <h1>This is an about page</h1>
+    <section class="section" id="about-hero-section">
+      <AboutHero />
+    </section>
+    <section class="section" id="story-section">
+      <StorySection />
     </section>
   </div>
 </template>
 
 <style scoped>
 .main-content {
-  height: 100vh;
+  height: 100%;
 }
 .section {
   display: flex;

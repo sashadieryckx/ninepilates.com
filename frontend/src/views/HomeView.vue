@@ -76,7 +76,6 @@ onMounted(() => {
   })
 })
 </script>
-
 <template>
   <div id="main-content" class="main-content">
     <BookClass class="c2a" />

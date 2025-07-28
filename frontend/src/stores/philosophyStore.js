@@ -5,6 +5,11 @@ import Breathe from '../assets/content/breathe.png'
 import Concentration from '../assets/content/concentration.png'
 import Control from '../assets/content/control.png'
 import Centering from '../assets/content/centering.png'
+import Precision from '../assets/content/precision.png'
+import Balance from '../assets/content/balance.png'
+import Flow from '../assets/content/flow.png'
+import Wholeness from '../assets/content/wholeness.png'
+import Relaxation from '../assets/content/relaxation.png'
 
 export const usePrinciplesStore = defineStore('principles', () => {
   const principles = ref([
@@ -39,29 +44,34 @@ export const usePrinciplesStore = defineStore('principles', () => {
     {
       id: '5',
       name: 'Precision',
+      image: Precision,
       subheading: 'Refine each movement with focus, form, and purpose.',
     },
     {
       id: '6',
       name: 'Balance',
+      image: Balance,
       subheading: 'Cultivate stability and harmony in every movement.',
       description: 'All movements in Pilates are done with a sense of rhythm and flow. Flow creates smooth, graceful and functional movements. It decreases the amount of stress placed on our joints and develops movement patterns that integrate our body into a smoothly flowing whole.',
     },
     {
       id: '7',
       name: 'Rhythm Flow',
+      image: Flow,
       subheading: 'Embrace the natural rhythm of your body.',
       description: 'All movements in Pilates are done with a sense of rhythm and flow. Flow creates smooth, graceful and functional movements. It decreases the amount of stress placed on our joints and develops movement patterns that integrate our body into a smoothly flowing whole.',
     },
     {
       id: '8',
       name: 'Wholeness',
+      image: Wholeness,
       subheading: 'Integrate mind, body, and spirit for holistic wellness.',
       description: 'Pilates is fundamentally about integration: integrating movement into a flowing whole body experience, integrating the mind and body to create clarity and purpose, integrating mind, body and spirit to create a life of balance.',
     },
     {
       id: '9',
       name: 'Relaxation',
+      image: Relaxation,
       subheading: 'Let go of tension to move freely and live fully.',
       description: 'To be healthy in body and mind it is important to understand the balance between effort and relaxation. In Pilates we learn to use just the amount of effort needed to complete the exercise correctly, no more, no less. Learning to release unnecessary tension in our bodies helps us to find ease and flow in movement and in the rest of our lives.',
     },
