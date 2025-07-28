@@ -87,7 +87,7 @@ h5 {
   height: 100%;
   background-color: var(--mocha);
   border-radius: 20px;
-  transform: rotate(-4deg) translateX(2px) translateY(-8px);
+  transform: rotate(-4deg) translateX(2px) translateY(-12px);
 }
 .color-box-2 {
   position: absolute;
@@ -97,7 +97,7 @@ h5 {
   height: 100%;
   background-color: var(--soya);
   border-radius: 20px;
-  transform: rotate(4deg) translateX(10px) translateY(8px);
+  transform: rotate(4deg) translateX(4px) translateY(14px);
 }
 a {
   cursor: pointer;
