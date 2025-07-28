@@ -39,6 +39,8 @@ const logoColor = computed(() => {
     'philosophy-section',
     'testimonials-section',
     'memberships-section',
+    'connect-section',
+    'contact-section',
     'about-content',
   ]
 
@@ -65,6 +67,8 @@ const desktopLinkColor = computed(() => {
     'philosophy-section',
     'testimonials-section',
     'memberships-section',
+    'connect-section',
+    'contact-section',
     'about-content',
   ]
 
@@ -95,6 +99,8 @@ const menuButtonLineColor = computed(() => {
     'philosophy-section',
     'testimonials-section',
     'memberships-section',
+    'connect-section',
+    'contact-section',
     'about-content',
   ]
 
