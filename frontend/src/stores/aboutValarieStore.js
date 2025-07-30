@@ -42,7 +42,7 @@ export const useAboutValarieStore = defineStore('abouts', () => {
     {
       id: 3,
       statement: 'Valérie creates a welcoming and inclusive environment for everyone.',
-      reveiw: 'Her classes are a perfect blend of challenge and support, and I always look forward to them.',
+      review: 'Her classes are a perfect blend of challenge and support, and I always look forward to them.',
       author: 'Prosper Junior',
       date: 'June 17th, 2025',
     },

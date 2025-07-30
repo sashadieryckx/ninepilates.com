@@ -2,6 +2,8 @@
 import { onMounted, onUnmounted } from 'vue'
 import AboutHero from '@/components/about/AboutHero.vue'
 import StorySection from '@/components/about/StorySection.vue'
+import ValsTestimonialSection from '@/components/about/ValsTestimonialSection.vue'
+import JoinMeSection from '@/components/about/JoinMeSection.vue'
 import { useViewStore } from '@/stores/useViewStore'
 
 const viewStore = useViewStore()
@@ -69,6 +71,12 @@ useHead({
     </section>
     <section class="section" id="story-section">
       <StorySection />
+    </section>
+    <section class="section" id="testimonials-section">
+      <ValsTestimonialSection />
+    </section>
+    <section class="section" id="join-me-section">
+      <JoinMeSection />
     </section>
   </div>
 </template>
