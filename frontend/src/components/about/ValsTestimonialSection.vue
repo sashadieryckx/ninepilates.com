@@ -2,6 +2,7 @@
 import { ref, computed } from 'vue'
 import { useAboutValarieStore } from '@/stores/aboutValarieStore'
 import TestimonialCards from '@/components/about/ValsTestimonialCards.vue'
+import Arrow from '@/components/icons/ArrowIcon.vue'
 import gsap from 'gsap'
 
 const aboutValarieStore = useAboutValarieStore()
@@ -66,13 +67,17 @@ function leave(el, done) {
       />
     </transition>
     <div class="navigation-buttons df-pad interactive">
-      <button @click="prevTestimonial" :disabled="currentIndex === 0" class="bold">←</button>
+      <button
+        @click="prevTestimonial"
+        :disabled="currentIndex === 0"
+      >
+        <Arrow />
+      </button>
       <button
         @click="nextTestimonial"
         :disabled="currentIndex === aboutValarieStore.valeriesTestimonials.length - 1"
-        class="bold"
       >
-        →
+        <Arrow />
       </button>
     </div>
   </div>
