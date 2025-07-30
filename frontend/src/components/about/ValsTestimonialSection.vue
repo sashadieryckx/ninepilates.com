@@ -67,17 +67,14 @@ function leave(el, done) {
       />
     </transition>
     <div class="navigation-buttons df-pad interactive">
-      <button
-        @click="prevTestimonial"
-        :disabled="currentIndex === 0"
-      >
-        <Arrow />
+      <button @click="prevTestimonial" :disabled="currentIndex === 0">
+        <Arrow fill="var(--coral)" class="prev" />
       </button>
       <button
         @click="nextTestimonial"
         :disabled="currentIndex === aboutValarieStore.valeriesTestimonials.length - 1"
       >
-        <Arrow />
+        <Arrow fill="var(--coral)" class="next" />
       </button>
     </div>
   </div>
@@ -115,8 +112,17 @@ function leave(el, done) {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 .navigation-buttons button:hover {
-  background-color: var(--mocha);
+  background-color: var(--soya);
+  scale: 1.05;
+}
+.prev,
+.next {
+  scale: 1.5;
+}
+.prev {
+  transform: rotate(180deg);
 }
 </style>
