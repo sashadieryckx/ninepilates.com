@@ -7,10 +7,17 @@ const classesStore = useClassesStore()
   <div id="classes-section">
     <div id="classes-heading" class="df-pad">
       <h2 class="roman">Pilates for every body and every mind</h2>
-      <h5 class="light">Join us in transforming your body and mind through our comprehensive yoga and fitness programs.</h5>
+      <h5 class="light">
+        Join us in transforming your body and mind through our comprehensive group and specialized
+        programs.
+      </h5>
     </div>
     <div id="classes-cards">
-      <ClassesCard v-for="classInfo in classesStore.classesInfo" :key="classInfo.id" :classesInfo="classInfo" />
+      <ClassesCard
+        v-for="classInfo in classesStore.classesInfo"
+        :key="classInfo.id"
+        :classesInfo="classInfo"
+      />
     </div>
   </div>
 </template>

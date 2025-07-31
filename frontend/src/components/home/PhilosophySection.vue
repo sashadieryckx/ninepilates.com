@@ -1,6 +1,7 @@
 <script setup>
 import { ref } from 'vue'
 import PhilosophyCard from '@/components/home/PhilosophyCard.vue'
+import Arrow from '@/components/icons/ArrowIcon.vue'
 import { usePrinciplesStore } from '@/stores/philosophyStore'
 
 const principlesStore = usePrinciplesStore()
@@ -12,7 +13,7 @@ function scrollLeft() {
   const gap = 32 // 2rem gap
   scrollContainer.value?.scrollBy({
     left: -(cardWidth + gap),
-    behavior: 'smooth'
+    behavior: 'smooth',
   })
 }
 
@@ -21,7 +22,7 @@ function scrollRight() {
   const gap = 32 // 2rem gap
   scrollContainer.value?.scrollBy({
     left: cardWidth + gap,
-    behavior: 'smooth'
+    behavior: 'smooth',
   })
 }
 </script>
@@ -29,16 +30,28 @@ function scrollRight() {
   <div class="philosophy-section-content">
     <div class="philosophy-heading df-pad">
       <h2 class="roman">Discover the <span class="light-italic">"Nine"</span> Philosophy</h2>
-      <h5 class="light">Built on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself — inside and out.</h5>
+      <h5 class="light">
+        Built on the belief that true wellness comes from within. Through our nine principals, we
+        help you build a stronger, more connected version of yourself — inside and out.
+      </h5>
     </div>
     <div class="philosophy-track interactive" ref="scrollContainer">
       <div class="track-wrapper df-mar">
-        <PhilosophyCard v-for="principals in principlesStore.principles" :key="principals.id" :principals="principals" class="philosophy-card" />
+        <PhilosophyCard
+          v-for="principals in principlesStore.principles"
+          :key="principals.id"
+          :principals="principals"
+          class="philosophy-card"
+        />
       </div>
     </div>
     <div class="buttons interactive">
-      <button class="scroll-btn left" @click="scrollLeft">‹</button>
-      <button class="scroll-btn right" @click="scrollRight">›</button>
+      <button class="scroll-btn left" @click="scrollLeft">
+        <Arrow fill="var(--mocha)" class="arrow" id="left-arrow" />
+      </button>
+      <button class="scroll-btn right" @click="scrollRight">
+        <Arrow fill="var(--mocha)" class="arrow" id="right-arrow" />
+      </button>
     </div>
   </div>
 </template>
@@ -59,6 +72,7 @@ function scrollRight() {
   align-items: center;
   justify-content: center;
   width: 100%;
+  margin-bottom: 4rem;
 }
 h2 {
   text-align: center;
@@ -70,7 +84,6 @@ h5 {
 .philosophy-track {
   position: relative;
   width: 100vw;
-  padding-top: 4rem;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
@@ -110,6 +123,12 @@ h5 {
   justify-content: center;
   color: var(--onyx);
 }
+#left-arrow {
+  transform: rotate(180deg);
+}
+.arrow {
+  scale: 0.45;
+}
 .scroll-btn:hover {
   background: rgba(0, 0, 0, 0.2);
 }
@@ -135,6 +154,9 @@ h5 {
     flex: 0 0 30%;
     max-width: 300px;
     min-width: 250px;
+  }
+  .philosophy-heading {
+    margin-bottom: 8rem;
   }
   .buttons {
     justify-content: center;
