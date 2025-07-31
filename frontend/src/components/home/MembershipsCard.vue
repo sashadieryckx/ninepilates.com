@@ -38,4 +38,16 @@ defineProps({
 .heading {
   margin-bottom: 1.5rem;
 }
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .membership-card {
+    max-width: 500px;
+  }
+}
 </style>

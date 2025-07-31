@@ -49,4 +49,20 @@ h5 {
 .memberships {
   margin-top: 4rem;
 }
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .memberships {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
 </style>
