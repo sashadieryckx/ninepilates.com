@@ -1,8 +1,51 @@
 <script setup>
+import { onMounted, onUnmounted, ref } from 'vue'
 import Testimonials from './TestimonialsCard.vue'
 import { useTestimonialsStore } from '@/stores/testimonialsStore'
-
+import gsap from 'gsap'
 const testimonialsStore = useTestimonialsStore()
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
+const scrollTriggerInstance = ref(null)
+
+onMounted(() => {
+  const testimonialCards = document.querySelectorAll('.card')
+  const testimonialsSection = document.getElementById('testimonials-section-content')
+
+  if (screen.width >= 1280 && testimonialCards.length > 0 && testimonialsSection) {
+    scrollTriggerInstance.value = gsap.fromTo(
+      testimonialCards,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: testimonialsSection,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      },
+    )
+  }
+})
+onUnmounted(() => {
+  if (scrollTriggerInstance.value) {
+    scrollTriggerInstance.value.scrollTrigger?.kill()
+    scrollTriggerInstance.value.kill()
+    scrollTriggerInstance.value = null
+  }
+
+  const trigger = ScrollTrigger.getById('memberships-section-animation')
+  if (trigger) {
+    trigger.kill()
+  }
+
+  gsap.killTweensOf('.card')
+})
 </script>
 <template>
   <div id="testimonials-section-content">

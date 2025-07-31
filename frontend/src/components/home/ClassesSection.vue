@@ -1,7 +1,41 @@
 <script setup>
+import { onMounted } from 'vue'
 import ClassesCard from '@/components/classes/ClassesCard.vue'
 import { useClassesStore } from '@/stores/classesStore'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
+
 const classesStore = useClassesStore()
+onMounted(() => {
+  const classesCards = document.querySelectorAll('.cards')
+  const classesSection = document.getElementById('classes-section')
+  let scrollTriggerInstance = null
+
+  if (screen.width >= 1280 && classesCards) {
+    scrollTriggerInstance = gsap.fromTo(
+      classesCards,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: classesSection,
+          start: 'top 80%',
+          toggleActions: 'play none none reverse',
+        },
+      },
+    )
+  }
+  return () => {
+    if (scrollTriggerInstance) {
+      scrollTriggerInstance.scrollTrigger?.kill()
+    }
+  }
+})
 </script>
 <template>
   <div id="classes-section">
@@ -17,6 +51,7 @@ const classesStore = useClassesStore()
         v-for="classInfo in classesStore.classesInfo"
         :key="classInfo.id"
         :classesInfo="classInfo"
+        class="cards"
       />
     </div>
   </div>

@@ -1,8 +1,53 @@
 <script setup>
+import { onMounted, onUnmounted, ref } from 'vue'
 import MembershipsCard from './MembershipsCard.vue'
 import { useMembershipsStore } from '@/stores/membershipStore'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 const membershipsStore = useMembershipsStore()
+const scrollTriggerInstance = ref(null)
+
+onMounted(() => {
+  const membershipCards = document.querySelectorAll('.card')
+  const membershipsSection = document.getElementById('memberships-section-content')
+
+  if (screen.width >= 1280 && membershipCards.length > 0 && membershipsSection) {
+    scrollTriggerInstance.value = gsap.fromTo(
+      membershipCards,
+      { opacity: 0, y: 20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        stagger: 0.2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          id: 'memberships-section-animation',
+          trigger: membershipsSection,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      },
+    )
+  }
+})
+
+onUnmounted(() => {
+  if (scrollTriggerInstance.value) {
+    scrollTriggerInstance.value.scrollTrigger?.kill()
+    scrollTriggerInstance.value.kill()
+    scrollTriggerInstance.value = null
+  }
+
+  const trigger = ScrollTrigger.getById('memberships-section-animation')
+  if (trigger) {
+    trigger.kill()
+  }
+
+  gsap.killTweensOf('.card')
+})
 </script>
 <template>
   <div id="memberships-section-content">
@@ -17,6 +62,7 @@ const membershipsStore = useMembershipsStore()
         v-for="membership in membershipsStore.memberships"
         :key="membership.id"
         :memberships="membership"
+        class="card"
       />
     </div>
   </div>
