@@ -52,4 +52,26 @@ defineProps({
   padding-top: 1.5rem;
   text-align: right;
 }
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .testimonial-card {
+    padding: 2.5rem;
+  }
+  .pfp {
+    margin-bottom: 4rem;
+  }
+  h4 {
+    font-size: 2rem;
+    line-height: 1.1em;
+  }
+  .date {
+    margin-top: 4rem;
+  }
+}
 </style>

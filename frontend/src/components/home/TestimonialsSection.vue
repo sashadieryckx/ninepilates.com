@@ -62,6 +62,12 @@ h5 {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  .testimonials {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
   h5 {
     width: 50%;
   }

@@ -17,7 +17,7 @@ export const useTestimonialsStore = defineStore('testimonials', () => {
         },
         {
             id: 3,
-            text: "The instructors at Nine have a beautiful way of blending strength and mindfulness. I’ve gained core control, flexibility, and a sense of calm I didn’t expect.",
+            text: "The instructors at Nine have a beautiful way of blending strength and mindfulness. I’ve gained core control, flexibility, and a sense of calm I didn’t expect. Best Investment I've made.",
             author: "Sofia De La Cruz",
             date: "June 3, 2025"
         }
