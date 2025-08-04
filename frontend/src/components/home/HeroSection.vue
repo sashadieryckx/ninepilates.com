@@ -89,10 +89,14 @@ import SignUp from '@/components/actions/C2AJourney.vue'
 @media (min-width: 1280px) {
   #hero-section {
     max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   .hero-content {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     align-items: center;
     justify-content: center;
     transform: translateY(-5%);

@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted, ref } from 'vue'
+import { onMounted, onUnmounted, nextTick, ref } from 'vue'
 import MembershipsCard from './MembershipsCard.vue'
 import { useMembershipsStore } from '@/stores/membershipStore'
 import gsap from 'gsap'
@@ -9,44 +9,78 @@ gsap.registerPlugin(ScrollTrigger)
 const membershipsStore = useMembershipsStore()
 const scrollTriggerInstance = ref(null)
 
-onMounted(() => {
+onMounted(async () => {
+  // Wait for DOM to be fully rendered
+  await nextTick()
+
+  // Add a small delay to ensure all components are mounted
+  setTimeout(() => {
+    initAnimation()
+  }, 100)
+})
+
+const initAnimation = () => {
   const membershipCards = document.querySelectorAll('.card')
   const membershipsSection = document.getElementById('memberships-section-content')
 
-  if (screen.width >= 1280 && membershipCards.length > 0 && membershipsSection) {
-    scrollTriggerInstance.value = gsap.fromTo(
-      membershipCards,
-      { opacity: 0, y: 20 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
-        stagger: 0.2,
-        ease: 'power3.out',
-        scrollTrigger: {
-          id: 'memberships-section-animation',
-          trigger: membershipsSection,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
-        },
+  if (window.innerWidth >= 1280 && membershipCards.length > 0 && membershipsSection) {
+    // Set initial state immediately to prevent flash
+    gsap.set(membershipCards, {
+      opacity: 0,
+      y: 20,
+      willChange: 'transform, opacity'
+    })
+
+    scrollTriggerInstance.value = gsap.to(membershipCards, {
+      opacity: 1,
+      y: 0,
+      duration: 0.6,
+      stagger: 0.15,
+      ease: 'power2.out',
+      scrollTrigger: {
+        id: 'memberships-section-animation',
+        trigger: membershipsSection,
+        start: 'top 75%',
+        end: 'top 25%',
+        toggleActions: 'play none none reverse',
+        invalidateOnRefresh: true,
+        refreshPriority: -1,
+        onComplete: () => {
+          // Remove will-change after animation completes for better performance
+          gsap.set(membershipCards, { willChange: 'auto' })
+        }
       },
-    )
+    })
+
+    // Refresh ScrollTrigger to ensure proper positioning
+    ScrollTrigger.refresh()
   }
-})
+}
 
 onUnmounted(() => {
+  // Clean up all ScrollTrigger instances
   if (scrollTriggerInstance.value) {
-    scrollTriggerInstance.value.scrollTrigger?.kill()
+    if (scrollTriggerInstance.value.scrollTrigger) {
+      scrollTriggerInstance.value.scrollTrigger.kill()
+    }
     scrollTriggerInstance.value.kill()
     scrollTriggerInstance.value = null
   }
 
+  // Additional cleanup
   const trigger = ScrollTrigger.getById('memberships-section-animation')
   if (trigger) {
     trigger.kill()
   }
 
+  // Kill all tweens targeting the cards
   gsap.killTweensOf('.card')
+
+  // Reset any remaining transforms
+  gsap.set('.card', {
+    clearProps: 'all',
+    willChange: 'auto'
+  })
 })
 </script>
 <template>
@@ -95,6 +129,13 @@ h5 {
 .memberships {
   margin-top: 4rem;
 }
+
+/* Animation-ready cards */
+.card {
+  transform: translateZ(0); /* Force GPU acceleration */
+  backface-visibility: hidden; /* Prevent flickering */
+}
+
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
