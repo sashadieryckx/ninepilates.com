@@ -8,53 +8,128 @@ gsap.registerPlugin(ScrollTrigger)
 
 const membershipsStore = useMembershipsStore()
 const scrollTriggerInstance = ref(null)
+const animationInitialized = ref(false)
 
 onMounted(async () => {
   // Wait for DOM to be fully rendered
   await nextTick()
 
-  // Add a small delay to ensure all components are mounted
+  console.log('Component mounted, memberships length:', membershipsStore.memberships.length)
+
+  // Simple timeout to ensure components are rendered
   setTimeout(() => {
     initAnimation()
-  }, 100)
+  }, 500)
+
+  // Also try a longer timeout as backup
+  setTimeout(() => {
+    if (!animationInitialized.value) {
+      console.log('Retrying animation initialization after 2 seconds...')
+      initAnimation()
+    }
+  }, 2000)
 })
 
 const initAnimation = () => {
-  const membershipCards = document.querySelectorAll('.card')
+  console.log('=== ANIMATION INIT START ===')
+
+  if (animationInitialized.value) {
+    console.log('Animation already initialized, skipping')
+    return
+  }
+
+  // Debug: Log all elements we can find
+  console.log('All .card elements on page:', document.querySelectorAll('.card').length)
+  console.log('All .membership-card elements:', document.querySelectorAll('.membership-card').length)
+  console.log('Section exists:', !!document.getElementById('memberships-section-content'))
+  console.log('Memberships div exists:', !!document.querySelector('.memberships'))
+
+  // Use multiple selectors to ensure we find the cards
+  let membershipCards = document.querySelectorAll('#memberships-section-content .memberships .card')
+
+  // Fallback selectors if the above doesn't work
+  if (membershipCards.length === 0) {
+    console.log('Trying fallback selector: .memberships .card')
+    membershipCards = document.querySelectorAll('.memberships .card')
+  }
+  if (membershipCards.length === 0) {
+    console.log('Trying fallback selector: .membership-card')
+    membershipCards = document.querySelectorAll('.membership-card')
+  }
+  if (membershipCards.length === 0) {
+    console.log('Trying fallback selector: .card')
+    membershipCards = document.querySelectorAll('.card')
+  }
+
   const membershipsSection = document.getElementById('memberships-section-content')
 
-  if (window.innerWidth >= 1280 && membershipCards.length > 0 && membershipsSection) {
+  console.log('Final cards found:', membershipCards.length)
+  console.log('Section found:', !!membershipsSection)
+  console.log('Memberships data length:', membershipsStore.memberships.length)
+
+  // Remove screen size restriction for testing - we'll animate on all sizes
+  if (membershipCards.length > 0 && membershipsSection) {
+    console.log('Setting up animation...')
+
     // Set initial state immediately to prevent flash
     gsap.set(membershipCards, {
       opacity: 0,
-      y: 20,
+      y: 30,
+      scale: 0.95,
       willChange: 'transform, opacity'
     })
+
+    console.log('Initial state set, creating ScrollTrigger...')
 
     scrollTriggerInstance.value = gsap.to(membershipCards, {
       opacity: 1,
       y: 0,
-      duration: 0.6,
-      stagger: 0.15,
+      scale: 1,
+      duration: 0.8,
+      stagger: 0.2,
       ease: 'power2.out',
       scrollTrigger: {
         id: 'memberships-section-animation',
         trigger: membershipsSection,
-        start: 'top 75%',
-        end: 'top 25%',
+        start: 'top 80%',
+        end: 'top 30%',
         toggleActions: 'play none none reverse',
         invalidateOnRefresh: true,
         refreshPriority: -1,
+        markers: false,
+        onToggle: (self) => {
+          console.log('ScrollTrigger toggled:', self.isActive)
+        },
         onComplete: () => {
           // Remove will-change after animation completes for better performance
           gsap.set(membershipCards, { willChange: 'auto' })
+          console.log('Animation completed')
         }
       },
     })
 
+    console.log('ScrollTrigger created, refreshing...')
+
     // Refresh ScrollTrigger to ensure proper positioning
     ScrollTrigger.refresh()
+    animationInitialized.value = true
+    console.log('Animation successfully initialized')
+  } else {
+    console.log('Animation not initialized - conditions not met')
+    if (membershipCards.length === 0) {
+      console.log('ERROR: No cards found!')
+      // Log the actual DOM structure for debugging
+      const membershipsDiv = document.querySelector('.memberships')
+      if (membershipsDiv) {
+        console.log('Memberships div HTML:', membershipsDiv.innerHTML)
+      }
+    }
+    if (!membershipsSection) {
+      console.log('ERROR: Section not found!')
+    }
   }
+
+  console.log('=== ANIMATION INIT END ===')
 }
 
 onUnmounted(() => {
@@ -75,12 +150,17 @@ onUnmounted(() => {
 
   // Kill all tweens targeting the cards
   gsap.killTweensOf('.card')
+  gsap.killTweensOf('.memberships .card')
 
   // Reset any remaining transforms
   gsap.set('.card', {
     clearProps: 'all',
     willChange: 'auto'
   })
+
+  // Reset animation flag
+  animationInitialized.value = false
+  console.log('Animation cleaned up')
 })
 </script>
 <template>

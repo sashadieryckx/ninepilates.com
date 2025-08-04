@@ -545,7 +545,7 @@ a {
     width: 0%;
     height: 2px;
     will-change: width;
-    transform: translateY(-8px);
+    transform: translateY(-4px);
   }
   #menu-btn {
     height: 2rem;
