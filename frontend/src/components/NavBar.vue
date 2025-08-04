@@ -3,6 +3,7 @@ import { gsap, Expo } from 'gsap'
 import { onMounted } from 'vue'
 import Logomark from '@/components/icons/LogomarkMain.vue'
 import LangButton from '@/components/LanguageButton.vue'
+import NavC2A from '@/components/actions/C2ANav.vue'
 
 import { useViewStore } from '@/stores/useViewStore'
 import { computed, watch, inject } from 'vue'
@@ -12,6 +13,8 @@ const viewStore = useViewStore()
 const route = useRoute()
 
 const openContactForm = inject('openContactForm')
+
+const desktop = window.innerWidth >= 1280
 
 // Reset active section when not on home page
 watch(
@@ -299,6 +302,9 @@ onMounted(() => {
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </a>
           </li>
+          <li>
+            <NavC2A v-if="desktop"/>
+          </li>
         </ul>
       </div>
       <div id="menu-btn" class="interactive">
@@ -399,10 +405,9 @@ onMounted(() => {
 }
 .mobile-list ul li {
   list-style: none;
-  line-height: 2em;
+  line-height: 3.5em;
   transition: cubic-bezier(0.075, 0.82, 0.165, 1);
   margin-top: 0.25em;
-  overflow: hidden;
 }
 .mobile-link {
   font-size: 3rem;
@@ -495,11 +500,8 @@ a {
     justify-content: start;
     padding: 5em 0 0 5em;
   }
-  .mobile-list ul {
-    display: unset;
-  }
   .mobile-list ul li {
-    line-height: 3.5em;
+    line-height: 6.5em;
     margin: 0;
     cursor: pointer;
   }
@@ -526,11 +528,11 @@ a {
   }
   #desktop-menu li {
     margin-left: 3em;
+    height: fit-content;
     overflow: hidden;
   }
   #desktop-menu a {
     font-size: 1.25rem;
-    /* color now set dynamically via style binding */
     text-decoration: none;
     letter-spacing: normal;
     mix-blend-mode: difference;
@@ -542,8 +544,8 @@ a {
   .menu-underline {
     width: 0%;
     height: 2px;
-    /* background-color now set dynamically via style binding */
     will-change: width;
+    transform: translateY(-8px);
   }
   #menu-btn {
     height: 2rem;
