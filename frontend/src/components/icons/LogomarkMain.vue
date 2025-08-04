@@ -37,9 +37,8 @@ defineProps({
 <style scoped>
 #logomark {
   width: 10em;
-  height: auto;
+  height: 100%;
   scale: 1;
-  transform: translateX(-14px);
   transition: fill 0.3s ease-in-out;
 }
 .logo-dark {
@@ -63,7 +62,7 @@ defineProps({
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   #logomark {
-    width: 14em;
+    width: 10em;
   }
 }
 /* DESKTOP 2 [GLOBAL] */
@@ -71,6 +70,9 @@ defineProps({
 }
 /* DESKTOP 3 [GLOBAL] */
 @media (min-width: 1728px) {
+  #logomark {
+    width: 14em;
+  }
 }
 /* DESKTOP 4 (Standard pc Monitor) */
 @media only screen and (min-width: 1920px) {

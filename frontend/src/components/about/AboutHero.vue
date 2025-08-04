@@ -84,14 +84,15 @@ h2 {
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   h1 {
-    font-size: 8rem;
+    font-size: 6rem;
   }
   h2 {
+    font-size: 4rem;
     text-align: left;
     margin-top: 1rem;
   }
   .heading :nth-child(2) {
-    font-size: 10rem;
+    font-size: 8rem;
     text-indent: 4rem;
   }
   .overlay {

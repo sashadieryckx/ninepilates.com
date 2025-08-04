@@ -321,9 +321,10 @@ onMounted(() => {
   padding-top: 1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+  padding-bottom: 1rem;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   align-content: center;
   font-family: sans-serif;
@@ -339,18 +340,11 @@ onMounted(() => {
   height: 10vh;
   overflow: visible;
 }
-#logo {
-  z-index: 99;
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: fit-content;
-}
 #menu-btn {
   position: relative;
   z-index: 101;
   width: 3rem;
-  height: auto;
+  height: 2rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -366,9 +360,6 @@ onMounted(() => {
   border-radius: 1px;
   transition: all 0.3s ease;
   will-change: width, transform, background-color;
-}
-#menu-btn {
-  height: 2rem;
 }
 #top-line {
   width: 1rem;
@@ -475,6 +466,11 @@ onMounted(() => {
   color: var(--coral) !important;
   text-shadow: none !important;
 }
+a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
@@ -484,7 +480,7 @@ onMounted(() => {
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   #header {
-    height: 8vh;
+    height: 7vh;
     padding-left: 3rem;
     padding-right: 3rem;
     margin: 1rem 1rem;
@@ -492,7 +488,7 @@ onMounted(() => {
     max-width: 98vw;
   }
   #logomark {
-    transform: translate(-1rem, -0.25rem);
+    transform: translate(-10px,0);
   }
   .mobile-list {
     align-items: start;
@@ -516,7 +512,6 @@ onMounted(() => {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    padding-top: 0.5rem;
   }
   #desktop-menu {
     display: contents;
@@ -575,6 +570,9 @@ onMounted(() => {
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */
 @media screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+  #header {
+    height: 7.5vh;
+  }
   #desktop-menu ul li {
     font-size: 1em;
   }
