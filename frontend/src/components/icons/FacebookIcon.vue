@@ -11,4 +11,11 @@
   height: 2rem;
   fill: var(--mocha);
 }
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  #fb {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
 </style>

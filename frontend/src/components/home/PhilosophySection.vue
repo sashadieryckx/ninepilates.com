@@ -144,7 +144,7 @@ h5 {
     width: 65%;
   }
   h5 {
-    width: 75%;
+    width: 65%;
   }
   .track-wrapper {
     display: flex;

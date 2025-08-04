@@ -13,4 +13,11 @@
   height: 2rem;
   fill: var(--mocha);
 }
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  #ig {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
 </style>
