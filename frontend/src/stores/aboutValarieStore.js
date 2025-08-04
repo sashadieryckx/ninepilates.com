@@ -27,7 +27,7 @@ export const useAboutValarieStore = defineStore('abouts', () => {
   const valeriesTestimonials = ref([
     {
       id: 1,
-      statement: 'Valarie is an amazing instructor! Her classes are always challenging and fun.',
+      statement: 'Valérie is an amazing instructor! Her classes are always challenging and fun.',
       review: 'Valérie\'s passion for Pilates shines through in every class. I always leave feeling stronger and more centered.',
       author: 'Vanessa Dorion',
       date: 'September 5th, 2025',

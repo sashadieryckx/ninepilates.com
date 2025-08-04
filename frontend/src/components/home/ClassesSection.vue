@@ -97,9 +97,11 @@ h5 {
     flex-direction: column;
     align-items: center;
   }
+  h2 {
+    width: 65%;
+  }
   h5 {
-    margin-top: 1rem;
-    font-size: 1.25rem;
+    margin-top: 2rem;
     width: 60%;
     text-align: center;
   }

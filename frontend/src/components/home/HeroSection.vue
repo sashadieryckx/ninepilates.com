@@ -1,3 +1,7 @@
+<script setup>
+import BookClass from '@/components/actions/C2ADiscover.vue'
+import SignUp from '@/components/actions/C2AJourney.vue'
+</script>
 <template>
   <div id="hero-section">
     <div class="hero-bg">
@@ -5,11 +9,15 @@
       <img src="../../assets/content/placeholder01.jpg" alt="Hero Background" class="hero-img" />
     </div>
     <div class="hero-content df-pad">
-      <h1 class="roman">Find your balance with Nine Pilates</h1>
+      <h1 class="roman">Find your Balance with Nine Pilates</h1>
       <h5 class="light">
         Join us in transforming your body and mind through our expert-led classes and supportive
         community.
       </h5>
+      <div class="c2a">
+        <BookClass />
+        <SignUp />
+      </div>
     </div>
   </div>
 </template>
@@ -68,6 +76,9 @@
   width: 100%;
   margin-top: 1rem;
 }
+.c2a {
+  display: none;
+}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
@@ -76,20 +87,31 @@
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  #hero-section {
+    max-height: 100vh;
+  }
   .hero-content {
-    width: 70%;
-    align-items: flex-start;
-    padding-top: 12rem;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-5%);
   }
   .hero-content h1 {
     font-size: 8rem;
-    text-align: left;
+    width: 90%;
   }
   .hero-content h5 {
-    font-size: 2rem;
-    text-align: left;
-    width: 75%;
+    width: 50%;
     padding-top: 1rem;
+  }
+  .c2a {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

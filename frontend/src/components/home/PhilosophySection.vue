@@ -140,6 +140,9 @@ h5 {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  h2 {
+    width: 65%;
+  }
   h5 {
     width: 75%;
   }

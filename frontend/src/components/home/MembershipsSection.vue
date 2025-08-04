@@ -110,5 +110,11 @@ h5 {
     justify-content: center;
     gap: 1rem;
   }
+  h2 {
+    width: 65%;
+  }
+  h5 {
+    width: 50%;
+  }
 }
 </style>

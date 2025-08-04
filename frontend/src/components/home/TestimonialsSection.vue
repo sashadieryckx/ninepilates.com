@@ -50,7 +50,7 @@ onUnmounted(() => {
 <template>
   <div id="testimonials-section-content">
     <div class="testimonials-heading df-pad">
-      <h2 class="roman">Movement that leaves a <span class="light-italic">impact</span></h2>
+      <h2 class="roman">Movement that leaves an <span class="light-italic">impact</span></h2>
       <h5 class="light">
         Every journey begins with a single breath — these are the stories of progress, presence, and
         the quiet strength built through consistent practice.
@@ -111,8 +111,11 @@ h5 {
     justify-content: center;
     gap: 1rem;
   }
+  h2 {
+    width: 65%;
+  }
   h5 {
-    width: 50%;
+    width: 60%;
   }
 }
 /* DESKTOP 2 [GLOBAL] */
