@@ -120,7 +120,7 @@ function leave(el, done) {
 }
 .prev,
 .next {
-  scale: 1.5;
+  scale: .5;
 }
 .prev {
   transform: rotate(180deg);
