@@ -28,10 +28,11 @@ defineProps({
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-end;
-  background-color: #3f3a3496;
-  backdrop-filter: blur(5px);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+  backdrop-filter: blur(20px);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
-  color: var(--coral);
+  color: var(--mocha);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 .pfp {
   display: flex;
@@ -45,7 +46,7 @@ defineProps({
   height: 6em;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid var(--coral);
+  border: 1px solid var(--mocha);
 }
 .date {
   font-size: 1.25rem;
@@ -62,12 +63,16 @@ defineProps({
 @media (min-width: 1280px) {
   .testimonial-card {
     padding: 2.5rem;
+    max-width: 500px;
   }
   .pfp {
-    margin-bottom: 4rem;
+    margin-bottom: 2rem;
+  }
+  .pfp h4 {
+    font-size: 1.5rem;
   }
   h4 {
-    font-size: 2rem;
+    font-size: 1.5rem;
     line-height: 1.1em;
   }
   .date {
