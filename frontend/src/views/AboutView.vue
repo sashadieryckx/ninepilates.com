@@ -87,6 +87,7 @@ useHead({
     <section class="section" id="testimonials-section">
       <ValsTestimonialSection />
     </section>
+    <section class="section" id="lifestyle-section"></section>
     <section class="section" id="join-me-section">
       <JoinMeSection />
     </section>
