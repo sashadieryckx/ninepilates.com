@@ -36,8 +36,8 @@
 }
 .c2a-container:hover {
   scale: 1.03;
-  box-shadow: 5px 2px 20px 1px rgba(63, 58, 52, 0.75);
-  -webkit-box-shadow: 5px 2px 20px 1px rgba(63, 58, 52, 0.75);
-  -moz-box-shadow: 5px 2px 20px 1px rgba(63, 58, 52, 0.75);
+  box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
 }
 </style>
