@@ -1,6 +1,8 @@
 <script setup>
 import { onMounted, onUnmounted, nextTick, ref } from 'vue'
 import MembershipsCard from './MembershipsCard.vue'
+import C2AMemberships from '@/components/actions/C2AMemberships.vue'
+import C2APackages from '@/components/actions/C2APackages.vue'
 import { useMembershipsStore } from '@/stores/membershipStore'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -40,7 +42,10 @@ const initAnimation = () => {
 
   // Debug: Log all elements we can find
   console.log('All .card elements on page:', document.querySelectorAll('.card').length)
-  console.log('All .membership-card elements:', document.querySelectorAll('.membership-card').length)
+  console.log(
+    'All .membership-card elements:',
+    document.querySelectorAll('.membership-card').length,
+  )
   console.log('Section exists:', !!document.getElementById('memberships-section-content'))
   console.log('Memberships div exists:', !!document.querySelector('.memberships'))
 
@@ -76,7 +81,7 @@ const initAnimation = () => {
       opacity: 0,
       y: 30,
       scale: 0.95,
-      willChange: 'transform, opacity'
+      willChange: 'transform, opacity',
     })
 
     console.log('Initial state set, creating ScrollTrigger...')
@@ -104,7 +109,7 @@ const initAnimation = () => {
           // Remove will-change after animation completes for better performance
           gsap.set(membershipCards, { willChange: 'auto' })
           console.log('Animation completed')
-        }
+        },
       },
     })
 
@@ -155,7 +160,7 @@ onUnmounted(() => {
   // Reset any remaining transforms
   gsap.set('.card', {
     clearProps: 'all',
-    willChange: 'auto'
+    willChange: 'auto',
   })
 
   // Reset animation flag
@@ -170,12 +175,21 @@ onUnmounted(() => {
       <h5 class="light">
         Explore our membership options and find the perfect fit for your journey with us.
       </h5>
+      <div class="c2a interactive">
+        <router-link to="/packages-and-pricing">
+          <C2AMemberships />
+        </router-link>
+        <router-link to="/packages-and-pricing">
+          <C2APackages />
+        </router-link>
+      </div>
     </div>
     <div class="memberships df-mar">
       <MembershipsCard
         v-for="membership in membershipsStore.memberships"
         :key="membership.id"
         :memberships="membership"
+        :reverse="membership.id === 2"
         class="card"
       />
     </div>
@@ -209,7 +223,12 @@ h5 {
 .memberships {
   margin-top: 4rem;
 }
-
+.c2a {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
 /* Animation-ready cards */
 .card {
   transform: translateZ(0); /* Force GPU acceleration */
@@ -224,10 +243,13 @@ h5 {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  #memberships-section-content {
+    padding-bottom: 12rem;
+  }
   .memberships {
     display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 1rem;
   }

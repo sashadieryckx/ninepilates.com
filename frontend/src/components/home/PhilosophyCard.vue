@@ -8,8 +8,10 @@ defineProps({
 </script>
 <template>
   <div class="philosophy-card">
-    <img :src="principals.image" :alt="principals.name" class="img"/>
-    <div class="num"><h6>{{ principals.id }}</h6></div>
+    <img :src="principals.image" :alt="principals.name" class="img" />
+    <div class="num">
+      <h6 class="bold">{{ principals.id }}</h6>
+    </div>
     <div class="bar">
       <h4 class="roman">{{ principals.name }}</h4>
       <p class="light-italic">{{ principals.subheading }}</p>
@@ -32,7 +34,7 @@ defineProps({
 p {
   font-size: 1rem;
   line-height: 1.1em;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
 .bar {
   position: absolute;
@@ -66,5 +68,6 @@ p {
 }
 h6 {
   color: var(--blanco);
+  transform: translateY(-20%);
 }
 </style>

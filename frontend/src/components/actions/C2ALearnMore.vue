@@ -11,10 +11,8 @@
 }
 #learn-more button {
   font-size: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--mocha);
-  color: var(--coral);
-  border-radius: 25px;
+  background-color: transparent;
+  color: var(--mocha);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -22,8 +20,9 @@
 #learn-more p {
   font-size: 1rem;
   transform: translateY(-3px);
+  text-decoration: underline;
 }
 #learn-more button:hover {
-  transform: scale(1.03);
+  color: var(--soya);
 }
 </style>

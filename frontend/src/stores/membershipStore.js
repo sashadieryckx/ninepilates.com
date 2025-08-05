@@ -1,14 +1,17 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
+import Breathe from '../assets/content/breathe.png'
+
 export const useMembershipsStore = defineStore('memberships', () => {
     const memberships = ref([
         {
             id: 1,
             title: "The Rhythm",
             description: "A gentle pace to support your practice. Ideal for those new to Pilates or seeking balance in a busy schedule. Find your rhythm, one breath at a time.",
-            price: '120/mo',
+            price: '100/mo',
             classes: '4',
+            image: Breathe, // Example image import
         },
         {
             id: 2,
@@ -21,8 +24,8 @@ export const useMembershipsStore = defineStore('memberships', () => {
             id: 3,
             title: "Cloud 9",
             description: "Our most immersive experience. Designed for those fully committed to their well-being — elevate your strength, control, and presence with regular, restorative movement.",
-            price: '300/mo',
-            classes: '12',
+            price: '350/mo',
+            classes: 'Unlimited',
         }
     ])
 

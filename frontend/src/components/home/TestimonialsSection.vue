@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
 import Testimonials from './TestimonialsCard.vue'
+import Button from '@/components/actions/C2AReviews.vue'
 import { useTestimonialsStore } from '@/stores/testimonialsStore'
 import gsap from 'gsap'
 const testimonialsStore = useTestimonialsStore()
@@ -55,6 +56,9 @@ onUnmounted(() => {
         Every journey begins with a single breath — these are the stories of progress, presence, and
         the quiet strength built through consistent practice.
       </h5>
+      <router-link>
+        <Button class="c2a roman interactive"></Button>
+      </router-link>
     </div>
     <div class="testimonials df-mar">
       <Testimonials
@@ -96,6 +100,9 @@ h5 {
 }
 .card {
   margin-bottom: 1rem;
+}
+.c2a {
+  margin-top: 2rem;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

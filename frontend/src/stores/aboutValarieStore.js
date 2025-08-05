@@ -27,15 +27,15 @@ export const useAboutValarieStore = defineStore('abouts', () => {
   const valeriesTestimonials = ref([
     {
       id: 1,
-      statement: 'Valérie is an amazing instructor! Her classes are always challenging and fun.',
-      review: 'Valérie\'s passion for Pilates shines through in every class. I always leave feeling stronger and more centered.',
+      statement: 'Valérie is truly an exceptional Pilates instructor. Her passion, energy, and patience create such a welcoming and empowering environment.',
+      review: 'She goes above and beyond to make sure everyone feels comfortable, offering thoughtful modifications and clear guidance throughout the class. You can tell she’s always well-prepared, and her attention to detail and client care—before, during, and after class—is unmatched. I’ve tried several instructors elsewhere, and Valérie truly stands out. Her classes are a highlight of my week.',
       author: 'Vanessa Dorion',
       date: 'September 5th, 2025',
     },
     {
       id: 2,
-      statement: 'I have seen incredible improvements in my strength and flexibility since joining Valarie\'s classes.',
-      review: 'Valérie\'s attention to detail and personalized approach make her classes truly special. I can\'t recommend her enough!',
+      statement: 'Valérie is such an incredible Pilates instructor. Her energy is contagious, and she has a natural ability to challenge and motivate in the most encouraging way.',
+      review: 'Every class feels fresh and engaging thanks to her creative flows and thoughtful sequencing. I’m so excited for everything she’s building—I know it’s going to be a huge success!',
       author: 'Abbey McDonald',
       date: 'August 12th, 2025',
     },

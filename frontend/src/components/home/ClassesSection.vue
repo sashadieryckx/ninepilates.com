@@ -1,6 +1,7 @@
 <script setup>
 import { onMounted } from 'vue'
 import ClassesCard from '@/components/classes/ClassesCard.vue'
+import Button from '@/components/actions/C2AClasses.vue'
 import { useClassesStore } from '@/stores/classesStore'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -45,6 +46,9 @@ onMounted(() => {
         Join us in transforming your body and mind through our comprehensive group and specialized
         programs.
       </h5>
+      <router-link to="/classes">
+        <Button class="c2a roman interactive"></Button>
+      </router-link>
     </div>
     <div id="classes-cards">
       <ClassesCard
@@ -71,6 +75,9 @@ h2 {
 h5 {
   text-align: center;
   margin-top: 1rem;
+}
+.c2a {
+  margin-top: 2rem;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
@@ -111,13 +118,6 @@ h5 {
 }
 /* DESKTOP 3 [GLOBAL] */
 @media (min-width: 1728px) {
-  h2 {
-    font-size: 4rem;
-  }
-  h5 {
-    margin-top: 1rem;
-    font-size: 1.5rem;
-  }
 }
 /* DESKTOP 4 (Standard pc Monitor) */
 @media only screen and (min-width: 1920px) {

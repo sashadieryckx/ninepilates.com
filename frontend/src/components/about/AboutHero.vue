@@ -12,18 +12,18 @@ import Facebook from '@/components/icons/FacebookIcon.vue'
     </div>
     <div class="socials">
       <a href="https://www.instagram.com/valerie.ninepilates/">
-        <Insta />
+        <Insta fill="var(--coral)" class="ig" />
       </a>
       <a href="https://www.tiktok.com/@valerie.ninepilates">
-        <Tiktok />
+        <Tiktok fill="var(--coral)" class="tt" />
       </a>
       <a href="https://www.facebook.com/valerie.ninepilates">
-        <Facebook />
+        <Facebook fill="var(--coral)" class="fb" />
       </a>
     </div>
     <div class="bg-img">
       <div class="overlay"></div>
-      <img src="@/assets/content/val.jpg" alt="Valerie" class="img">
+      <img src="@/assets/content/val.jpg" alt="Valerie" class="img" />
     </div>
   </div>
 </template>
@@ -75,6 +75,11 @@ h2 {
 .socials {
   display: none;
 }
+.ig,
+.tt,
+.fb {
+  scale: 0.75;
+}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
@@ -100,7 +105,8 @@ h2 {
   }
   .socials {
     position: absolute;
-    top: 45%;
+    top: 50%;
+    transform: translateY(-50%);
     right: 2rem;
     z-index: 2;
     display: flex;

@@ -17,10 +17,11 @@ defineProps({
   position: relative;
   z-index: 1;
   width: 100%;
-  height: 100%;
+  max-width: 90%;
   padding: 1rem 0rem;
   margin: 2rem 0rem;
   background: transparent;
+  text-align: left;
 }
 h2 {
   margin-bottom: 1rem;
@@ -38,7 +39,13 @@ h5 {
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   .story-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     max-width: 650px;
+    text-align: left;
+    margin: 0;
   }
   h2 {
     font-size: 4rem;

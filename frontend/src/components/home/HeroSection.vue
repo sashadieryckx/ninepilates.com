@@ -14,7 +14,7 @@ import SignUp from '@/components/actions/C2AJourney.vue'
         Join us in transforming your body and mind through our expert-led classes and supportive
         community.
       </h5>
-      <div class="c2a">
+      <div class="c2a interactive">
         <BookClass />
         <SignUp />
       </div>
@@ -126,6 +126,10 @@ import SignUp from '@/components/actions/C2AJourney.vue'
 }
 /* DESKTOP 4 (Standard pc Monitor) */
 @media only screen and (min-width: 1920px) {
+  .hero-content h1 {
+    font-size: 8rem;
+    width: 70%;
+  }
 }
 /* DESKTOP 5 (4k Monitor) */
 @media only screen and (min-width: 2160px) {

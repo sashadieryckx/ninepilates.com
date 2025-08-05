@@ -12,8 +12,6 @@ gsap.registerPlugin(ScrollTrigger)
 
 const viewStore = useViewStore()
 
-const desktop = window.innerWidth >= 1280
-
 onMounted(() => {
   const observerOptions = {
     root: null,
@@ -50,7 +48,7 @@ onMounted(() => {
       observer.unobserve(aboutContent)
     }
     // Clean up ScrollTrigger instances
-    ScrollTrigger.getAll().forEach(trigger => trigger.kill())
+    ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
   })
 })
 
@@ -75,10 +73,10 @@ useHead({
 <template>
   <div id="about-content" class="main-content">
     <spline-viewer
-      v-if="desktop"
       id="story-spline"
       url="https://prod.spline.design/Q7G8F76kI4CUqhAr/scene.splinecode"
-      loading="eager">
+      loading="eager"
+    >
     </spline-viewer>
     <section class="section" id="about-hero-section">
       <AboutHero />
@@ -112,7 +110,6 @@ useHead({
   position: relative;
 }
 #story-spline {
-  display: none;
   position: fixed;
   top: 0;
   left: 0;

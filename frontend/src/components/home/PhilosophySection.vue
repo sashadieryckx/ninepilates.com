@@ -115,7 +115,6 @@ h5 {
   border-radius: 50%;
   width: 50px;
   height: 50px;
-  font-size: 24px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
@@ -127,7 +126,8 @@ h5 {
   transform: rotate(180deg);
 }
 .arrow {
-  scale: 0.45;
+  width: 1rem;
+  height: 1rem;
 }
 .scroll-btn:hover {
   background: rgba(0, 0, 0, 0.2);

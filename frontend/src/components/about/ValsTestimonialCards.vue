@@ -22,7 +22,7 @@ defineProps({
   min-height: 50vh;
 }
 h3 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 1rem;
 }
 .review {

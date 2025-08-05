@@ -1,21 +1,35 @@
 <script setup>
-import JoinNow from '@/components/actions/C2AJoinNow.vue'
+import JoinNow from '@/components/actions/C2ASignUp.vue'
+import LearnMore from '@/components/actions/C2ALearnMore.vue'
 defineProps({
   memberships: {
     type: Object,
     required: true,
   },
+  reverse: {
+    type: Boolean,
+    default: false,
+  },
 })
 </script>
 <template>
-  <div class="membership-card">
-    <div class="heading">
-      <h2 class="bold">{{ memberships.title }}</h2>
-      <h3 class="roman">{{ memberships.price }}</h3>
-      <JoinNow class="c2a" />
+  <div class="membership-card interactive" :class="{ reverse: reverse }">
+    <div class="img-container">
+      <img :src="memberships.image" alt="Membership Image" class="img" />
     </div>
-    <div class="info">
-      <p>{{ memberships.description }}</p>
+    <div class="content">
+      <div class="heading">
+        <h3 class="bold">{{ memberships.title }}</h3>
+        <h4 class="roman">${{ memberships.price }}</h4>
+      </div>
+      <div class="info">
+        <p class="italic">Includes {{ memberships.classes }} Classes</p>
+        <p class="light">{{ memberships.description }}</p>
+      </div>
+      <div class="c2a interactive">
+        <JoinNow />
+        <LearnMore />
+      </div>
     </div>
   </div>
 </template>
@@ -23,20 +37,66 @@ defineProps({
 .membership-card {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  max-width: 400px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 25px 25px 0 0;
+}
+.img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.content {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   width: 100%;
   max-width: 400px;
   padding: 2rem 1.5rem 1.5rem 1.5rem;
-  border-radius: 15px;
+  border-radius: 0 0 25px 25px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border: 2px solid var(--mocha);
-  margin-bottom: 1rem;
+  margin-bottom: 4rem;
   background-color: #f3ece967;
-  backdrop-filter: blur(5px);
 }
 .heading {
   margin-bottom: 1.5rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 2.5rem;
+  margin-top: 0.5rem;
+}
+.c2a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  width: 100%;
+}
+p {
+  font-size: 1rem;
+}
+.info :nth-child(1) {
+  margin-bottom: 1rem;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
@@ -47,7 +107,43 @@ defineProps({
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   .membership-card {
-    max-width: 500px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 60%;
+    padding: 0;
+  }
+  .membership-card.reverse {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .membership-card.reverse .img-container {
+    order: 2;
+    border-radius: 0 25px 25px 0;
+  }
+  .membership-card.reverse .content {
+    order: 1;
+    border-radius: 25px 0 0 25px;
+  }
+  .img-container {
+    height: 100%;
+    border-radius: 25px 0 0 25px;
+  }
+  .content {
+    padding: 1rem 2rem 2rem 2rem;
+    max-width: 100%;
+    height: 100%;
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0px 25px 25px 0px;
+    margin: 0;
+  }
+  h3 {
+    font-size: 4rem;
+  }
+  p {
+    font-size: 1.25rem;
   }
 }
 </style>

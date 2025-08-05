@@ -2,15 +2,15 @@
   <div id="accolades-section" class="df-mar">
     <div class="accolade one">
       <div class="icon"></div>
-      <h4 class="roman">Accolade 1</h4>
+      <h4 class="light">Improved Flexibility</h4>
     </div>
     <div class="accolade two">
       <div class="icon"></div>
-      <h4 class="roman">Accolade 2</h4>
+      <h4 class="light">Enhanced Mind Body Connection</h4>
     </div>
     <div class="accolade three">
       <div class="icon"></div>
-      <h4 class="roman">Accolade 3</h4>
+      <h4 class="light">Core Strength and Stability</h4>
     </div>
   </div>
 </template>
@@ -19,9 +19,10 @@
   position: relative;
   z-index: 1;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  gap: 4rem;
   width: 100%;
   margin: 2rem 0rem;
 }
@@ -34,8 +35,10 @@
   gap: 0.5rem;
 }
 .accolade h4 {
-  font-size: 1rem;
-  color: var(--soya);
+  font-size: 1.25rem;
+  line-height: 1.2em;
+  width: 75%;
+  color: var(--mocha);
 }
 .icon {
   width: 4em;
@@ -68,6 +71,10 @@
   .three {
     grid-column: 1;
     grid-row: 3;
+  }
+  .accolade h4 {
+    font-size: 1.25rem;
+    width: 50%;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

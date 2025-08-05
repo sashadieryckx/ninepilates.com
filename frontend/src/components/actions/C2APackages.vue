@@ -1,7 +1,7 @@
 <template>
   <div class="c2a-container">
     <button>
-      <p class="roman">Book Now</p>
+      <p class="roman">Packages</p>
     </button>
   </div>
 </template>
@@ -14,14 +14,15 @@
   height: fit-content;
   width: 100%;
   transition: all 0.3s ease;
+  border-radius: 14px;
 }
 .c2a-container button {
-  background-color: var(--coral);
+  background-color: var(--mocha);
   backdrop-filter: blur(5px);
   border: none;
   border-radius: 14px;
-  padding: 0.5rem 1.25rem;
-  font-size: 1rem;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
@@ -31,14 +32,12 @@
 .c2a-container button p {
   font-size: 1rem;
   transform: translateY(-8%);
-  color: var(--mocha);
-  text-wrap: nowrap;
+  color: var(--coral);
 }
 .c2a-container:hover {
-  transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-/* DESKTOP 1 [GLOBAL] */
-@media (min-width: 1280px) {
+  scale: 1.03;
+  box-shadow: 5px 2px 20px 1px rgba(63, 58, 52, 0.75);
+  -webkit-box-shadow: 5px 2px 20px 1px rgba(63, 58, 52, 0.75);
+  -moz-box-shadow: 5px 2px 20px 1px rgba(63, 58, 52, 0.75);
 }
 </style>

@@ -24,5 +24,6 @@ defineProps({
 #arrow {
   width: 4rem;
   height: 4rem;
+  fill: v-bind(fill);
 }
 </style>

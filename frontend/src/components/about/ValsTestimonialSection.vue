@@ -85,8 +85,8 @@ function leave(el, done) {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 90vh;
-  max-height: 90vh;
+  min-height: 110vh;
+  max-height: 110vh;
   gap: 2rem;
   padding: 4rem 0rem;
   overflow: hidden;
@@ -97,7 +97,7 @@ function leave(el, done) {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-  bottom: 1rem;
+  bottom: 4rem;
 }
 .navigation-buttons button {
   width: 3rem;
@@ -120,9 +120,21 @@ function leave(el, done) {
 }
 .prev,
 .next {
-  scale: .5;
+  scale: 1.5;
 }
 .prev {
   transform: rotate(180deg);
+}
+/* DESKTOP 2 [GLOBAL] */
+@media (min-width: 1440px) {
+}
+/* DESKTOP 3 [GLOBAL] */
+@media (min-width: 1728px) {
+}
+/* DESKTOP 4 (Standard pc Monitor) */
+@media only screen and (min-width: 1920px) {
+}
+/* DESKTOP 5 (4k Monitor) */
+@media only screen and (min-width: 2160px) {
 }
 </style>

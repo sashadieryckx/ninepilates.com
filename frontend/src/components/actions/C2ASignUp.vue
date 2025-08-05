@@ -1,7 +1,7 @@
 <template>
   <div id="learn-more">
     <button>
-      <p class="roman">Join now</p>
+      <p class="roman">Sign up →</p>
     </button>
   </div>
 </template>
@@ -10,20 +10,18 @@
   margin-top: 1rem;
 }
 #learn-more button {
+  position: relative;
+  display: inline-block;
   font-size: 1rem;
-  padding: 0.25rem 1.5rem;
-  background-color: var(--mocha);
-  color: var(--coral);
-  border-radius: 25px;
+  background-color: transparent;
+  color: var(--mocha);
   border: none;
   cursor: pointer;
   transition: all 0.3s ease;
+  overflow: hidden;
 }
 #learn-more p {
   font-size: 1rem;
   transform: translateY(-3px);
-}
-#learn-more button:hover {
-  transform: scale(1.03);
 }
 </style>

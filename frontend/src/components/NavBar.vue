@@ -250,6 +250,11 @@ onMounted(() => {
         <li>
           <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
         </li>
+        <li>
+          <RouterLink to="/packages-and-pricing" class="mobile-link roman"
+            >Packages & Pricing</RouterLink
+          >
+        </li>
         <li style="z-index: 3">
           <a class="mobile-link roman" @click="openContactForm">Contact</a>
         </li>
@@ -297,13 +302,23 @@ onMounted(() => {
             </RouterLink>
           </li>
           <li>
+            <RouterLink
+              to="/packages-and-pricing"
+              class="desktop-link"
+              :style="{ color: desktopLinkColor }"
+            >
+              Packages & Pricing
+              <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
+            </RouterLink>
+          </li>
+          <li>
             <a class="desktop-link" :style="{ color: desktopLinkColor }" @click="openContactForm">
               Contact
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </a>
           </li>
           <li>
-            <NavC2A v-if="desktop"/>
+            <NavC2A v-if="desktop" />
           </li>
         </ul>
       </div>
@@ -493,7 +508,7 @@ a {
     max-width: 98vw;
   }
   #logomark {
-    transform: translate(-10px,0);
+    transform: translate(-10px, 0);
   }
   .mobile-list {
     align-items: start;
@@ -532,7 +547,7 @@ a {
     overflow: hidden;
   }
   #desktop-menu a {
-    font-size: 1.25rem;
+    font-size: 1rem;
     text-decoration: none;
     letter-spacing: normal;
     mix-blend-mode: difference;
@@ -565,22 +580,25 @@ a {
     width: 4rem;
     height: 4rem;
   }
-  .close-btn .line{
+  .close-btn .line {
     width: 2.5rem;
     height: 3px;
   }
 }
 /* DESKTOP 2 (Macbook pro 13 inch display) */
-@media screen and (min-width: 1280px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
+@media screen and (min-width: 1280px) {
   #header {
     height: 7.5vh;
   }
   #desktop-menu ul li {
-    font-size: 1em;
+    font-size: 1rem;
   }
 }
 /* DESKTOP 3 (15 inch display) [GLOBAL] */
-@media screen and (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (min-width: 1440px) {
+  #desktop-menu a {
+    font-size: 1.25rem;
+  }
 }
 /* DESKTOP 4 (Standard Pc Monitor) [GLOBAL] */
 @media (min-width: 1920px) {

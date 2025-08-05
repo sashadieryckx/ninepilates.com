@@ -25,6 +25,11 @@ const router = createRouter({
       component: () => import('../views/ScheduleView.vue'),
     },
     {
+      path: '/packages-and-pricing',
+      name: 'packages-and-pricing',
+      component: () => import('../views/PackagesAndPricingView.vue'),
+    },
+    {
       path: '/faq',
       name: 'faq',
       component: () => import('../views/FAQView.vue'),
