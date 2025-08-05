@@ -26,17 +26,13 @@ onMounted(async () => {
   // Also try a longer timeout as backup
   setTimeout(() => {
     if (!animationInitialized.value) {
-      console.log('Retrying animation initialization after 2 seconds...')
       initAnimation()
     }
   }, 2000)
 })
 
 const initAnimation = () => {
-  console.log('=== ANIMATION INIT START ===')
-
   if (animationInitialized.value) {
-    console.log('Animation already initialized, skipping')
     return
   }
 
@@ -54,28 +50,19 @@ const initAnimation = () => {
 
   // Fallback selectors if the above doesn't work
   if (membershipCards.length === 0) {
-    console.log('Trying fallback selector: .memberships .card')
     membershipCards = document.querySelectorAll('.memberships .card')
   }
   if (membershipCards.length === 0) {
-    console.log('Trying fallback selector: .membership-card')
     membershipCards = document.querySelectorAll('.membership-card')
   }
   if (membershipCards.length === 0) {
-    console.log('Trying fallback selector: .card')
     membershipCards = document.querySelectorAll('.card')
   }
 
   const membershipsSection = document.getElementById('memberships-section-content')
 
-  console.log('Final cards found:', membershipCards.length)
-  console.log('Section found:', !!membershipsSection)
-  console.log('Memberships data length:', membershipsStore.memberships.length)
-
   // Remove screen size restriction for testing - we'll animate on all sizes
   if (membershipCards.length > 0 && membershipsSection) {
-    console.log('Setting up animation...')
-
     // Set initial state immediately to prevent flash
     gsap.set(membershipCards, {
       opacity: 0,
@@ -83,9 +70,6 @@ const initAnimation = () => {
       scale: 0.95,
       willChange: 'transform, opacity',
     })
-
-    console.log('Initial state set, creating ScrollTrigger...')
-
     scrollTriggerInstance.value = gsap.to(membershipCards, {
       opacity: 1,
       y: 0,
@@ -96,7 +80,7 @@ const initAnimation = () => {
       scrollTrigger: {
         id: 'memberships-section-animation',
         trigger: membershipsSection,
-        start: 'top 80%',
+        start: 'top 60%',
         end: 'top 30%',
         toggleActions: 'play none none reverse',
         invalidateOnRefresh: true,
@@ -118,23 +102,7 @@ const initAnimation = () => {
     // Refresh ScrollTrigger to ensure proper positioning
     ScrollTrigger.refresh()
     animationInitialized.value = true
-    console.log('Animation successfully initialized')
-  } else {
-    console.log('Animation not initialized - conditions not met')
-    if (membershipCards.length === 0) {
-      console.log('ERROR: No cards found!')
-      // Log the actual DOM structure for debugging
-      const membershipsDiv = document.querySelector('.memberships')
-      if (membershipsDiv) {
-        console.log('Memberships div HTML:', membershipsDiv.innerHTML)
-      }
-    }
-    if (!membershipsSection) {
-      console.log('ERROR: Section not found!')
-    }
   }
-
-  console.log('=== ANIMATION INIT END ===')
 }
 
 onUnmounted(() => {
