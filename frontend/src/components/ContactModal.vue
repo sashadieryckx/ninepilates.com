@@ -28,6 +28,7 @@ const closeModal = () => {
 <template>
   <div id="contact-spline">
   <spline-viewer
+  v-if="props.isOpen"
     url="https://prod.spline.design/Q7G8F76kI4CUqhAr/scene.splinecode"
     loading="eager">
   </spline-viewer>
@@ -102,6 +103,18 @@ p.roman {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+h2 {
+  font-size: 12rem;
+}
+h5 {
+  margin-top: 2rem;
+  font-size: 2rem;
+  width: 30%;
+}
+#contact-modal {
+  padding-left: 4rem;
+  justify-content: flex-start;
+}
 .contact-close {
   top: 1rem;
   right: 2rem;
