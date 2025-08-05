@@ -4,8 +4,8 @@ import BookClass from '@/components/actions/C2ABookClass2.vue'
 <template>
   <div id="join-me-content">
     <div class="line"></div>
+    <div class="gradient"></div>
     <div class="join-me-heading df-pad">
-      <div class="gradient"></div>
       <h2 class="roman">Join me on your wellness <span class="light-italic">journey</span></h2>
     </div>
     <div class="c2a">
@@ -27,6 +27,7 @@ import BookClass from '@/components/actions/C2ABookClass2.vue'
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 .line {
   position: relative;
@@ -49,10 +50,11 @@ h2 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  overflow: visible;
 }
 .gradient {
   position: absolute;
-  z-index: 1;
+  z-index: 0;
   top: 0%;
   left: 50%;
   transform: translate(-50%, -14%);
@@ -84,5 +86,44 @@ h2 {
 .img {
   width: 90%;
   background-color: var(--soya);
+}
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  #join-me-content {
+    min-height: 100vh;
+    background: transparent;
+  }
+  .gradient {
+    height: 100%;
+    top: -10%;
+    background: radial-gradient(
+      circle,
+      rgba(199, 183, 166, 0) 0%,
+      rgba(106, 96, 82, 0.25) 20%,
+      rgba(199, 183, 166, 1) 35%,
+      rgba(199, 183, 166, 1) 100%
+    );
+  }
+  .line {
+    display: none;
+  }
+  .join-me-heading {
+    padding-top: 8rem;
+  }
+  h2 {
+    width: 65%;
+  }
+  .img {
+    height: 60vh;
+  }
+  .c2a {
+    margin-bottom: 12rem;
+  }
 }
 </style>

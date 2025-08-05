@@ -125,6 +125,24 @@ function leave(el, done) {
 .prev {
   transform: rotate(180deg);
 }
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .testimonials-content {
+    min-height: 100vh;
+    max-height: 100vh;
+    padding: 12rem 0rem;
+  }
+  .prev,
+  .next {
+    scale: 0.55;
+  }
+}
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {
 }

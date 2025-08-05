@@ -106,10 +106,6 @@ onMounted(() => {
         :abouts="abouts"
       />
     </div>
-    <div class="img-container">
-      <img src="" alt="" class="img" />
-      <h2>Placeholder</h2>
-    </div>
   </div>
 </template>
 <style scoped>
@@ -131,15 +127,6 @@ onMounted(() => {
   padding: 2rem 0;
   z-index: 10;
   gap: 4rem;
-}
-.img-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 40em;
-  background-color: var(--soya);
-  color: var(--coral);
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

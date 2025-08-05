@@ -121,6 +121,9 @@ useHead({
 #join-me-section {
   background-color: var(--coral);
 }
+#testimonials-section {
+  z-index: 2;
+}
 
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

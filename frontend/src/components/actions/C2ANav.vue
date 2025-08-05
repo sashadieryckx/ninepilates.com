@@ -8,12 +8,14 @@
 <style scoped>
 .c2a-container {
   position: relative;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
   height: fit-content;
   width: 100%;
   transition: all 0.3s ease;
+  border-radius: 14px;
 }
 .c2a-container button {
   background-color: var(--coral);
@@ -27,6 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  transition: all 0.3s ease;
 }
 .c2a-container button p {
   font-size: 1rem;
@@ -34,9 +37,8 @@
   color: var(--mocha);
   text-wrap: nowrap;
 }
-.c2a-container:hover {
+.c2a-container button:hover {
   transform: scale(1.03);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {

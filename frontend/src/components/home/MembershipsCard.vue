@@ -150,7 +150,7 @@ p {
   }
   .c2a {
     position: absolute;
-    bottom: 0rem;
+    bottom: 1rem;
     left: 0;
     padding-left: 2rem;
     padding-right: 2rem;
