@@ -1,0 +1,50 @@
+{
+  "home": {
+    "hero": {
+      "heading": "Find your balance with Nine Pilates",
+      "subheading": "Join us in transforming your body and mind through our expert-led classes and supportive community."
+    },
+    "statement": {
+      "text": "Discover the transformative power of Pilates. Whether you’re just starting out or you’re a seasoned practitioner, discover your path to a strong body and a serene mind."
+    },
+    "accolades": {
+      "flexibility": "Improved Flexibility",
+      "connection": "Mind Body Connection",
+      "core": "Core Strength & Stability"
+    },
+    "philosophy": {
+      "title": "Discover the “Nine” Philosophy",
+      "description": "Build on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself - inside and out.",
+      "principles": {
+        "breathing": "Breathing",
+        "breathingDescription": "Reconnect body and mind through conscious breath.",
+        "concentration": "Concentration",
+        "concentrationDescription": "Presence in motion - every movement begins with awareness.",
+        "control": "Control",
+        "controlDescription": "Master your body through intentional movement.",
+        "centering": "Centering",
+        "centeringDescription": "Find strength within - the core of every motion.",
+        "precision": "Precision",
+        "precisionDescription": "Refine each movement with focus, form, and purpose.",
+        "balance": "Balance",
+        "balanceDescription": "Cultivate stability and harmony in every movement.",
+        "rhythm": "Rhythm Flow",
+        "rhythmDescription": "Embrace the natural rhythm of your body.",
+        "wholeness": "Wholeness",
+        "wholenessDescription": "Integrate mind, body, and spirit for holistic wellness.",
+        "relaxation": "Relaxation",
+        "relaxationDescription": "Let go of tension to move freely and live fully."
+      }
+    },
+    "memberships": {
+      "heading": "Memberships made to move with you",
+      "description": "Explore our membership options and find the perfect fit for your journey with us."
+    },
+    "connect": {
+      "heading": "Connect & share with us on socials"
+    },
+    "contact": {
+      "cta": "Have a question? Shoot us a message!"
+    }
+  }
+}

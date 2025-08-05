@@ -1,0 +1,50 @@
+{
+  "home": {
+    "hero": {
+      "heading": "Trouvez votre équilibre avec Nine Pilates",
+      "subheading": "Rejoignez-nous pour une transformation complète du corps et de l’esprit, guidée par nos instructeurs experts et soutenue par une communauté chaleureuse."
+    },
+    "statement": {
+      "text": "Découvrez le pouvoir transformateur du Pilates. Débutant ou expérimenté, progressez vers un corps fort et un esprit serein."
+    },
+    "accolades": {
+      "flexibility": "Souplesse améliorée",
+      "connection": "Connexion corps-esprit",
+      "core": "Force et stabilité du tronc"
+    },
+    "philosophy": {
+      "title": "Découvrez la philosophie \"Nine\"",
+      "description": "Basée sur la conviction que le bien-être véritable vient de l’intérieur. Grâce à nos neuf principes, nous vous aidons à construire une version de vous-même plus forte et plus connectée – intérieurement et extérieurement.",
+      "principles": {
+        "breathing": "Respiration",
+        "breathingDescription": "Reconnectez le corps et l’esprit par la respiration consciente.",
+        "concentration": "Concentration",
+        "concentrationDescription": "La présence en mouvement : chaque geste commence par la conscience.",
+        "control": "Contrôle",
+        "controlDescription": "Maîtrisez votre corps grâce à des mouvements intentionnels.",
+        "centering": "Centrage",
+        "centeringDescription": "Trouvez la force intérieure : le centre de chaque mouvement.",
+        "precision": "Précision",
+        "precisionDescription": "Affinez chaque mouvement avec concentration, forme et intention.",
+        "balance": "Équilibre",
+        "balanceDescription": "Cultivez la stabilité et l’harmonie dans chaque geste.",
+        "rhythm": "Flux rythmique",
+        "rhythmDescription": "Adoptez le rythme naturel de votre corps.",
+        "wholeness": "Plénitude",
+        "wholenessDescription": "Intégrez le corps, l’esprit et l’âme pour un bien-être holistique.",
+        "relaxation": "Relaxation",
+        "relaxationDescription": "Libérez les tensions pour bouger librement et vivre pleinement."
+      }
+    },
+    "memberships": {
+      "heading": "Des abonnements qui bougent avec vous",
+      "description": "Découvrez nos formules d’abonnement et trouvez celle qui correspond à votre parcours avec nous."
+    },
+    "connect": {
+      "heading": "Connectez-vous et partagez avec nous sur les réseaux sociaux"
+    },
+    "contact": {
+      "cta": "Une question ? Écrivez-nous un message !"
+    }
+  }
+}
