@@ -40,4 +40,10 @@
   -webkit-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
   -moz-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
 }
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .c2a-container button p {
+    font-size: 1.25rem;
+  }
+}
 </style>

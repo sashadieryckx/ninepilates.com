@@ -24,15 +24,21 @@
   padding: 0.5rem 1.5rem;
   font-size: 1.25rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: all 0.3s ease;
 }
 .c2a-container button p {
   font-size: 1.25rem;
   transform: translateY(-8%);
   color: var(--coral);
   text-wrap: nowrap;
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .c2a-container button p {
+    font-size: 1.25rem;
+  }
 }
 </style>
