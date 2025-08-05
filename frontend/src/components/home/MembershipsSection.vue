@@ -170,7 +170,7 @@ onUnmounted(() => {
 </script>
 <template>
   <div id="memberships-section-content">
-    <div class="memberships-heading df-pad">
+    <div class="memberships-heading">
       <h2 class="roman">Memberships made to <span class="light-italic">move</span> with you</h2>
       <h5 class="light">
         Explore our membership options and find the perfect fit for your journey with us.
@@ -202,9 +202,12 @@ onUnmounted(() => {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
   min-height: 100vh;
   padding-top: 4rem;
   padding-bottom: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .memberships-heading {
   display: flex;

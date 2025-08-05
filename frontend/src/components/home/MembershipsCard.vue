@@ -110,14 +110,16 @@ p {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     max-width: 60%;
+    min-height: 600px;
     padding: 0;
+    margin-bottom: 4rem;
   }
   .membership-card.reverse {
     grid-template-columns: repeat(2, 1fr);
   }
   .membership-card.reverse .img-container {
     order: 2;
-    border-radius: 0 25px 25px 0;
+    border-radius: 25px;
   }
   .membership-card.reverse .content {
     order: 1;
@@ -125,9 +127,11 @@ p {
   }
   .img-container {
     height: 100%;
-    border-radius: 25px 0 0 25px;
+    border-radius: 25px;
   }
   .content {
+    position: relative;
+    justify-content: flex-start;
     padding: 1rem 2rem 2rem 2rem;
     max-width: 100%;
     height: 100%;
@@ -135,7 +139,6 @@ p {
     box-shadow: none;
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
-    border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 0px 25px 25px 0px;
     margin: 0;
   }
@@ -144,6 +147,14 @@ p {
   }
   p {
     font-size: 1.25rem;
+  }
+  .c2a {
+    position: absolute;
+    bottom: 0rem;
+    left: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
   }
 }
 </style>

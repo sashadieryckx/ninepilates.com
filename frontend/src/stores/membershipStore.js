@@ -2,6 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 import Breathe from '../assets/content/breathe.png'
+import Concentration from '../assets/content/concentration.png'
 
 export const useMembershipsStore = defineStore('memberships', () => {
     const memberships = ref([
@@ -19,6 +20,7 @@ export const useMembershipsStore = defineStore('memberships', () => {
             description: "For those ready to deepen their connection. With consistent movement and mindful progression, this package helps you stay in tune with your body and your goals.",
             price: '220/mo',
             classes: '8',
+            image: Concentration, // Example image import
         },
         {
             id: 3,
@@ -26,6 +28,7 @@ export const useMembershipsStore = defineStore('memberships', () => {
             description: "Our most immersive experience. Designed for those fully committed to their well-being — elevate your strength, control, and presence with regular, restorative movement.",
             price: '350/mo',
             classes: 'Unlimited',
+            image: Concentration, // Example image import
         }
     ])
 
