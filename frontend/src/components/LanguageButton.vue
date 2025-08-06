@@ -24,11 +24,11 @@ watch(locale, (newLocale) => {
     <div class="language-toggle" @click="toggleLanguage">
       <div class="toggle-track">
         <div class="toggle-slider" :class="{ active: currentLanguage === 'fr' }"></div>
-        <span class="language-label left roman" :class="{ active: currentLanguage === 'en' }">
-          EN
+        <span class="language-label left light" :class="{ active: currentLanguage === 'en' }">
+          En
         </span>
-        <span class="language-label right roman" :class="{ active: currentLanguage === 'fr' }">
-          FR
+        <span class="language-label right light" :class="{ active: currentLanguage === 'fr' }">
+          Fr
         </span>
       </div>
     </div>
@@ -48,20 +48,21 @@ watch(locale, (newLocale) => {
 }
 .toggle-track {
   position: relative;
-  width: 80px;
+  width: 64px;
   height: 36px;
   background-color: transparent;
   border-radius: 18px;
-  border: 1px solid var(--coral);
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   padding: 0.25rem 0.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
 }
 .toggle-track:hover {
   border-color: var(--dawn);
-  box-shadow: 0 0 0 4px rgba(196, 183, 166, 0.2);
+  box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
 }
 .toggle-slider {
   position: absolute;
@@ -69,7 +70,8 @@ watch(locale, (newLocale) => {
   left: 2px;
   width: 32px;
   height: 32px;
-  background: linear-gradient(135deg, var(--coral), var(--dawn));
+  background: linear-gradient(135deg, #f3ece960, var(--coral));
+  backdrop-filter: blur(10px);
   border-radius: 50%;
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow:
@@ -78,9 +80,9 @@ watch(locale, (newLocale) => {
   transform: translateX(0);
 }
 .toggle-slider.active {
-  transform: translateX(42px);
+  transform: translateX(30px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  background: linear-gradient(135deg, var(--dawn), var(--blanco));
+  opacity: .75;
 }
 .language-label {
   position: relative;
@@ -89,15 +91,13 @@ watch(locale, (newLocale) => {
   opacity: 0.5;
   transition: all 0.3s ease;
   z-index: 2;
-  text-transform: uppercase;
-  transform: translateY(-8%);
+  transform: translateY(-12%);
   width: 100%;
 }
 .language-label.active {
   opacity: 1;
   color: var(--mocha);
-  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.3);
-  transform: scale(1.05) translateY(-8%);
+  transform: scale(1.05) translateY(-12%);
 }
 .language-label.left {
   text-align: left;
