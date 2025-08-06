@@ -1,4 +1,13 @@
 {
+  "navbar": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "classes": "Cours",
+    "schedule": "Horaires",
+    "packages-and-pricing": "Forfaits & Tarifs",
+    "contact": "Contact",
+    "register": "Inscription"
+  },
   "home": {
     "hero": {
       "heading": "Trouvez votre équilibre avec Nine Pilates",

@@ -4,6 +4,7 @@ import Footer from './components/SiteFooter.vue'
 import LogoMark from './components/icons/LogoMark.vue'
 import CircleLoader from './components/icons/CircleLoader.vue'
 import ContactModal from './components/ContactModal.vue'
+import LanguageButton from './components/LanguageButton.vue'
 
 import { RouterView } from 'vue-router'
 
@@ -238,6 +239,9 @@ watch(
     <footer id="footer-section">
       <Footer> </Footer>
     </footer>
+    <div id="language-button-container">
+      <LanguageButton />
+    </div>
   </VueLenis>
 </template>
 
@@ -265,6 +269,30 @@ footer {
   position: relative;
   z-index: 1;
   max-width: 100vw;
+}
+/* LANGUAGE BUTTON */
+#language-button-container {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  pointer-events: auto;
+}
+
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+  #language-button-container {
+    bottom: 2.5rem;
+    right: 2.5rem;
+  }
+}
+
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  #language-button-container {
+    bottom: 3rem;
+    right: 3rem;
+  }
 }
 /* LOADER */
 #loader {

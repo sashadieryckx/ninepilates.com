@@ -1,4 +1,13 @@
 {
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "classes": "Classes",
+    "schedule": "Schedule",
+    "packages-and-pricing": "Packages & Pricing",
+    "contact": "Contact",
+    "register": "Book Now"
+  },
   "home": {
     "hero": {
       "heading": "Find your balance with Nine Pilates",

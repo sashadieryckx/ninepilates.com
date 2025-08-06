@@ -2,12 +2,15 @@
 import { gsap, Expo } from 'gsap'
 import { onMounted } from 'vue'
 import Logomark from '@/components/icons/LogomarkMain.vue'
-import LangButton from '@/components/LanguageButton.vue'
 import NavC2A from '@/components/actions/C2ANav.vue'
 
 import { useViewStore } from '@/stores/useViewStore'
 import { computed, watch, inject } from 'vue'
 import { useRoute } from 'vue-router'
+
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const viewStore = useViewStore()
 const route = useRoute()
@@ -239,24 +242,22 @@ onMounted(() => {
     <div class="mobile-list interactive">
       <ul>
         <li style="z-index: 6">
-          <RouterLink to="/" class="mobile-link roman">Home</RouterLink>
+          <RouterLink to="/" class="mobile-link roman">{{ t("navbar.home") }}</RouterLink>
         </li>
         <li style="z-index: 5">
-          <RouterLink to="/about" class="mobile-link roman">About</RouterLink>
+          <RouterLink to="/about" class="mobile-link roman">{{ t("navbar.about") }}</RouterLink>
         </li>
         <li style="z-index: 4">
-          <RouterLink to="/classes" class="mobile-link roman">Classes</RouterLink>
+          <RouterLink to="/classes" class="mobile-link roman">{{ t("navbar.classes") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/schedule" class="mobile-link roman">Schedule</RouterLink>
+          <RouterLink to="/schedule" class="mobile-link roman">{{ t("navbar.schedule") }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/packages-and-pricing" class="mobile-link roman"
-            >Packages & Pricing</RouterLink
-          >
+          <RouterLink to="/packages-and-pricing" class="mobile-link roman">{{ t("navbar.packages-and-pricing") }}</RouterLink>
         </li>
         <li style="z-index: 3">
-          <a class="mobile-link roman" @click="openContactForm">Contact</a>
+          <a class="mobile-link roman" @click="openContactForm">{{ t("navbar.contact") }}</a>
         </li>
         <li style="z-index: 2">
           <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
@@ -267,7 +268,6 @@ onMounted(() => {
         <div class="line"></div>
       </div>
     </div>
-    <LangButton class="lang-btn" />
   </div>
   <div id="header" class="interactive">
     <router-link to="/" id="logo">
@@ -279,25 +279,25 @@ onMounted(() => {
         <ul>
           <li>
             <RouterLink to="/" class="desktop-link" :style="{ color: desktopLinkColor }">
-              Home
+              {{ t("navbar.home") }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/about" class="desktop-link" :style="{ color: desktopLinkColor }">
-              About
+              {{ t("navbar.about") }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/classes" class="desktop-link" :style="{ color: desktopLinkColor }">
-              Classes
+              {{ t("navbar.classes") }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/schedule" class="desktop-link" :style="{ color: desktopLinkColor }">
-              Schedule
+              {{ t("navbar.schedule") }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
@@ -307,13 +307,13 @@ onMounted(() => {
               class="desktop-link"
               :style="{ color: desktopLinkColor }"
             >
-              Packages & Pricing
+              {{ t("navbar.packages-and-pricing") }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <a class="desktop-link" :style="{ color: desktopLinkColor }" @click="openContactForm">
-              Contact
+              {{ t("navbar.contact") }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </a>
           </li>
@@ -441,10 +441,6 @@ onMounted(() => {
 #desktop-menu {
   position: relative;
   display: none;
-}
-.lang-btn {
-  position: relative;
-  z-index: 100;
 }
 .close-btn {
   position: fixed;
