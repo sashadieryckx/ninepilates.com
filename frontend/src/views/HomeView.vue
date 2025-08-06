@@ -78,7 +78,9 @@ onMounted(() => {
 </script>
 <template>
   <div id="main-content" class="main-content">
-    <BookClass class="c2a" />
+    <div class="mobile-c2a">
+      <BookClass />
+    </div>
     <section class="section" id="hero-section">
       <HeroSection />
     </section>
@@ -132,11 +134,11 @@ onMounted(() => {
   height: 100vh;
   overflow: hidden;
 }
-.c2a {
+.mobile-c2a {
   position: fixed;
   z-index: 10;
   bottom: 1rem;
-  left: 0;
+  left: 1rem;
 }
 .img-container {
   position: relative;

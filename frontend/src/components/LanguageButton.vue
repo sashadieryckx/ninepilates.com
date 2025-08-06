@@ -48,10 +48,10 @@ watch(locale, (newLocale) => {
 }
 .toggle-track {
   position: relative;
-  width: 64px;
+  width: 70px;
   height: 36px;
-  background-color: transparent;
   border-radius: 18px;
+  border: 1px solid #f3ece95a;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -80,34 +80,33 @@ watch(locale, (newLocale) => {
   transform: translateX(0);
 }
 .toggle-slider.active {
-  transform: translateX(30px);
+  transform: translateX(34px);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  opacity: .75;
 }
 .language-label {
   position: relative;
   font-size: 1rem;
   color: var(--blanco);
   opacity: 0.5;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
   z-index: 2;
   transform: translateY(-12%);
   width: 100%;
 }
 .language-label.active {
   opacity: 1;
-  color: var(--mocha);
+  color: var(--onyx);
   transform: scale(1.05) translateY(-12%);
 }
 .language-label.left {
   text-align: left;
   margin-left: 0px;
-  margin-right: 0.25rem;
+  margin-right: 0.4rem;
 }
 .language-label.right {
   text-align: right;
   margin-right: 0px;
-  margin-left: 0.25rem;
+  margin-left: 0.4rem;
 }
 .toggle-track:active .toggle-slider {
   transform: translateX(0) scale(0.95);

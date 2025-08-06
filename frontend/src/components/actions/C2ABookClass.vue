@@ -1,7 +1,7 @@
 <template>
   <div class="c2a-container">
     <button>
-      <p class="roman">Book Your Class</p>
+      <p class="light">Book Now</p>
     </button>
   </div>
 </template>
@@ -15,23 +15,26 @@
   width: 100%;
 }
 .c2a-container button {
-  background-color: #1615139b;
-  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
   color: var(--blanco);
   border: none;
-  border-radius: 14px;
-  border: 1px solid var(--coral);
-  padding: 0.75rem 1.5rem;
+  border-radius: 18px;
+  border: 1px solid #f3ece95a;
+  padding: 0.5rem 1rem;
   font-size: 1.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow:
+  0 2px 8px rgba(0, 0, 0, 0.3),
+  0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 .c2a-container button p {
-  font-size: 1.25rem;
+  font-size: 1rem;
   transform: translateY(-8%);
-  color: var(--coral);
+  color: var(--blanco);
 }
 </style>
