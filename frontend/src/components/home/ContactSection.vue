@@ -1,15 +1,16 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import { useContactStore } from '@/stores/ContactFormStore.js'
 import { useParallax } from '@/composables/useParallax.js'
 
+const { t } = useI18n()
 const contactStore = useContactStore()
 useParallax()
 </script>
 <template>
   <div id="contact-us-content">
     <div class="contact-heading df-pad">
-      <h3 class="roman">Have a question?</h3>
-      <h3 class="light-italic">Shoot us a message!</h3>
+      <h3 class="roman">{{ t("home.contact.cta") }}</h3>
     </div>
     <div class="img-container">
       <img src="@/assets/content/contact-us.jpg" alt="Contact Us Image" class="img parallax" />

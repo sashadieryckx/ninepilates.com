@@ -1,19 +1,26 @@
 <script setup>
-import { ref } from 'vue'
-import { onMounted } from 'vue'
+import { computed, watch } from 'vue'
+import { useI18n } from 'vue-i18n'
 
-const currentLanguage = ref('en') // Default to English
+const { locale } = useI18n()
 
-const toggleLanguage = () => {
-  currentLanguage.value = currentLanguage.value === 'fr' ? 'en' : 'fr'
-  console.log(`Language switched to: ${currentLanguage.value}`)
+const currentLanguage = computed(() => locale.value)
+
+function toggleLanguage() {
+  const newLocale = locale.value === 'en' ? 'fr' : 'en'
+  locale.value = newLocale
+  localStorage.setItem('locale', newLocale)
+
+  document.documentElement.lang = newLocale
 }
-onMounted(() => {
-  // Any initialization logic can go here
+
+watch(locale, (newLocale) => {
+  localStorage.setItem('locale', newLocale)
+  document.documentElement.lang = newLocale
 })
 </script>
 <template>
-  <div class="language-switch">
+  <div class="language-switch interactive">
     <div class="language-toggle" @click="toggleLanguage">
       <div class="toggle-track">
         <div class="toggle-slider" :class="{ active: currentLanguage === 'fr' }"></div>

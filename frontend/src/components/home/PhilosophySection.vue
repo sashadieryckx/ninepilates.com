@@ -1,9 +1,11 @@
 <script setup>
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import PhilosophyCard from '@/components/home/PhilosophyCard.vue'
 import Arrow from '@/components/icons/ArrowIcon.vue'
 import { usePrinciplesStore } from '@/stores/philosophyStore'
 
+const { t } = useI18n()
 const principlesStore = usePrinciplesStore()
 
 const scrollContainer = ref(null)
@@ -29,10 +31,9 @@ function scrollRight() {
 <template>
   <div class="philosophy-section-content">
     <div class="philosophy-heading df-pad">
-      <h2 class="roman">Discover the <span class="light-italic">"Nine"</span> Philosophy</h2>
+      <h2 class="roman">{{ t("home.philosophy.title") }}</h2>
       <h5 class="light">
-        Built on the belief that true wellness comes from within. Through our nine principals, we
-        help you build a stronger, more connected version of yourself — inside and out.
+        {{ t("home.philosophy.description") }}
       </h5>
     </div>
     <div class="philosophy-track interactive" ref="scrollContainer">

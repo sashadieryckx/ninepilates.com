@@ -1,16 +1,21 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
 <template>
   <div id="accolades-section" class="df-mar">
     <div class="accolade one">
       <div class="icon"></div>
-      <h4 class="light">Improved Flexibility</h4>
+      <h4 class="light">{{ t("home.accolades.flexibility") }}</h4>
     </div>
     <div class="accolade two">
       <div class="icon"></div>
-      <h4 class="light">Enhanced Mind Body Connection</h4>
+      <h4 class="light">{{ t("home.accolades.connection") }}</h4>
     </div>
     <div class="accolade three">
       <div class="icon"></div>
-      <h4 class="light">Core Strength and Stability</h4>
+      <h4 class="light">{{ t("home.accolades.core") }}</h4>
     </div>
   </div>
 </template>

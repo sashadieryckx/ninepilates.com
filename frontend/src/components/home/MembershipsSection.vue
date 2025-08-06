@@ -1,5 +1,6 @@
 <script setup>
 import { onMounted, onUnmounted, nextTick, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import MembershipsCard from './MembershipsCard.vue'
 import C2AMemberships from '@/components/actions/C2AMemberships.vue'
 import C2APackages from '@/components/actions/C2APackages.vue'
@@ -8,6 +9,7 @@ import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
 
+const { t } = useI18n()
 const membershipsStore = useMembershipsStore()
 const scrollTriggerInstance = ref(null)
 const animationInitialized = ref(false)
@@ -139,9 +141,9 @@ onUnmounted(() => {
 <template>
   <div id="memberships-section-content">
     <div class="memberships-heading">
-      <h2 class="roman">Memberships made to <span class="light-italic">move</span> with you</h2>
+      <h2 class="roman">{{ t("home.memberships.heading") }}</h2>
       <h5 class="light">
-        Explore our membership options and find the perfect fit for your journey with us.
+        {{ t("home.memberships.description") }}
       </h5>
       <div class="c2a interactive">
         <router-link to="/packages-and-pricing">

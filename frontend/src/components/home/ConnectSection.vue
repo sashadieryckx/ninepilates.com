@@ -1,14 +1,17 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import Insta from '@/components/icons/InstaIcon.vue'
 import Tiktok from '@/components/icons/TiktokIcon.vue'
 import Facebook from '@/components/icons/FacebookIcon.vue'
 import Youtube from '@/components/icons/YoutubeIcon.vue'
+
+const { t } = useI18n()
 </script>
 <template>
   <div id="connect-section-content" class="interactive">
     <div class="overlay"></div>
     <div class="connect-heading df-pad">
-      <h2 class="roman">Connect & share with us on <span class="light-italic">socials</span></h2>
+      <h2 class="roman">{{ t("home.connect.heading") }}</h2>
       <h5 class="light">Join our mindful movement online—follow, tag, and share your journey with us.</h5>
     </div>
     <div class="mobile-images df-mar">

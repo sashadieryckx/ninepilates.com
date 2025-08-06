@@ -1,6 +1,9 @@
 <script setup>
 import BookClass from '@/components/actions/C2ADiscover.vue'
 import SignUp from '@/components/actions/C2AJourney.vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 <template>
   <div id="hero-section">
@@ -9,10 +12,9 @@ import SignUp from '@/components/actions/C2AJourney.vue'
       <img src="../../assets/content/placeholder01.jpg" alt="Hero Background" class="hero-img" />
     </div>
     <div class="hero-content df-pad">
-      <h1 class="roman">Find your Balance with Nine Pilates</h1>
+      <h1 class="roman">{{ t("home.hero.heading") }}</h1>
       <h5 class="light">
-        Join us in transforming your body and mind through our expert-led classes and supportive
-        community.
+        {{ t("home.hero.subheading") }}
       </h5>
       <div class="c2a interactive">
         <BookClass />

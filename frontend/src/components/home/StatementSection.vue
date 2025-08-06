@@ -1,10 +1,13 @@
 <script setup>
 import { onMounted, onBeforeUnmount } from 'vue'
+import { useI18n } from 'vue-i18n'
 import SplitType from 'split-type'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+
 gsap.registerPlugin(ScrollTrigger)
 
+const { t } = useI18n()
 let splitTypeInstances = []
 
 onMounted(() => {
@@ -60,8 +63,7 @@ onBeforeUnmount(() => {
 <template>
   <div id="statement-section" class="df-mar">
     <h2 id="statement" class="split-type light" data-bg-color="#6f1a0722" data-fg-color="var(--mocha)">
-      <span>D</span>iscover the transformative power of Pilates. Whether you're a beginner or an
-      experienced practitioner.
+      {{ t("home.statement.text") }}
     </h2>
   </div>
 </template>
