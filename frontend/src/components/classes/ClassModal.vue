@@ -76,6 +76,7 @@ const handleCloseClick = () => {
         <span class="close-line"></span>
       </button>
       <div v-if="classData" class="class-image">
+        <div class="img-overlay"></div>
         <img :src="classData.image" :alt="classData.title" class="modal-img" />
         <div class="img-title">
           <h2 class="bold">{{ classData.title }}.</h2>
@@ -309,7 +310,19 @@ const handleCloseClick = () => {
     height: 100%;
     object-fit: cover;
   }
+  .img-overlay {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #16151355;
+  }
   .img-title {
+    position: relative;
+    z-index: 2;
     width: 100%;
     height: 100%;
     display: flex;

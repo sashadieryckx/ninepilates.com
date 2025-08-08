@@ -165,8 +165,6 @@ const handleMouseLeave = (ev) => {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 2px solid var(--coral);
 }
 
 .menu__item-link:hover + .marquee {
