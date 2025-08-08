@@ -11,7 +11,9 @@
   "home": {
     "hero": {
       "heading": "Trouvez votre équilibre avec Nine Pilates",
-      "subheading": "Rejoignez-nous pour une transformation complète du corps et de l’esprit, guidée par nos instructeurs experts et soutenue par une communauté chaleureuse."
+      "subheading": "Venez vivre une transformation du corps et de l’esprit grâce à nos cours guidés par des experts et soutenus par une communauté bienveillante.",
+      "button-1": "Découvrir",
+      "button-2": "S'inscrire"
     },
     "statement": {
       "text": "Découvrez le pouvoir transformateur du Pilates. Débutant ou expérimenté, progressez vers un corps fort et un esprit serein."
@@ -55,5 +57,17 @@
     "contact": {
       "cta": "Une question ? Écrivez-nous un message !"
     }
+  },
+  "about": {
+  "storySection": {
+    "aboutMeHeading": "À propos de moi",
+    "aboutMe": "Je m'appelle Valérie, une instructrice de Pilates passionnée, dédiée à aider les autres à atteindre leurs objectifs de bien-être grâce au pouvoir du mouvement et de la pleine conscience.",
+    "myJourneyHeading": "Mon parcours",
+    "myJourney": "Mon aventure dans le Pilates a commencé il y a 5 ans, et cette pratique a transformé ma vie d'une façon que je n'aurais jamais imaginée. Je suis déterminée à partager cette expérience transformatrice avec les autres.",
+    "inspirationHeading": "Ce qui m’inspire",
+    "inspiration": "Ce qui m’inspire, c’est la conviction que le Pilates peut permettre à chacun de se reconnecter à son corps, de gagner en force et d’améliorer son bien-être global. Je m’efforce de créer un espace accueillant et inclusif pour tous.",
+    "missionHeading": "La mission",
+    "mission": "Ma mission avec Nine Pilates est d’offrir des cours de qualité, accessibles à tous les niveaux. À travers le mouvement, j’espère aider chacun à se sentir plus fort, plus aligné et plus épanoui, grâce à la pratique du Pilates."
+  }
   }
 }

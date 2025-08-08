@@ -11,7 +11,9 @@
   "home": {
     "hero": {
       "heading": "Find your balance with Nine Pilates",
-      "subheading": "Join us in transforming your body and mind through our expert-led classes and supportive community."
+      "subheading": "Join us in transforming your body and mind through our expert-led classes and supportive community.",
+      "button-1": "Discover",
+      "button-2": "Start your journey"
     },
     "statement": {
       "text": "Discover the transformative power of Pilates. Whether you’re just starting out or you’re a seasoned practitioner, discover your path to a strong body and a serene mind."
@@ -54,6 +56,18 @@
     },
     "contact": {
       "cta": "Have a question? Shoot us a message!"
+    }
+  },
+  "about": {
+    "storySection": {
+      "aboutMeHeading": "About me",
+      "aboutMe": "I am Valerie, a passionate pilates instructor dedicated to helping others achieve their fitness goals through the power of movement and mindfulness.",
+      "myJourneyHeading": "My journey",
+      "myJourney": "My journey into pilates began 4 years ago, and it has transformed my life in ways I never imagined. I am committed to sharing this transformative experience with others.",
+      "inspirationHeading": "My inspiration",
+      "inspiration": "My inspiration comes from the belief that pilates can empower individuals to connect with their bodies, improve their strength, and enhance their overall well-being. I strive to create a welcoming and inclusive environment for all.",
+      "missionHeading": "My mission",
+      "mission": "My mission with Nine Pilates is to provide high-quality Pilates instruction that caters to all levels, from beginners to advanced practitioners. I aim to inspire and motivate my clients to lead healthier, happier lives through the practice of pilates."
     }
   }
 }

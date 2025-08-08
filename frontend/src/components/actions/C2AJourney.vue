@@ -1,7 +1,12 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
 <template>
   <div class="c2a-container">
     <button>
-      <p class="roman">Start your journey</p>
+      <p class="roman">{{ t('home.hero.button-2') }}</p>
     </button>
   </div>
 </template>
