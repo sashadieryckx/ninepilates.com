@@ -7,8 +7,10 @@ import gsap from 'gsap'
 const testimonialsStore = useTestimonialsStore()
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
-
 const scrollTriggerInstance = ref(null)
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 onMounted(() => {
   const testimonialCards = document.querySelectorAll('.card')
@@ -51,10 +53,9 @@ onUnmounted(() => {
 <template>
   <div id="testimonials-section-content">
     <div class="testimonials-heading df-pad">
-      <h2 class="roman">Movement that leaves an <span class="light-italic">impact</span></h2>
+      <h2 class="roman">{{ t('home.testimonials.title') }} <span class="light-italic">{{ t('home.testimonials.titleSpan') }}</span></h2>
       <h5 class="light">
-        Every journey begins with a single breath — these are the stories of progress, presence, and
-        the quiet strength built through consistent practice.
+        {{ t('home.testimonials.description') }}
       </h5>
       <router-link>
         <Button class="c2a roman interactive"></Button>

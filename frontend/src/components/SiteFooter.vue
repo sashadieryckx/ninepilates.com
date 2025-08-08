@@ -3,13 +3,16 @@ import { inject } from 'vue'
 
 const openContactForm = inject('openContactForm')
 
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 <template>
   <div id="footer" class="interactive df-pad">
     <div id="divider" class=""></div>
     <img id="default-background" src="" />
     <div id="footer-title">
-      <h3 class="roman">Movement with Intention.</h3>
+      <h3 class="roman">{{ t('footer.tagline') }}</h3>
     </div>
     <div id="bottom-bar">
       <div id="contact">
@@ -48,7 +51,7 @@ const openContactForm = inject('openContactForm')
         <router-link to="/faq" class="roman">FAQ</router-link>
       </div>
       <div id="credits">
-        <p class="light">© 2025 Nine Pilates® | All rights reserved</p>
+        <p class="light">© 2025 Nine Pilates™ | All rights reserved</p>
         <p class="light">Website by — <a href="https://www.982studios.ca/">982studios®</a></p>
       </div>
       <div id="logos">

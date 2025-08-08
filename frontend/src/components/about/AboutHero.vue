@@ -2,13 +2,17 @@
 import Insta from '@/components/icons/InstaIcon.vue'
 import Tiktok from '@/components/icons/TiktokIcon.vue'
 import Facebook from '@/components/icons/FacebookIcon.vue'
+
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 </script>
 <template>
   <div class="about-hero-content">
     <div class="heading df-mar">
-      <h1 class="roman">Hello, I'm</h1>
-      <h1 class="italic">Valérie.</h1>
-      <h2 class="light">The founder of <span class="light-italic">Nine Pilates</span></h2>
+      <h1 class="roman">{{ t('about.hero.title-1') }}</h1>
+      <h1 class="italic">{{ t('about.hero.title-2') }}</h1>
+      <h2 class="light">{{ t('about.hero.title-3') }} <span class="light-italic">{{ t('about.hero.title-4') }}</span></h2>
     </div>
     <div class="socials">
       <a href="https://www.instagram.com/valerie.ninepilates/">

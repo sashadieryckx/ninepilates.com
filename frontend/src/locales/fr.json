@@ -47,6 +47,11 @@
         "relaxationDescription": "Libérez les tensions pour bouger librement et vivre pleinement."
       }
     },
+    "testimonials": {
+      "title": "Mouvement qui laisse un ",
+      "titleSpan": "impact",
+      "description": "Chaque voyage commence par une seule respiration — ce sont les histoires de progrès, de présence et de force tranquille construites grâce à une pratique constante."
+    },
     "memberships": {
       "heading": "Des abonnements qui bougent avec vous",
       "description": "Découvrez nos formules d’abonnement et trouvez celle qui correspond à votre parcours avec nous."
@@ -59,15 +64,34 @@
     }
   },
   "about": {
-  "storySection": {
-    "aboutMeHeading": "À propos de moi",
-    "aboutMe": "Je m'appelle Valérie, une instructrice de Pilates passionnée, dédiée à aider les autres à atteindre leurs objectifs de bien-être grâce au pouvoir du mouvement et de la pleine conscience.",
-    "myJourneyHeading": "Mon parcours",
-    "myJourney": "Mon aventure dans le Pilates a commencé il y a 5 ans, et cette pratique a transformé ma vie d'une façon que je n'aurais jamais imaginée. Je suis déterminée à partager cette expérience transformatrice avec les autres.",
-    "inspirationHeading": "Ce qui m’inspire",
-    "inspiration": "Ce qui m’inspire, c’est la conviction que le Pilates peut permettre à chacun de se reconnecter à son corps, de gagner en force et d’améliorer son bien-être global. Je m’efforce de créer un espace accueillant et inclusif pour tous.",
-    "missionHeading": "La mission",
-    "mission": "Ma mission avec Nine Pilates est d’offrir des cours de qualité, accessibles à tous les niveaux. À travers le mouvement, j’espère aider chacun à se sentir plus fort, plus aligné et plus épanoui, grâce à la pratique du Pilates."
-  }
+    "hero": {
+      "title-1": "Bonjour, je suis",
+      "title-2": "Valérie.",
+      "title-3": "La fondatrice de",
+      "title-4": "Nine Pilates"
+    },
+    "storySection": {
+      "aboutMeHeading": "À propos de moi",
+      "aboutMe": "Je m'appelle Valérie, une instructrice de Pilates passionnée, dédiée à aider les autres à atteindre leurs objectifs de bien-être grâce au pouvoir du mouvement et de la pleine conscience.",
+      "myJourneyHeading": "Mon parcours",
+      "myJourney": "Mon aventure dans le Pilates a commencé il y a 5 ans, et cette pratique a transformé ma vie d'une façon que je n'aurais jamais imaginée. Je suis déterminée à partager cette expérience transformatrice avec les autres.",
+      "inspirationHeading": "Ce qui m’inspire",
+      "inspiration": "Ce qui m’inspire, c’est la conviction que le Pilates peut permettre à chacun de se reconnecter à son corps, de gagner en force et d’améliorer son bien-être global. Je m’efforce de créer un espace accueillant et inclusif pour tous.",
+      "missionHeading": "La mission",
+      "mission": "Ma mission avec Nine Pilates est d’offrir des cours de qualité, accessibles à tous les niveaux. À travers le mouvement, j’espère aider chacun à se sentir plus fort, plus aligné et plus épanoui, grâce à la pratique du Pilates."
+    }
+  },
+  "callToActions": {
+    "joinUs": "Rejoignez-nous",
+    "bookNow": "Réservez",
+    "learnMore": "En savoir plus",
+    "reviews": "Voir nos avis",
+    "memberships": "Adhésions",
+    "packages": "Forfaits",
+    "signUp": "S'inscrire →",
+    "getInTouch": "Contactez-nous"
+  },
+  "footer": {
+    "tagline": "Mouvement avec Intention"
   }
 }

@@ -304,8 +304,8 @@ footer {
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   #language-button-container {
-    bottom: 2rem;
-    right: 2rem;
+    bottom: 1rem;
+    right: 1rem;
   }
 }
 /* LOADER */

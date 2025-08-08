@@ -47,6 +47,11 @@
         "relaxationDescription": "Let go of tension to move freely and live fully."
       }
     },
+    "testimonials": {
+      "title": "Movement that leaves an ",
+      "titleSpan": "impact",
+      "description": "Every journey begins with a single breath — these are the stories of progress, presence, and the quiet strength built through consistent practice."
+    },
     "memberships": {
       "heading": "Memberships made to move with you",
       "description": "Explore our membership options and find the perfect fit for your journey with us."
@@ -59,6 +64,12 @@
     }
   },
   "about": {
+    "hero": {
+      "title-1": "Hello, I'm",
+      "title-2": "Valérie.",
+      "title-3": "The founder of",
+      "title-4": "Nine Pilates"
+    },
     "storySection": {
       "aboutMeHeading": "About me",
       "aboutMe": "I am Valerie, a passionate pilates instructor dedicated to helping others achieve their fitness goals through the power of movement and mindfulness.",
@@ -69,5 +80,18 @@
       "missionHeading": "My mission",
       "mission": "My mission with Nine Pilates is to provide high-quality Pilates instruction that caters to all levels, from beginners to advanced practitioners. I aim to inspire and motivate my clients to lead healthier, happier lives through the practice of pilates."
     }
+  },
+    "callToActions": {
+    "joinUs": "Join us",
+    "bookNow": "Book Now",
+    "learnMore": "Learn more",
+    "reviews": "See our reviews",
+    "memberships": "Memberships",
+    "packages": "Packages",
+    "signUp": "Sign Up →",
+    "getInTouch": "Let's get in touch"
+  },
+  "footer": {
+    "tagline": "Movement with Intention"
   }
 }

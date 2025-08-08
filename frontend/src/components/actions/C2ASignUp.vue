@@ -1,7 +1,12 @@
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
 <template>
   <div id="learn-more">
     <button>
-      <p class="roman">Sign up →</p>
+      <p class="roman">{{ t('callToActions.signUp') }}</p>
     </button>
   </div>
 </template>

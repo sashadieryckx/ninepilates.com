@@ -15,7 +15,7 @@ useParallax()
     <div class="img-container">
       <img src="@/assets/content/contact-us.jpg" alt="Contact Us Image" class="img parallax" />
       <button class="c2a interactive" @click="contactStore.openContactForm">
-        <span class="roman">Let's get in touch</span>
+        <span class="roman">{{ t("callToActions.getInTouch") }}</span>
       </button>
     </div>
   </div>
