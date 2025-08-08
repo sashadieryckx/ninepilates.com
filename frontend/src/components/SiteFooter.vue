@@ -19,29 +19,17 @@ const { t } = useI18n()
         <h6 class="light">info@ninepilates.com</h6>
         <h6 class="light">595 Montreal Rd, Unit 204</h6>
         <div id="socials">
-          <a
-            href="https://www.instagram.com/ninepilates.studio/"
-            target="_blank"
-            class="light"
+          <a href="https://www.instagram.com/ninepilates.studio/" target="_blank" class="light"
             >Instagram ↗
           </a>
-          <a
-            href=""
-            target="_blank"
-            class="light"
-            >Tik Tok ↗
-          </a>
-          <a
-            href=""
-            target="_blank"
-            class="light"
-            >Facebook ↗
-          </a>
+          <a href="" target="_blank" class="light">Tik Tok ↗ </a>
+          <a href="" target="_blank" class="light">Facebook ↗ </a>
         </div>
       </div>
       <div id="column-1">
         <router-link to="/" class="roman">Home</router-link>
-        <router-link to="/classes" class="roman">Classes</router-link>      </div>
+        <router-link to="/classes" class="roman">Classes</router-link>
+      </div>
       <div id="column-2">
         <router-link to="/about" class="roman">About</router-link>
         <router-link to="/schedule" class="roman">Schedule</router-link>
@@ -179,7 +167,7 @@ const { t } = useI18n()
 /* TABLET 2 [GLOBAL] */
 @media (min-width: 1000px) {
   #footer-title h6 {
-    font-size: 3.5em;
+    font-size: 3.5rem;
     width: 80%;
   }
 }
@@ -247,15 +235,11 @@ const { t } = useI18n()
     grid-column: 6 / span 12;
     grid-row: 4;
   }
-  #cheo-logo {
-    width: auto;
-    height: 2em;
-  }
 }
 /* DESKTOP 4 (Standard pc Monitor) */
 @media (min-width: 1920px) {
-  #footer-title h6 {
-    font-size: 6em;
+  #footer-title h3 {
+    font-size: 7rem;
   }
 }
 </style>
