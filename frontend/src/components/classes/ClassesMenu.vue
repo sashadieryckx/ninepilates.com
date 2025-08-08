@@ -1,5 +1,4 @@
 <script setup>
-import { defineProps } from 'vue'
 import MenuItem from '@/components/classes/ClassMenuItem.vue'
 
 defineProps({
@@ -8,16 +7,23 @@ defineProps({
     default: () => [],
   },
 })
+
+const emit = defineEmits(['classClick'])
+
+const handleClassClick = (item) => {
+  emit('classClick', item)
+}
 </script>
 <template>
-  <div class="menu-wrap">
+  <div class="menu-wrap interactive">
     <nav class="menu">
       <MenuItem
-        v-for="(item, idx) in items"
-        :key="idx"
+        v-for="item in items"
+        :key="item.id"
         :slug="item.slug"
-        :text="item.text"
+        :title="item.title"
         :image="item.image"
+        @click="handleClassClick(item)"
       />
     </nav>
   </div>
@@ -26,9 +32,11 @@ defineProps({
 .menu-wrap {
   width: 100%;
   height: 100%;
+  max-width: 75vw;
+  max-height: 80vh;
   overflow: hidden;
+  padding: 0 1rem;
 }
-
 .menu {
   display: flex;
   flex-direction: column;
@@ -36,13 +44,15 @@ defineProps({
   margin: 0;
   padding: 0;
 }
-
+.menu :last-child {
+  border-bottom: none;
+}
 .menu__item {
   flex: 1;
   position: relative;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 -1px #fff;
+  border-bottom: 2px solid var(--mocha);
 }
 
 .menu__item-link {
@@ -56,16 +66,17 @@ defineProps({
   text-decoration: none;
   white-space: nowrap;
   font-weight: 600;
-  color: #fff;
+  color: var(--blanco);
   font-size: 4vh;
 }
 
 .menu__item-link:hover {
-  color: #060010;
+  color: var(--mocha);
+  cursor: pointer;
 }
 
 .menu__item-link:focus:not(:focus-visible) {
-  color: #fff;
+  color: var(--mocha);
 }
 
 .marquee {
@@ -76,7 +87,7 @@ defineProps({
   width: 100%;
   height: 100%;
   pointer-events: none;
-  background: #fff;
+  background: var(--blanco);
   transform: translate3d(0, 101%, 0);
   transition: transform 0.6s ease-expo;
 }
@@ -130,5 +141,30 @@ defineProps({
   to {
     transform: translateX(-50%);
   }
+}
+
+/* TABLET 1 [GLOBAL] */
+@media (min-width: 768px) {
+}
+/* TABLET 2 [GLOBAL] */
+@media (min-width: 1000px) {
+}
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .menu-wrap {
+    padding: 0 4rem;
+  }
+}
+/* DESKTOP 2 [GLOBAL] */
+@media (min-width: 1440px) {
+}
+/* DESKTOP 3 [GLOBAL] */
+@media (min-width: 1728px) {
+}
+/* DESKTOP 4 (Standard pc Monitor) */
+@media only screen and (min-width: 1920px) {
+}
+/* DESKTOP 5 (4k Monitor) */
+@media only screen and (min-width: 2160px) {
 }
 </style>

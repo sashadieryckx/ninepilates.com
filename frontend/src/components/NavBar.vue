@@ -30,6 +30,11 @@ watch(
 )
 
 const logoColor = computed(() => {
+  // If on classes page, use light logo (which uses mocha color)
+  if (route.path === '/classes') {
+    return 'logo-light'
+  }
+
   if (!viewStore.activeSection) {
     return 'logo-dark'
   }
@@ -54,6 +59,11 @@ const logoColor = computed(() => {
 })
 
 const desktopLinkColor = computed(() => {
+  // If on classes page, use mocha color
+  if (route.path === '/classes') {
+    return 'var(--mocha)'
+  }
+
   if (!viewStore.activeSection) {
     return 'var(--coral)'
   }
@@ -82,6 +92,11 @@ const desktopLinkColor = computed(() => {
 })
 
 const menuButtonLineColor = computed(() => {
+  // If on classes page, use mocha color
+  if (route.path === '/classes') {
+    return 'var(--mocha)'
+  }
+
   // If not on home page or no active section, use coral
   if (!viewStore.activeSection) {
     return 'var(--coral)'
@@ -242,22 +257,26 @@ onMounted(() => {
     <div class="mobile-list interactive">
       <ul>
         <li style="z-index: 6">
-          <RouterLink to="/" class="mobile-link roman">{{ t("navbar.home") }}</RouterLink>
+          <RouterLink to="/" class="mobile-link roman">{{ t('navbar.home') }}</RouterLink>
         </li>
         <li style="z-index: 5">
-          <RouterLink to="/about" class="mobile-link roman">{{ t("navbar.about") }}</RouterLink>
+          <RouterLink to="/about" class="mobile-link roman">{{ t('navbar.about') }}</RouterLink>
         </li>
         <li style="z-index: 4">
-          <RouterLink to="/classes" class="mobile-link roman">{{ t("navbar.classes") }}</RouterLink>
+          <RouterLink to="/classes" class="mobile-link roman">{{ t('navbar.classes') }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/schedule" class="mobile-link roman">{{ t("navbar.schedule") }}</RouterLink>
+          <RouterLink to="/schedule" class="mobile-link roman">{{
+            t('navbar.schedule')
+          }}</RouterLink>
         </li>
         <li>
-          <RouterLink to="/packages-and-pricing" class="mobile-link roman">{{ t("navbar.packages-and-pricing") }}</RouterLink>
+          <RouterLink to="/packages-and-pricing" class="mobile-link roman">{{
+            t('navbar.packages-and-pricing')
+          }}</RouterLink>
         </li>
         <li style="z-index: 3">
-          <a class="mobile-link roman" @click="openContactForm">{{ t("navbar.contact") }}</a>
+          <a class="mobile-link roman" @click="openContactForm">{{ t('navbar.contact') }}</a>
         </li>
         <li style="z-index: 2">
           <RouterLink to="/faq" class="mobile-link roman">FAQ</RouterLink>
@@ -279,25 +298,25 @@ onMounted(() => {
         <ul>
           <li>
             <RouterLink to="/" class="desktop-link" :style="{ color: desktopLinkColor }">
-              {{ t("navbar.home") }}
+              {{ t('navbar.home') }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/about" class="desktop-link" :style="{ color: desktopLinkColor }">
-              {{ t("navbar.about") }}
+              {{ t('navbar.about') }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/classes" class="desktop-link" :style="{ color: desktopLinkColor }">
-              {{ t("navbar.classes") }}
+              {{ t('navbar.classes') }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <RouterLink to="/schedule" class="desktop-link" :style="{ color: desktopLinkColor }">
-              {{ t("navbar.schedule") }}
+              {{ t('navbar.schedule') }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
@@ -307,13 +326,13 @@ onMounted(() => {
               class="desktop-link"
               :style="{ color: desktopLinkColor }"
             >
-              {{ t("navbar.packages-and-pricing") }}
+              {{ t('navbar.packages-and-pricing') }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </RouterLink>
           </li>
           <li>
             <a class="desktop-link" :style="{ color: desktopLinkColor }" @click="openContactForm">
-              {{ t("navbar.contact") }}
+              {{ t('navbar.contact') }}
               <div class="menu-underline" :style="{ backgroundColor: desktopLinkColor }"></div>
             </a>
           </li>
