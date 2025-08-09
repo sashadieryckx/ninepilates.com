@@ -70,41 +70,40 @@ const handleCloseClick = () => {
     style="display: none"
   >
     <div ref="overlayRef" class="overlay-bg"></div>
-    <div ref="contentRef" class="modal-content" @click.stop>
-      <button class="close-btn" @click="handleCloseClick" aria-label="Close modal">
-        <span class="close-line"></span>
-        <span class="close-line"></span>
-      </button>
-      <div v-if="classData" class="class-image">
-        <div class="img-overlay"></div>
-        <img :src="classData.image" :alt="classData.title" class="modal-img" />
-        <div class="img-title">
-          <h2 class="bold">{{ classData.title }}.</h2>
-        </div>
-      </div>
-      <div v-if="classData" class="class-details">
-        <div class="class-header">
-          <p class="class-subtitle light">{{ classData.subtitle }}</p>
-        </div>
-
-        <div class="class-body">
-          <div class="class-description">
-            <p class="description-text">{{ classData.description }}</p>
-          </div>
-
-          <div v-if="classData.notes" class="class-notes">
-            <p class="notes-text italic">{{ classData.notes }}</p>
+      <div ref="contentRef" class="modal-content" @click.stop>
+        <button class="close-btn" @click="handleCloseClick" aria-label="Close modal">
+          <span class="close-line"></span>
+          <span class="close-line"></span>
+        </button>
+        <div v-if="classData" class="class-image">
+          <div class="img-overlay"></div>
+          <img :src="classData.image" :alt="classData.title" class="modal-img" />
+          <div class="img-title">
+            <h2 class="bold">{{ classData.title }}.</h2>
           </div>
         </div>
-      </div>
-      <div class="class-c2a">
-        <p>Placeholder</p>
-        <div class="class-actions">
-          <button class="book-btn interactive">Book This Class</button>
-          <button class="learn-more-btn interactive" @click="handleCloseClick">Close</button>
+        <div v-if="classData" class="class-details">
+          <div class="class-header">
+            <h3 class="roman">{{ classData.title }}.</h3>
+            <p class="class-subtitle light-italic">{{ classData.subtitle }}</p>
+          </div>
+          <div class="class-body">
+            <div class="class-description">
+              <p class="description-text light">{{ classData.description }}</p>
+            </div>
+
+            <div v-if="classData.notes" class="class-notes">
+              <p class="notes-text italic">{{ classData.notes }}</p>
+            </div>
+          </div>
+          <div class="class-actions">
+            <a class="book-btn interactive"><span class="bold">Book This Class</span></a>
+            <router-link to="/packages-and-pricing" class="learn-more-btn interactive roman">
+              <span class="bold">View Packages</span>
+            </router-link>
+          </div>
         </div>
       </div>
-    </div>
   </div>
 </template>
 
@@ -160,7 +159,7 @@ const handleCloseClick = () => {
   position: absolute;
   width: 1.5rem;
   height: 2px;
-  background: var(--mocha);
+  background: var(--blanco);
   transition: all 0.3s ease;
 }
 
@@ -173,14 +172,16 @@ const handleCloseClick = () => {
 }
 
 .close-btn:hover .close-line {
-  background: var(--blanco);
+  background: var(--soya);
 }
 
 .class-details {
   color: var(--mocha);
-  background-color: var(--coral);
 }
-
+.class-details p {
+  font-size: 1rem;
+  line-height: 1.1em;
+}
 .class-header {
   margin-bottom: 2rem;
   text-align: center;
@@ -206,11 +207,7 @@ const handleCloseClick = () => {
   margin-bottom: 2rem;
 }
 .class-notes {
-  background: var(--mocha);
   color: var(--cream);
-  padding: 1.5rem;
-  border-radius: 15px;
-  margin-bottom: 1rem;
 }
 .notes-title {
   color: var(--coral);
@@ -229,7 +226,7 @@ const handleCloseClick = () => {
 }
 .book-btn {
   background: var(--coral);
-  color: var(--cream);
+  color: var(--mocha);
   border: none;
   padding: 1rem 2rem;
   border-radius: 50px;
@@ -240,24 +237,41 @@ const handleCloseClick = () => {
 }
 .book-btn:hover {
   background: var(--mocha);
-  transform: translateY(-2px);
+  color: var(--coral);
+  transform: scale(1.03);
+  box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
 }
 .learn-more-btn {
   background: transparent;
   color: var(--mocha);
   border: 2px solid var(--mocha);
-  padding: 1rem 2rem;
+  padding: .5rem 1.5rem;
   border-radius: 50px;
-  font-weight: 600;
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
+.book-btn,
+.learn-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.learn-more-btn span,
+.book-btn span {
+  margin: 0;
+  height: 2em;
+  font-size: 1rem;
+}
 .learn-more-btn:hover {
   background: var(--mocha);
-  color: var(--cream);
-  transform: translateY(-2px);
+  color: var(--coral);
+  transform: scale(1.03);
+  box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
+  -webkit-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
+  -moz-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
 }
 
 /* Responsive Design */
@@ -266,7 +280,6 @@ const handleCloseClick = () => {
     padding: 2rem;
     margin: 1rem;
   }
-
   .class-title {
     font-size: 2rem;
   }
@@ -293,14 +306,17 @@ const handleCloseClick = () => {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 2rem;
+    background: radial-gradient(circle at top left, #c7b7a6 0%, #f0e9e3 40%, #b49e8b 100%);
+    border-radius: 50px;
   }
   .class-image {
     position: relative;
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 1 / span 2;
     background-color: var(--soya);
-    border-radius: 20px;
+    border-radius: 42px;
     overflow: hidden;
+    margin: 2rem;
   }
   .modal-img {
     position: absolute;
@@ -330,32 +346,81 @@ const handleCloseClick = () => {
     justify-content: center;
   }
   .img-title h2 {
-    color: var(--blanco);
-    font-size: 7rem;
-    transform: translateY(-3rem);
+    background: radial-gradient(circle at top left, #c7b7a6 0%, #f0e9e3 40%, #b49e8b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 4rem;
+    transform: translateY(-2rem);
     text-align: center;
   }
   .class-details {
-    grid-column: 2;
+    grid-column: 1;
+    grid-row: 1 / span 2;
     border-radius: 20px;
-    padding: 3rem;
+    padding: 4rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    max-width: 700px;
   }
-  .class-c2a {
-    grid-column: 2;
-    grid-row: 2;
-    background-color: var(--coral);
-    border-radius: 20px;
-    padding: 3rem;
+  .class-details h3 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+  .class-details p {
+    font-size: 1.25rem;
+    color: var(--mocha);
+    text-align: left;
+  }
+  .close-btn {
+    top: 4rem;
+    right: 4rem;
+    background-color: #16151365;
+    backdrop-filter: blur(10px);
+    height: 6em;
+    width: 6em;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  .close-btn:hover {
+    background-color: var(--mocha);
+    transform: scale(1.1);
+  }
+  .close-line {
+    background: var(--coral);
+  }
+  .close-btn:hover .close-line {
+    background: var(--coral);
+  }
+  .class-actions {
+    margin-top: 1rem;
   }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {
+  .class-details h3 {
+    font-size: 6rem;
+  }
 }
 /* DESKTOP 3 [GLOBAL] */
 @media (min-width: 1728px) {
+  .img-title h2 {
+    font-size: 6rem;
+  }
+  .class-details h3 {
+    font-size: 6rem;
+  }
 }
 /* DESKTOP 4 (Standard pc Monitor) */
 @media only screen and (min-width: 1920px) {
+  .img-title h2 {
+    font-size: 8rem;
+  }
 }
 /* DESKTOP 5 (4k Monitor) */
 @media only screen and (min-width: 2160px) {

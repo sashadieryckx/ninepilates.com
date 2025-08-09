@@ -16,7 +16,7 @@
   max-width: 100vw;
   overflow: hidden;
   font-family: sans-serif;
-  background-color: var(--coral);
+  background: radial-gradient(circle at top left, #c7b7a6 0%, #f0e9e3 40%, #b49e8b 100%);
 }
 ::-webkit-scrollbar {
   display: none;
