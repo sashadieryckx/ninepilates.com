@@ -118,7 +118,7 @@ const handleCloseClick = () => {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
+  padding: 1rem;
 }
 .overlay-bg {
   position: absolute;
@@ -129,31 +129,64 @@ const handleCloseClick = () => {
   background: #161513e0;
   backdrop-filter: blur(10px);
 }
-.close-btn {
-  position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  background: none;
-  border: none;
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-}
 .modal-content {
   position: relative;
+  z-index: 5;
   border-radius: 20px;
   width: 100%;
   height: 100%;
   overflow-y: auto;
+  margin: 0;
+}
+.class-image {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background-color: var(--soya);
+  border-radius: 20px;
+  overflow: hidden;
+}
+.modal-img {
+  position: absolute;
+  top: -25%;
+  width: 100%;
+  height: 150%;
+  object-fit: cover;
+}
+.img-overlay {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, var(--blanco) 70%);
+}
+.img-title {
+  display: none;
 }
 .img-title h2 {
   color: var(--blanco);
   text-transform: uppercase;
   transform: translateY(-20px);
+}
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: #16151365;
+  backdrop-filter: blur(10px);
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
 }
 .close-line {
   position: absolute;
@@ -162,21 +195,26 @@ const handleCloseClick = () => {
   background: var(--blanco);
   transition: all 0.3s ease;
 }
-
 .close-line:first-child {
   transform: rotate(45deg);
 }
-
 .close-line:last-child {
   transform: rotate(-45deg);
 }
-
 .close-btn:hover .close-line {
   background: var(--soya);
 }
-
 .class-details {
   color: var(--mocha);
+  position: relative;
+  z-index: 2;
+  padding: 2rem 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 .class-details p {
   font-size: 1rem;
@@ -184,18 +222,16 @@ const handleCloseClick = () => {
 }
 .class-header {
   margin-bottom: 2rem;
-  text-align: center;
 }
-
-.class-title {
-  font-size: 2.5rem;
+.class-header h3 {
+  font-size: 3rem;
   color: var(--mocha);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
+  margin-bottom: 1rem;
+  font-weight: bold;
 }
 .class-subtitle {
-  font-size: 1.2rem;
-  color: var(--coral);
+  font-size: 1.5rem;
+  color: var(--mocha);
   margin-bottom: 0;
 }
 .class-body {
@@ -220,15 +256,14 @@ const handleCloseClick = () => {
 }
 .class-actions {
   display: flex;
+  flex-direction: row;
   gap: 1rem;
   justify-content: center;
-  flex-wrap: wrap;
 }
 .book-btn {
   background: var(--coral);
   color: var(--mocha);
   border: none;
-  padding: 1rem 2rem;
   border-radius: 50px;
   font-weight: 600;
   text-transform: uppercase;
@@ -247,7 +282,6 @@ const handleCloseClick = () => {
   background: transparent;
   color: var(--mocha);
   border: 2px solid var(--mocha);
-  padding: .5rem 1.5rem;
   border-radius: 50px;
   text-transform: uppercase;
   cursor: pointer;
@@ -258,12 +292,14 @@ const handleCloseClick = () => {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: .5rem 1.5rem;
 }
 .learn-more-btn span,
 .book-btn span {
   margin: 0;
   height: 2em;
-  font-size: 1rem;
+  font-size: .75rem;
+  text-wrap: nowrap;
 }
 .learn-more-btn:hover {
   background: var(--mocha);
@@ -272,26 +308,6 @@ const handleCloseClick = () => {
   box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
   -webkit-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
   -moz-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .modal-content {
-    padding: 2rem;
-    margin: 1rem;
-  }
-  .class-title {
-    font-size: 2rem;
-  }
-
-  .class-actions {
-    flex-direction: column;
-  }
-
-  .book-btn,
-  .learn-more-btn {
-    width: 100%;
-  }
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
@@ -313,6 +329,8 @@ const handleCloseClick = () => {
     position: relative;
     grid-column: 2;
     grid-row: 1 / span 2;
+    height: calc(100% - 4rem);
+    width: calc(100% - 4rem);
     background-color: var(--soya);
     border-radius: 42px;
     overflow: hidden;
@@ -327,14 +345,7 @@ const handleCloseClick = () => {
     object-fit: cover;
   }
   .img-overlay {
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    background-color: #16151355;
+    background: #16151355;
   }
   .img-title {
     position: relative;
@@ -361,9 +372,6 @@ const handleCloseClick = () => {
     padding: 4rem;
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
     justify-content: center;
     max-width: 700px;
   }
@@ -371,6 +379,9 @@ const handleCloseClick = () => {
     font-size: 4rem;
     margin-bottom: 1rem;
     text-align: left;
+  }
+  .class-header h3  {
+    font-weight: 400;
   }
   .class-details p {
     font-size: 1.25rem;
@@ -380,8 +391,6 @@ const handleCloseClick = () => {
   .close-btn {
     top: 4rem;
     right: 4rem;
-    background-color: #16151365;
-    backdrop-filter: blur(10px);
     height: 6em;
     width: 6em;
     border-radius: 50%;
@@ -399,6 +408,15 @@ const handleCloseClick = () => {
   }
   .class-actions {
     margin-top: 1rem;
+  }
+  .book-btn,
+  .learn-more-btn {
+    padding: .75rem 2rem;
+  }
+  .book-btn span,
+  .learn-more-btn span {
+    font-size: 1rem;
+    text-wrap: nowrap;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

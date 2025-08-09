@@ -32,8 +32,8 @@ const handleClassClick = (item) => {
 .menu-wrap {
   width: 100%;
   height: 100%;
-  max-width: 75vw;
-  max-height: 80vh;
+  max-width: 95vw;
+  max-height: 50vh;
   overflow: hidden;
   padding: 0 1rem;
 }
@@ -153,6 +153,8 @@ const handleClassClick = (item) => {
 @media (min-width: 1280px) {
   .menu-wrap {
     padding: 0 4rem;
+    max-width: 75vw;
+    max-height: 80vh;
   }
 }
 /* DESKTOP 2 [GLOBAL] */

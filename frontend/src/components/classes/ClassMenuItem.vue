@@ -102,7 +102,7 @@ const handleMouseLeave = (ev) => {
   white-space: nowrap;
   font-weight: 600;
   color: var(--mocha);
-  font-size: 4vh;
+  font-size: 1.5rem;
   background: transparent;
   border: none;
 }
@@ -150,10 +150,10 @@ const handleMouseLeave = (ev) => {
   white-space: nowrap;
   text-transform: uppercase;
   font-weight: 400;
-  font-size: 4vh;
+  font-size: 1.5rem;
   line-height: 1.2;
   padding: 1vh 1vw 0;
-  transform: translateY(-10px);
+  transform: translateY(-4px);
 }
 
 .marquee__img {
@@ -188,6 +188,13 @@ const handleMouseLeave = (ev) => {
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
+  .menu__item-link {
+    font-size: 4vh;
+  }
+  .marquee span {
+    font-size: 4vh;
+    transform: translateY(-10px);
+  }
 }
 /* DESKTOP 2 [GLOBAL] */
 @media (min-width: 1440px) {

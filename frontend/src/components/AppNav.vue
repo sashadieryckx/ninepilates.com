@@ -1,13 +1,7 @@
 <template>
   <div class="app-nav">
     <div class="li">
-      <p class="light">Home</p>
-    </div>
-    <div class="li">
       <p class="light">Book Now</p>
-    </div>
-    <div class="li">
-      <p class="light">Schedule</p>
     </div>
   </div>
 </template>
