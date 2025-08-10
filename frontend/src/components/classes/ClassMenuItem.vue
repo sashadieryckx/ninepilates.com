@@ -153,7 +153,7 @@ const handleMouseLeave = (ev) => {
   font-size: 1.5rem;
   line-height: 1.2;
   padding: 1vh 1vw 0;
-  transform: translateY(-4px);
+  transform: translateY(-6px);
 }
 
 .marquee__img {
