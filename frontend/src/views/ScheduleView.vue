@@ -1,4 +1,5 @@
 <script setup>
+import { ref, onMounted } from 'vue'
 // Unhead SEO
 import { useHead } from '@unhead/vue'
 useHead({
@@ -15,11 +16,21 @@ useHead({
     },
   ],
 })
+import Schedule from '@/components/schedule/Schedule.vue'
+
+const scheduleKey = ref(0)
+
+// Force component remount when navigating to schedule
+onMounted(() => {
+  scheduleKey.value = Date.now()
+  console.log('ScheduleView mounted, forcing Schedule component refresh')
+})
 </script>
 <template>
   <div id="main-content" class="main-content">
-    <section class="section">
-      <h1>This is a Schedule page.</h1>
+    <section class="section" id="schedule">
+      <!-- Key forces component to remount completely -->
+      <Schedule :key="scheduleKey" />
     </section>
   </div>
 </template>
@@ -33,5 +44,6 @@ useHead({
   align-items: center;
   justify-content: center;
   height: 100%;
+  width: 100%;
 }
 </style>
