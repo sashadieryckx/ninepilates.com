@@ -4,6 +4,9 @@ import { defineStore } from 'pinia'
 import NineFoundations from '../assets/content/classes/nineFoundations.png'
 import FormFlow from '../assets/content/classes/formFlow.png'
 import Inferno from '../assets/content/classes/inferno.png'
+import GluteMode from '../assets/content/classes/gluteMode.png'
+import AirNine from '../assets/content/classes/airNine.png'
+import Restore from '../assets/content/classes/restore.png'
 
 export const useClassesStore = defineStore('classes', () => {
   const classesInfo = ref([
@@ -23,7 +26,7 @@ export const useClassesStore = defineStore('classes', () => {
       description: 'A modern approach to Pilates, incorporating elements from various styles to create a unique workout.',
     },
   ])
-  
+
   const classes = ref([
     {
       id: 1,
@@ -58,7 +61,8 @@ export const useClassesStore = defineStore('classes', () => {
       title: 'Glute Mode',
       subtitle: 'Core & Glutes Focus',
       description: 'A lower-body focused sculpt class targeting your glutes and core with precision and intensity. Expect deep glute activation, core stabilization, and strong sequencing that lifts, tones, and strengthens your posterior chain.',
-      notes: 'The tempo is controlled, the movements intentional — and the burn, undeniable. Prior reformer experience strongly recommended.'
+      notes: 'The tempo is controlled, the movements intentional — and the burn, undeniable. Prior reformer experience strongly recommended.',
+      image: GluteMode
     },
     {
       id: 5,
@@ -66,7 +70,8 @@ export const useClassesStore = defineStore('classes', () => {
       title: 'Air Nine',
       subtitle: 'Jumpboard HIIT – Cardio & Core',
       description: 'Elevate your heart rate and fire up your core in this high-energy, low-impact cardio class using the jumpboard. Expect explosive intervals, muscular endurance work, and full-body sequences that challenge your breath and stamina. Horizontal training at its best — targeting muscular endurance while boosting cardiovascular performance on the reformer. Bounce, sculpt, and sweat — all while protecting your joints.',
-      notes: 'Reformer experience required.'
+      notes: 'Reformer experience required.',
+      image: AirNine
     },
     {
       id: 6,
@@ -74,7 +79,8 @@ export const useClassesStore = defineStore('classes', () => {
       title: 'Restore & Stretch',
       subtitle: 'Recovery – All Levels',
       description: 'A slow, breath-driven reformer class focused on deep stretching, mobility, and nervous system reset. Move intentionally through lengthening sequences that release tension, restore alignment, and bring balance to the body and mind.',
-      notes: 'Ideal for rest days, recovery, or as a complement to more intense sessions. Leave feeling grounded, open, and recharged.'
+      notes: 'Ideal for rest days, recovery, or as a complement to more intense sessions. Leave feeling grounded, open, and recharged.',
+      image: Restore
     }
   ])
 

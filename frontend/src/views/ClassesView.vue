@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import ClassesMenu from '@/components/classes/ClassesMenu.vue'
 import ClassModal from '@/components/classes/ClassModal.vue'
 import { useClassesStore } from '@/stores/classesStore.js'
+import PrivateClasses from '@/components/classes/PrivateClassesSection.vue'
 
 const classesStore = useClassesStore()
 
@@ -21,15 +22,20 @@ const closeModal = () => {
 </script>
 <template>
   <div id="main-content" class="main-content">
-    <section class="section">
+    <section class="section" id="class-list">
       <ClassesMenu :items="classesStore.classes" @classClick="handleClassClick" />
     </section>
-
     <ClassModal :isOpen="isModalOpen" :classData="selectedClass" @close="closeModal" />
+    <section class="section">
+      <PrivateClasses />
+    </section>
   </div>
 </template>
 <style scoped>
 #main-content {
+  height: 100%;
+}
+#class-list {
   height: 100vh;
 }
 .section {
