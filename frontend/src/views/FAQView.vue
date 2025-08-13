@@ -9,7 +9,7 @@ const faqStore = useFAQStore()
     <div id="faq-heading" class="df-pad">
       <h2 class="roman">Frequently asked questions.</h2>
       <h5 class="light">
-        Experience fully customized Pilates sessions tailored to your body, goals, and pace—offering the attention, precision, and guidance you need to progress with confidence.
+        Everything You Need to Know Before You Flow. Find quick answers to common questions so you can feel confident and prepared for your Nine Pilates journey.
       </h5>
     </div>
     <section id="faq-section" class="section interactive">

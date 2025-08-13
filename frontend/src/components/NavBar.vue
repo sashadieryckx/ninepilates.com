@@ -30,8 +30,8 @@ watch(
 )
 
 const logoColor = computed(() => {
-  // If on classes page, use light logo (which uses mocha color)
-  if (route.path === '/classes') {
+  // If on classes page or FAQ page, use light logo (which uses mocha color)
+  if (route.path === '/classes' || route.path === '/faq') {
     return 'logo-light'
   }
 
@@ -59,8 +59,8 @@ const logoColor = computed(() => {
 })
 
 const desktopLinkColor = computed(() => {
-  // If on classes page, use mocha color
-  if (route.path === '/classes') {
+  // If on classes page or FAQ page, use mocha color
+  if (route.path === '/classes' || route.path === '/faq') {
     return 'var(--mocha)'
   }
 
@@ -92,8 +92,8 @@ const desktopLinkColor = computed(() => {
 })
 
 const menuButtonLineColor = computed(() => {
-  // If on classes page, use mocha color
-  if (route.path === '/classes') {
+  // If on classes page or FAQ page, use mocha color
+  if (route.path === '/classes' || route.path === '/faq') {
     return 'var(--mocha)'
   }
 
