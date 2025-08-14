@@ -163,7 +163,7 @@ onBeforeUnmount(() => {
   }
   .answer {
     font-size: 1.25rem;
-    width: 90%;
+    width: 85%;
   }
 }
 </style>

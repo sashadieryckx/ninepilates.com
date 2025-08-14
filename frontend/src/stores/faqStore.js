@@ -20,14 +20,37 @@ export const useFAQStore = defineStore('faq', () => {
         },
         {
           id: 4,
+          question: "Do I need previous Pilates experience to join?",
+          answer: "No prior experience is necessary. We have classes for every level."
+        },
+        {
+          id: 5,
+          question: "Which class should I take if it’s my first time on the reformer?",
+          answer: "We recommend starting with our \"The Nine Foundations\" Reformer class, which is designed for beginners."
+        },
+        {
+          id: 6,
           question: "What is the class size?",
           answer: "Our classes are intentionally kept to a maximum of 8 attendees to ensure personalized attention."
         },
         {
-          id: 5,
+          id: 7,
           question: "Where is Nine Pilates Located?",
-          answer: "Nine Pilates is located at 511 Lacolle Way, Unit A5."
-        }
+          answer: "We are located at 511 Lacolle Way Unit A5 and have on-site parking."
+        },
+        {
+          id: 8,
+          question: "What is your cancellation policy?",
+          answer: "We require 1 hour notice for cancellations, otherwise you will be charged for the class."
+        },
+        {
+          id: 9,
+          question: "Do you have changing rooms or showers?",
+          answer: "We have a unisex bathroom with two stalls available to our clients."
+        },
+
+
+
     ])
 
     return { faqs }
