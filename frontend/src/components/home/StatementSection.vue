@@ -62,8 +62,13 @@ onBeforeUnmount(() => {
 </script>
 <template>
   <div id="statement-section" class="df-mar">
-    <h2 id="statement" class="split-type light" data-bg-color="#6f1a0722" data-fg-color="var(--mocha)">
-      {{ t("home.statement.text") }}
+    <h2
+      id="statement"
+      class="split-type light"
+      data-bg-color="#6f1a0722"
+      data-fg-color="var(--mocha)"
+    >
+      {{ t('home.statement.text') }}
     </h2>
   </div>
 </template>
