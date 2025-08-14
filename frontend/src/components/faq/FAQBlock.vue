@@ -118,11 +118,10 @@ onBeforeUnmount(() => {
   cursor: pointer;
   text-align: left;
 }
-
 .question {
   margin: 0;
+  width: 80%;
 }
-
 .indicator {
   position: relative;
   width: 18px;
@@ -160,6 +159,9 @@ onBeforeUnmount(() => {
 @media (min-width: 1280px) {
   .faq-header {
     max-width: 45vw;
+  }
+  .question {
+    width: 100%;
   }
   .answer {
     font-size: 1.25rem;

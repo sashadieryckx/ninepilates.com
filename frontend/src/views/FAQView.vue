@@ -12,21 +12,29 @@ const faqStore = useFAQStore()
         Everything You Need to Know Before You Flow. Find quick answers to common questions so you can feel confident and prepared for your Nine Pilates journey.
       </h5>
     </div>
-    <section id="faq-section" class="section interactive">
+    <section id="faq-section" class="section interactive df-pad">
       <FAQBlock v-for="faq in faqStore.faqs" :key="faq.id" :faq="faq" />
     </section>
   </div>
 </template>
 <style scoped>
 #faq-content {
+  height: 100%;
   min-height: 100vh;
+}
+#faq-heading {
+  margin-top: 8rem;
+}
+#faq-section {
+  margin: 4rem 0;
 }
 h2 {
   text-align: left;
 }
 h5 {
+  font-size: 1rem;
   text-align: left;
-  margin-top: 1rem;
+  margin-top: 2rem;
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
@@ -41,7 +49,8 @@ h5 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    margin-top: 12rem;
   }
   #faq-section {
     grid-column: 2;
@@ -51,8 +60,10 @@ h5 {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin: 0;
   }
   h5 {
+    font-size: 1.5rem;
     margin-top: 2rem;
   }
 }
