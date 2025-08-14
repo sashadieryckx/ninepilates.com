@@ -6,7 +6,7 @@ export const useFAQStore = defineStore('faq', () => {
         {
             id: 1,
             question: "What is Nine Pilates?",
-            answer: "Nine Pilates is a contemporary Pilates studio that focuses on mindful movement and holistic wellness."
+            answer: "Nine Pilates is a reformer Pilates studio that focuses on mindful movement and holistic wellness."
         },
         {
             id: 2,
@@ -22,6 +22,11 @@ export const useFAQStore = defineStore('faq', () => {
           id: 4,
           question: "What is the class size?",
           answer: "Our classes are intentionally kept to a maximum of 8 attendees to ensure personalized attention."
+        },
+        {
+          id: 5,
+          question: "Where is Nine Pilates Located?",
+          answer: "Nine Pilates is located at 511 Lacolle Way, Unit A5."
         }
     ])
 

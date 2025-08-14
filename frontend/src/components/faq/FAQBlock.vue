@@ -156,4 +156,14 @@ onBeforeUnmount(() => {
   margin: 0;
   opacity: 0.9;
 }
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .faq-header {
+    max-width: 45vw;
+  }
+  .answer {
+    font-size: 1.25rem;
+    width: 90%;
+  }
+}
 </style>

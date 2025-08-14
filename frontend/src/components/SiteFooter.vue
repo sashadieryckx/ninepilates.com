@@ -17,7 +17,7 @@ const { t } = useI18n()
     <div id="bottom-bar">
       <div id="contact">
         <h6 class="light">info@ninepilates.com</h6>
-        <h6 class="light">595 Montreal Rd, Unit 204</h6>
+        <h6 class="light">511 Lacolle Way, Unit A5</h6>
         <div id="socials">
           <a href="https://www.instagram.com/ninepilates.studio/" target="_blank" class="light"
             >Instagram ↗
