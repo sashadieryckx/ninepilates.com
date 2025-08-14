@@ -27,7 +27,9 @@ defineProps({
         <p class="light">{{ memberships.description }}</p>
       </div>
       <div class="c2a interactive">
-        <JoinNow />
+        <a :href="memberships.signUp">
+          <JoinNow />
+        </a>
         <LearnMore />
       </div>
     </div>
