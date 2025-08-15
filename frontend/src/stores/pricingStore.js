@@ -7,22 +7,25 @@ export const usePricingStore = defineStore('pricing', () => {
       id: 1,
       name: 'The Flow',
       price: '220',
-      classes: '8',
-      description: 'Find your balance and build your practice at a steady pace. The Flow is perfect for those who want a consistent Pilates routine without overcommitting. With eight classes a month, you’ll strengthen, lengthen, and connect, leaving room for life’s other rhythms.'
+      classes: '8 Classes / Month',
+      description: 'Find your balance and build your practice at a steady pace. The Flow is perfect for those who want a consistent Pilates routine without overcommitting. With eight classes a month, you’ll strengthen, lengthen, and connect, leaving room for life’s other rhythms.',
+      c2a: 'Join now'
     },
     {
       id: 2,
       name: 'The Rhythm',
       price: '300',
-      classes: '12',
-      description: 'Move to your own beat with The Rhythm. Designed for those ready to elevate their practice, this membership offers twelve classes a month to keep your body engaged and your mind in tune. A harmonious blend of challenge and flexibility for deeper transformation.'
+      classes: '12 Classes / Month',
+      description: 'Move to your own beat with The Rhythm. Designed for those ready to elevate their practice, this membership offers twelve classes a month to keep your body engaged and your mind in tune. A harmonious blend of challenge and flexibility for deeper transformation.',
+      c2a: 'Join now'
     },
     {
       id: 3,
       name: 'Cloud 9',
       price: '330',
-      classes: 'Unlimited',
-      description: 'Your all-access pass to mindful movement. With unlimited classes, Cloud 9 is for the committed Pilates enthusiast who wants the freedom to flow anytime. Immerse yourself in strength, control, and connection—whenever inspiration strikes.'
+      classes: 'Unlimited Classes / Month',
+      description: 'Your all-access pass to mindful movement. With unlimited classes, Cloud 9 is for the committed Pilates enthusiast who wants the freedom to flow anytime. Immerse yourself in strength, control, and connection—whenever inspiration strikes.',
+      c2a: 'Join now'
     },
   ])
   const packages = ref([
