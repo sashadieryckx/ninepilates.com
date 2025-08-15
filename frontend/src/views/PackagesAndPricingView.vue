@@ -1,6 +1,7 @@
 <script setup>
 import Hero from '@/components/packages-and-pricing/Packages&PricingHero.vue'
-import OfferingsBlock from '@/components/packages-and-pricing/OfferingsBlock.vue';
+import OfferingsBlock from '@/components/packages-and-pricing/OfferingsBlock.vue'
+import FoundersMembership from '@/components/packages-and-pricing/FoundersMembership.vue'
 </script>
 <template>
   <div id="packages-and-pricing" class="main-content">
@@ -16,6 +17,9 @@ import OfferingsBlock from '@/components/packages-and-pricing/OfferingsBlock.vue
         title="Packages"
         c2a="View Packages"
       />
+    </section>
+    <section class="section" id="founders-membership">
+      <FoundersMembership />
     </section>
   </div>
 </template>
@@ -44,6 +48,10 @@ import OfferingsBlock from '@/components/packages-and-pricing/OfferingsBlock.vue
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
     padding: 0 1rem 1rem 1rem;
+  }
+  #founders-membership {
+    height: 100%;
+    padding: 1rem;
   }
 }
 </style>
