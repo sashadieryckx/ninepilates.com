@@ -1,13 +1,19 @@
 <script setup>
-defineProps({
+const props = defineProps({
   title: String,
   c2a: String,
 })
+
+const emit = defineEmits(['openModal'])
+
+const handleClick = () => {
+  emit('openModal', props.title.toLowerCase())
+}
 </script>
 <template>
   <div id="offering-block">
     <h2 class="roman">{{ title }}</h2>
-    <button class="c2a interactive">
+    <button class="c2a interactive" @click="handleClick">
       <p class="roman">{{ c2a }}</p>
     </button>
   </div>

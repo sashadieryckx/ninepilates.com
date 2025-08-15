@@ -1,7 +1,22 @@
 <script setup>
+import { ref } from 'vue'
 import Hero from '@/components/packages-and-pricing/Packages&PricingHero.vue'
 import OfferingsBlock from '@/components/packages-and-pricing/OfferingsBlock.vue'
 import FoundersMembership from '@/components/packages-and-pricing/FoundersMembership.vue'
+import PricingModal from '@/components/packages-and-pricing/PricingModal.vue'
+
+// Modal state management
+const isModalOpen = ref(false)
+const modalType = ref('memberships') // 'memberships' or 'packages'
+
+const openModal = (type) => {
+  modalType.value = type
+  isModalOpen.value = true
+}
+
+const closeModal = () => {
+  isModalOpen.value = false
+}
 </script>
 <template>
   <div id="packages-and-pricing" class="main-content">
@@ -12,15 +27,24 @@ import FoundersMembership from '@/components/packages-and-pricing/FoundersMember
       <OfferingsBlock
         title="Memberships"
         c2a="Explore Memberships"
+        @openModal="openModal"
       />
       <OfferingsBlock
         title="Packages"
         c2a="View Packages"
+        @openModal="openModal"
       />
     </section>
     <section class="section" id="founders-membership">
       <FoundersMembership />
     </section>
+
+    <!-- Pricing Modal -->
+    <PricingModal
+      :isOpen="isModalOpen"
+      :modalType="modalType"
+      @close="closeModal"
+    />
   </div>
 </template>
 <style scoped>
