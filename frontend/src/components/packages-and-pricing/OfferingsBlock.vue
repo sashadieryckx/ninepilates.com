@@ -14,8 +14,14 @@ defineProps({
 </template>
 <style scoped>
 #offering-block {
+  height: 50vh;
   border-radius: 50px;
   background-color: var(--soya);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
 }
 .c2a {
   background-color: var(--mocha);
@@ -54,10 +60,7 @@ h2 {
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   #offering-block {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    height: 100%;
     gap: 2rem;
   }
   .c2a p {

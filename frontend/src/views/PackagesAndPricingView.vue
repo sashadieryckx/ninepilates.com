@@ -23,6 +23,13 @@ import OfferingsBlock from '@/components/packages-and-pricing/OfferingsBlock.vue
 .section {
   height: 100%;
 }
+#offerings-section {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0 1rem 1rem 1rem;
+}
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {
 }
