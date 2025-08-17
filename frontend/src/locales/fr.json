@@ -1,97 +1,127 @@
-{
-  "navbar": {
-    "home": "Accueil",
-    "about": "À Propos",
-    "classes": "Cours",
-    "schedule": "Horaires",
-    "packages-and-pricing": "Forfaits & Tarifs",
-    "contact": "Contact",
-    "register": "Inscription"
-  },
-  "home": {
-    "hero": {
-      "heading": "Trouvez votre équilibre avec Nine Pilates",
-      "subheading": "Venez vivre une transformation du corps et de l’esprit grâce à nos cours guidés par des experts et soutenus par une communauté bienveillante.",
-      "button-1": "Découvrir",
-      "button-2": "S'inscrire"
+  {
+    "navbar": {
+      "home": "Accueil",
+      "about": "À Propos",
+      "classes": "Cours",
+      "schedule": "Horaires",
+      "packages-and-pricing": "Forfaits & Tarifs",
+      "contact": "Contact",
+      "register": "Inscription"
     },
-    "statement": {
-      "text": "Découvrez le pouvoir transformateur du Pilates. Débutant ou expérimenté, progressez vers un corps fort et un esprit serein."
-    },
-    "accolades": {
-      "flexibility": "Souplesse améliorée",
-      "connection": "Connexion corps-esprit",
-      "core": "Force et stabilité du tronc"
-    },
-    "philosophy": {
-      "title": "Découvrez la philosophie \"Nine\"",
-      "description": "Basée sur la conviction que le bien-être véritable vient de l’intérieur. Grâce à nos neuf principes, nous vous aidons à construire une version de vous-même plus forte et plus connectée – intérieurement et extérieurement.",
-      "principles": {
-        "breathing": "Respiration",
-        "breathingDescription": "Reconnectez le corps et l’esprit par la respiration consciente.",
-        "concentration": "Concentration",
-        "concentrationDescription": "La présence en mouvement : chaque geste commence par la conscience.",
-        "control": "Contrôle",
-        "controlDescription": "Maîtrisez votre corps grâce à des mouvements intentionnels.",
-        "centering": "Centrage",
-        "centeringDescription": "Trouvez la force intérieure : le centre de chaque mouvement.",
-        "precision": "Précision",
-        "precisionDescription": "Affinez chaque mouvement avec concentration, forme et intention.",
-        "balance": "Équilibre",
-        "balanceDescription": "Cultivez la stabilité et l’harmonie dans chaque geste.",
-        "rhythm": "Flux rythmique",
-        "rhythmDescription": "Adoptez le rythme naturel de votre corps.",
-        "wholeness": "Plénitude",
-        "wholenessDescription": "Intégrez le corps, l’esprit et l’âme pour un bien-être holistique.",
-        "relaxation": "Relaxation",
-        "relaxationDescription": "Libérez les tensions pour bouger librement et vivre pleinement."
+    "home": {
+      "hero": {
+        "heading": "Trouvez votre équilibre avec Nine Pilates",
+        "subheading": "Venez vivre une transformation du corps et de l’esprit grâce à nos cours guidés par des experts et soutenus par une communauté bienveillante.",
+        "button-1": "Découvrir",
+        "button-2": "S'inscrire"
+      },
+      "statement": {
+        "text": "Découvrez le pouvoir transformateur du Pilates. Débutant ou expérimenté, progressez vers un corps fort et un esprit serein."
+      },
+      "accolades": {
+        "flexibility": "Amélioration de la flexibilité ",
+        "connection": "Développement de la connexion corps-esprit",
+        "core": "Renforcement et stabilité du tronc"
+      },
+      "philosophy": {
+        "title": "Découvrez la philosophie \"Nine\"",
+        "description": "Notre philosophie part d’une certitude : le bien-être naît en vous. Avec nos neuf principes comme fil conducteur, nous vous aidons à renforcer à la fois votre corps, votre esprit et votre âme, pour rayonner de l’intérieur comme de l’extérieur.",
+        "principles": {
+          "breathing": "Respiration",
+          "breathingDescription": "Reconnectez le corps et l’esprit par la respiration consciente.",
+          "concentration": "Concentration",
+          "concentrationDescription": "La présence en mouvement : chaque geste commence par la conscience.",
+          "control": "Contrôle",
+          "controlDescription": "Maîtrisez votre corps grâce à des mouvements intentionnels.",
+          "centering": "Centrage",
+          "centeringDescription": "Trouvez la force intérieure : le centre de chaque mouvement.",
+          "precision": "Précision",
+          "precisionDescription": "Affinez chaque mouvement avec concentration, forme et intention.",
+          "balance": "Équilibre",
+          "balanceDescription": "Cultivez la stabilité et l’harmonie dans chaque geste.",
+          "rhythm": "Flux rythmique",
+          "rhythmDescription": "Adoptez le rythme naturel de votre corps.",
+          "wholeness": "Plénitude",
+          "wholenessDescription": "Intégrez le corps, l’esprit et l’âme pour un bien-être holistique.",
+          "relaxation": "Relaxation",
+          "relaxationDescription": "Libérez les tensions pour bouger librement et vivre pleinement."
+        }
+      },
+      "testimonials": {
+        "title": "Mouvement qui laisse un ",
+        "titleSpan": "impact",
+        "description": "Chaque voyage commence par une seule respiration — ce sont les histoires de progrès, de présence et de force tranquille construites grâce à une pratique constante.",
+        "testimonial-content": {
+          "client-1": {
+            "name": "Marie L",
+            "feedback": "Dès mon premier cours chez Nine Pilates, j’ai su que j’étais au bon endroit. Les profs sont vraiment à l’écoute, l’ambiance est tellement apaisante… et je repars toujours en me sentant plus forte et plus légère."
+          },
+          "client-2": {
+            "name": "Élodie R",
+            "feedback": "Nine Pilates, c’est ma petite bulle d’air. Chaque séance est pensée avec soin, et je repars toujours plus détendue, la tête vidée. Pour moi, c’est bien plus qu’un entraînement."
+          },
+          "client-3": {
+            "name": "Camille D",
+            "feedback": "J’adore venir ici. L’accueil est chaleureux, l’espace est magnifique, et on sent vraiment que chaque mouvement compte. Après chaque cours, je me sens plus alignée, plus forte, et tellement mieux dans ma peau."
+          }
+        }
+      },
+      "memberships": {
+        "heading": "Des abonnements conçus pour évoluer avec vous",
+        "description": "Découvrez nos formules d’abonnement et choisissez celle qui vous accompagnera le mieux dans votre parcours avec nous."
+      },
+      "connect": {
+        "heading": "Connectez-vous et partagez avec nous",
+        "subheading": "Rejoignez notre mouvement conscient en ligne - suivez-nous, identifiez-nous et partagez votre parcours avec nous."
+      },
+      "contact": {
+        "cta": "Une question ? Écrivez-nous un message !"
       }
     },
-    "testimonials": {
-      "title": "Mouvement qui laisse un ",
-      "titleSpan": "impact",
-      "description": "Chaque voyage commence par une seule respiration — ce sont les histoires de progrès, de présence et de force tranquille construites grâce à une pratique constante."
+    "about": {
+      "hero": {
+        "title-1": "Bonjour, je suis",
+        "title-2": "Valérie.",
+        "title-3": "La fondatrice de",
+        "title-4": "Nine Pilates"
+      },
+      "storySection": {
+        "aboutMeHeading": "À propos de moi",
+        "aboutMe": "Je m'appelle Valérie, une instructrice de Pilates passionnée, dédiée à aider les autres à atteindre leurs objectifs de bien-être grâce au pouvoir du mouvement et de la pleine conscience.",
+        "myJourneyHeading": "Mon parcours",
+        "myJourney": "J’ai découvert le Pilates il y a 4 ans, et cette pratique a transformé ma vie bien au-delà de ce que j’aurais imaginé. Elle m’a permis de développer à la fois ma force physique et mentale, et j'ai aujourd'hui à cœur de faire vivre cette transformation à d'autres – un cours à la fois.",
+        "inspirationHeading": "Ce qui m’inspire",
+        "inspiration": "Je suis convaincue que le Pilates a sa place dans la vie de chacun-e. C’est un outil puissant pour retrouver une connexion avec son corps, gagner en force et se sentir bien – à l’intérieur comme à l'extérieur. Mon objectif est de créer un espace où chacun-e se sent accueilli-e, valorisé-e et inspiré-e.",
+        "missionHeading": "La mission",
+        "mission": "Avec Nine Pilates, ma mission est d’offrir des cours de qualité, dynamiques et accessibles à tous les niveaux — des débutant-e-s aux plus expérimenté-e-s. Je souhaite vous inspirer à mener une vie façonnée par la force, l’équilibre et la sérénité grâce au pouvoir du Pilates."
+      },
+      "val-testimonials": {
+        "testimonial-1": {
+          "name": "Sophie",
+          "testimonial": "Dès mon premier cours avec Valérie, j’ai su que j’étais entre de bonnes mains. Son énergie et sa maîtrise du Pilates font toute la différence."
+        },
+        "testimonial-2": {
+          "name":"Karine",
+          "testimonial": "Valérie rend chaque mouvement accessible tout en nous poussant à nous dépasser. Les bienfaits se font sentir dès les premières séances."
+        },
+        "testimonial-3": {
+          "name": "Isabelle",
+          "testimonial": "Franchement, dès le premier cours avec Valérie, j’ai su que j’allais aimer ça. Elle explique super bien, met tout le monde à l’aise et on sent déjà les résultats."
+        }
+      },
+      "c2a": "Rejoignez-moi dans votre parcours bien-être!"
     },
-    "memberships": {
-      "heading": "Des abonnements qui bougent avec vous",
-      "description": "Découvrez nos formules d’abonnement et trouvez celle qui correspond à votre parcours avec nous."
+    "callToActions": {
+      "joinUs": "Rejoignez-nous",
+      "bookNow": "Réservez",
+      "learnMore": "En savoir plus",
+      "reviews": "Voir nos avis",
+      "memberships": "Adhésions",
+      "packages": "Forfaits",
+      "signUp": "S'inscrire →",
+      "getInTouch": "Contactez-nous"
     },
-    "connect": {
-      "heading": "Connectez-vous et partagez avec nous sur les réseaux sociaux"
-    },
-    "contact": {
-      "cta": "Une question ? Écrivez-nous un message !"
+    "footer": {
+      "tagline": "Mouvement avec Intention"
     }
-  },
-  "about": {
-    "hero": {
-      "title-1": "Bonjour, je suis",
-      "title-2": "Valérie.",
-      "title-3": "La fondatrice de",
-      "title-4": "Nine Pilates"
-    },
-    "storySection": {
-      "aboutMeHeading": "À propos de moi",
-      "aboutMe": "Je m'appelle Valérie, une instructrice de Pilates passionnée, dédiée à aider les autres à atteindre leurs objectifs de bien-être grâce au pouvoir du mouvement et de la pleine conscience.",
-      "myJourneyHeading": "Mon parcours",
-      "myJourney": "Mon aventure dans le Pilates a commencé il y a 5 ans, et cette pratique a transformé ma vie d'une façon que je n'aurais jamais imaginée. Je suis déterminée à partager cette expérience transformatrice avec les autres.",
-      "inspirationHeading": "Ce qui m’inspire",
-      "inspiration": "Ce qui m’inspire, c’est la conviction que le Pilates peut permettre à chacun de se reconnecter à son corps, de gagner en force et d’améliorer son bien-être global. Je m’efforce de créer un espace accueillant et inclusif pour tous.",
-      "missionHeading": "La mission",
-      "mission": "Ma mission avec Nine Pilates est d’offrir des cours de qualité, accessibles à tous les niveaux. À travers le mouvement, j’espère aider chacun à se sentir plus fort, plus aligné et plus épanoui, grâce à la pratique du Pilates."
-    }
-  },
-  "callToActions": {
-    "joinUs": "Rejoignez-nous",
-    "bookNow": "Réservez",
-    "learnMore": "En savoir plus",
-    "reviews": "Voir nos avis",
-    "memberships": "Adhésions",
-    "packages": "Forfaits",
-    "signUp": "S'inscrire →",
-    "getInTouch": "Contactez-nous"
-  },
-  "footer": {
-    "tagline": "Mouvement avec Intention"
   }
-}

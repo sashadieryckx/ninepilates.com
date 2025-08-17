@@ -25,7 +25,7 @@
     },
     "philosophy": {
       "title": "Discover the “Nine” Philosophy",
-      "description": "Build on the belief that true wellness comes from within. Through our nine principals, we help you build a stronger, more connected version of yourself - inside and out.",
+      "description": "Nine principles. One philosophy. A path to move better, feel better, and live better.",
       "principles": {
         "breathing": "Breathing",
         "breathingDescription": "Reconnect body and mind through conscious breath.",
@@ -57,7 +57,8 @@
       "description": "Explore our membership options and find the perfect fit for your journey with us."
     },
     "connect": {
-      "heading": "Connect & share with us on socials"
+      "heading": "Connect & share with us on socials",
+      "subheading": "Join our mindful movement online - follow, tag, and share your journey with us."
     },
     "contact": {
       "cta": "Have a question? Shoot us a message!"
@@ -79,7 +80,22 @@
       "inspiration": "My inspiration comes from the belief that pilates can empower individuals to connect with their bodies, improve their strength, and enhance their overall well-being. I strive to create a welcoming and inclusive environment for all.",
       "missionHeading": "My mission",
       "mission": "My mission with Nine Pilates is to provide high-quality Pilates instruction that caters to all levels, from beginners to advanced practitioners. I aim to inspire and motivate my clients to lead healthier, happier lives through the practice of pilates."
-    }
+    },
+    "val-testimonials": {
+      "testimonial-1": {
+        "name": "Jane G",
+        "testimonial": "Valérie is truly an exceptional Pilates instructor. Her passion, energy, and patience create such a welcoming and empowering environment. She goes above and beyond to make sure everyone feels comfortable, offering thoughtful modifications and clear guidance throughout the class. You can tell she’s always well-prepared, and her attention to detail and client care—before, during, and after class—is unmatched. I’ve tried several instructors elsewhere, and Valérie truly stands out. Her classes are a highlight of my week."
+      },
+      "testimonial-2": {
+        "name":"Malaika STL",
+        "testimonial": "Valérie is such an incredible Pilates instructor. Her explanations are always clear, her energy is contagious, and she has a natural ability to challenge and motivate in the most encouraging way. Every class feels fresh and engaging thanks to her creative flows and thoughtful sequencing."
+      },
+      "testimonial-3": {
+        "name": "Sylvie M",
+        "testimonial": "Valerie is a truly amazing Pilates instructor. Her passion for Pilates and its core principles are inspiring. Her ability to connect with her students and her focus on correct movement and breathwork is not only engaging but also very motivating. Thanks to Valerie I have developed a deep appreciation for Pilates and commitment to my practice. Thank you, Val for being such an inspiration and for all your guidance. Looking forward to many more classes with you."
+      }
+    },
+    "c2a": "Join me on your wellness journey!"
   },
     "callToActions": {
     "joinUs": "Join us",

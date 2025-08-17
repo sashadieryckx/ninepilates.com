@@ -24,7 +24,7 @@
 }
 h2, h3, h5 {
   color: var(--coral);
-  width: 50%;
+  width: 75%;
   text-align: center;
 }
 .c2a {

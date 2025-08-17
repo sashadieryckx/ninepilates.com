@@ -57,9 +57,9 @@ onUnmounted(() => {
       <h5 class="light">
         {{ t('home.testimonials.description') }}
       </h5>
-      <router-link>
+      <a href="#">
         <Button class="c2a roman interactive"></Button>
-      </router-link>
+      </a>
     </div>
     <div class="testimonials df-mar">
       <Testimonials

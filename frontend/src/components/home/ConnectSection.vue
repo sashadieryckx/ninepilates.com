@@ -12,7 +12,7 @@ const { t } = useI18n()
     <div class="overlay"></div>
     <div class="connect-heading df-pad">
       <h2 class="roman">{{ t("home.connect.heading") }}</h2>
-      <h5 class="light">Join our mindful movement online—follow, tag, and share your journey with us.</h5>
+      <h5 class="light">{{ t("home.connect.subheading") }}</h5>
     </div>
     <div class="mobile-images df-mar">
       <div class="img-container">
