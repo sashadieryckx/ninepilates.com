@@ -97,6 +97,18 @@
     },
     "c2a": "Join me on your wellness journey!"
   },
+  "classes": {
+    "class-1": {
+      "name": "The Nine Foundations",
+      "description": "A gentle, beginner-friendly introduction to the reformer, designed to set you up for success. You’ll work on alignment, breathwork, and control, building both confidence with the equipment and a solid understanding of the Nine Pilates principles.",
+      "advisory": "First time on a reformer? We highly recommend starting here before moving on to more advanced classes."
+    },
+    "class-2": {
+      "name": "Form & Flow",
+      "description": "A full-body flow that blends strength, coordination, and control into rhythmic sequences designed to sculpt, energize, and inspire. Expect dynamic transitions, deep core engagement, and intentional movement that challenges your body from the inside out.",
+      "advisory": "Suitable for all levels, with options to modify or intensify as needed."
+    }
+  },
     "callToActions": {
     "joinUs": "Join us",
     "bookNow": "Book Now",
