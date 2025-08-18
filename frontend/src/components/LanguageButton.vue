@@ -57,11 +57,14 @@ watch(locale, (newLocale) => {
   align-items: center;
   padding: 0.25rem 0.5rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
+  box-shadow:
+  0 2px 8px rgba(0, 0, 0, 0.3),
+  0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 .toggle-track:hover {
-  border-color: var(--dawn);
+  border-color: var(--mocha);
   box-shadow: 0 0 10px 4px rgba(0, 0, 0, 0.2);
 }
 .toggle-slider {

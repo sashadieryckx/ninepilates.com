@@ -38,10 +38,12 @@ onMounted(() => {
 </script>
 <template>
   <div class="c2a-container">
-    <button ref="buttonRef" class="btn">
-      <span class="hover-effect"></span>
-      <p class="roman">{{ t('callToActions.login') }}</p>
-    </button>
+    <a href="https://momence.com/sign-in">
+      <button ref="buttonRef" class="btn">
+        <span class="hover-effect"></span>
+        <p class="roman">{{ t('callToActions.login') }}</p>
+      </button>
+    </a>
   </div>
 </template>
 <style scoped>

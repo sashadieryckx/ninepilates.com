@@ -39,7 +39,7 @@ const { t } = useI18n()
   box-shadow:
   0 2px 8px rgba(0, 0, 0, 0.3),
   0 0 0 1px rgba(255, 255, 255, 0.1);
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease;
 }
 .c2a-container button p {
   font-size: 1rem;
@@ -48,6 +48,7 @@ const { t } = useI18n()
 }
 .c2a-container button:hover {
   transform: scale(1.03);
+  border-color: var(--mocha);
 }
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
