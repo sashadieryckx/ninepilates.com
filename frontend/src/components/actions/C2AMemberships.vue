@@ -41,7 +41,7 @@ const { t } = useI18n()
   color: var(--coral);
 }
 .c2a-container button:hover {
-  scale: 1.03;
+  transform: scale(1.03);
   box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
   -webkit-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);
   -moz-box-shadow: 0px 2px 10px 1px rgba(63, 58, 52, 0.4);

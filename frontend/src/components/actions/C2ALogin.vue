@@ -4,10 +4,12 @@ import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 </script>
 <template>
-  <div class="c2a-container">
-    <button>
-      <p class="light">{{ t('callToActions.bookNow') }}</p>
-    </button>
+  <div class="c2a-container interactive">
+    <a href="https://momence.com/u/nine-pilates-inc.-d4tYXV">
+      <button>
+        <p class="light">{{ t('callToActions.bookNow') }}</p>
+      </button>
+    </a>
   </div>
 </template>
 <style scoped>
@@ -18,9 +20,10 @@ const { t } = useI18n()
   align-items: center;
   height: fit-content;
   width: 100%;
+  cursor: pointer;
 }
 .c2a-container button {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.25);
   backdrop-filter: blur(10px);
   color: var(--blanco);
   border: none;
@@ -36,10 +39,24 @@ const { t } = useI18n()
   box-shadow:
   0 2px 8px rgba(0, 0, 0, 0.3),
   0 0 0 1px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
 }
 .c2a-container button p {
   font-size: 1rem;
   transform: translateY(-8%);
   color: var(--blanco);
+}
+.c2a-container button:hover {
+  transform: scale(1.03);
+}
+
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  .c2a-container button {
+    padding: 0.5rem 2rem;
+  }
+  .c2a-container button p {
+    font-size: 1.25rem;
+  }
 }
 </style>

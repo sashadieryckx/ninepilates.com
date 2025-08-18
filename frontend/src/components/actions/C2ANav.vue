@@ -5,7 +5,7 @@ const { t } = useI18n()
 <template>
   <div class="c2a-container">
     <button>
-      <p class="roman">{{ t('callToActions.bookNow') }}</p>
+      <p class="roman">{{ t('callToActions.login') }}</p>
     </button>
   </div>
 </template>
@@ -16,10 +16,11 @@ const { t } = useI18n()
   display: flex;
   justify-content: center;
   align-items: center;
-  height: fit-content;
+  height: 100%;
   width: 100%;
   transition: all 0.3s ease;
   border-radius: 14px;
+  overflow: visible;
 }
 .c2a-container button {
   background-color: var(--coral);

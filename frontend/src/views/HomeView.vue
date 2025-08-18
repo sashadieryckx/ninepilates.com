@@ -1,5 +1,5 @@
 <script setup>
-import BookClass from '@/components/actions/C2ABookClass.vue'
+import BookClass from '@/components/actions/C2ALogin.vue'
 import HeroSection from '@/components/home/HeroSection.vue'
 import StatementSection from '@/components/home/StatementSection.vue'
 import AccoladesSection from '@/components/home/AccoladesSection.vue'
