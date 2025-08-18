@@ -49,7 +49,6 @@ const { t } = useI18n()
 .c2a-container button:hover {
   transform: scale(1.03);
 }
-
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
   .c2a-container button {
