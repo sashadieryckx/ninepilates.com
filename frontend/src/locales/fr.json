@@ -57,12 +57,12 @@
             "feedback": "Dès mon premier cours chez Nine Pilates, j’ai su que j’étais au bon endroit. Les profs sont vraiment à l’écoute, l’ambiance est tellement apaisante… et je repars toujours en me sentant plus forte et plus légère."
           },
           "client-2": {
-            "name": "Élodie R",
-            "feedback": "Nine Pilates, c’est ma petite bulle d’air. Chaque séance est pensée avec soin, et je repars toujours plus détendue, la tête vidée. Pour moi, c’est bien plus qu’un entraînement."
-          },
-          "client-3": {
             "name": "Camille D",
             "feedback": "J’adore venir ici. L’accueil est chaleureux, l’espace est magnifique, et on sent vraiment que chaque mouvement compte. Après chaque cours, je me sens plus alignée, plus forte, et tellement mieux dans ma peau."
+          },
+          "client-3": {
+            "name": "Élodie R",
+            "feedback": "Nine Pilates, c’est ma petite bulle d’air. Chaque séance est pensée avec soin, et je repars toujours plus détendue, la tête vidée. Pour moi, c’est bien plus qu’un entraînement."
           }
         }
       },

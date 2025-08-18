@@ -5,9 +5,11 @@
     <h3 class="italic">Limited Time Only</h3>
     <h2 class="roman">Founders Membership</h2>
     <h5 class="light">Unlimited classes. Exclusive rate. Be part of our story from the very start.</h5>
-    <button class="c2a interactive">
-      <p class="roman">Start your journey</p>
-    </button>
+    <a href="https://momence.com/Nine-Pilates-Inc./membership/Founder-Membership---Unlimited-%2F-Month/491844">
+      <button class="c2a interactive">
+        <p class="roman">Start your journey</p>
+      </button>
+    </a>
   </div>
 </template>
 <style scoped>

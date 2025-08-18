@@ -52,19 +52,19 @@
       "titleSpan": "impact",
       "description": "Every journey begins with a single breath — these are the stories of progress, presence, and the quiet strength built through consistent practice.",
       "testimonial-content": {
-          "client-1": {
-            "name": "Alex R",
-            "feedback": "Nine Pilates is truly a breath of fresh air. Every class feels so thoughtful and uplifting. It’s not just a workout,  it’s a complete mind-body reset."
-          },
-          "client-2": {
-            "name": "Julie M",
-            "feedback": "From the moment I walked into the studio, I felt supported. Every class feels intentional and empowering. Highly recommend Nine to anyone looking to strengthen both body and mind."
-          },
-          "client-3": {
-            "name": "Sarah L",
-            "feedback": "From the very first class, I knew Nine Pilates was special. The instructors are attentive, the atmosphere is uplifting, and I always leave feeling stronger, calmer, and more connected to myself."
-          }
+        "client-1": {
+          "name": "Julie M",
+          "feedback": "From the moment I walked into the studio, I felt supported. Every class feels intentional and empowering. Highly recommend Nine to anyone looking to strengthen both body and mind."
+        },
+        "client-2": {
+          "name": "Alex R",
+          "feedback": "Nine Pilates is truly a breath of fresh air. Every class feels so thoughtful and uplifting. It’s not just a workout,  it’s a complete mind-body reset."
+        },
+        "client-3": {
+          "name": "Sarah L",
+          "feedback": "From the very first class, I knew Nine Pilates was special. The instructors are attentive, the atmosphere is uplifting, and I always leave feeling stronger, calmer, and more connected to myself."
         }
+      }
     },
     "memberships": {
       "heading": "Memberships made to move with you",

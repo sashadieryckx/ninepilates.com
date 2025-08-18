@@ -1,27 +1,30 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
 export const useTestimonialsStore = defineStore('testimonials', () => {
-    const testimonials = ref([
+    const { t, locale } = useI18n()
+
+    const testimonials = computed(() => [
         {
             id: 1,
-            text: "Nine Pilates completely transformed how I feel in my body. The sessions are mindful, challenging, and deeply restorative. I've never felt stronger or more connected.",
-            author: "Emily Kirkland",
-            date: "April 12, 2025"
+            text: t('home.testimonials.testimonial-content.client-1.feedback'),
+            author:  t('home.testimonials.testimonial-content.client-1.name'),
+            date: "September 12, 2025"
         },
         {
             id: 2,
-            text: "From the moment I walked into the studio, I felt supported. Every class feels intentional and empowering. Highly recommend Nine to anyone looking to strengthen both body and mind.",
-            author: "Jason Mendosa",
-            date: "May 2, 2025"
+            text: t('home.testimonials.testimonial-content.client-2.feedback'),
+            author: t('home.testimonials.testimonial-content.client-2.name'),
+            date: "September 2, 2025"
         },
         {
             id: 3,
-            text: "The instructors at Nine have a beautiful way of blending strength and mindfulness. I’ve gained core control, flexibility, and a sense of calm I didn’t expect. Best Investment I've made.",
-            author: "Sofia De La Cruz",
-            date: "June 3, 2025"
+            text: t('home.testimonials.testimonial-content.client-3.feedback'),
+            author: t('home.testimonials.testimonial-content.client-3.name'),
+            date: "August 28, 2025"
         }
     ])
 
-    return { testimonials }
+    return { testimonials, locale }
 })
