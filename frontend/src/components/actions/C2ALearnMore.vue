@@ -30,4 +30,10 @@ const { t } = useI18n()
 #learn-more button:hover {
   color: var(--soya);
 }
+/* DESKTOP 1 [GLOBAL] */
+@media (min-width: 1280px) {
+  #learn-more button p {
+    font-size: 1.25rem;
+  }
+}
 </style>

@@ -20,10 +20,10 @@ defineProps({
     <div class="content">
       <div class="heading">
         <h3 class="bold">{{ memberships.title }}</h3>
-        <h4 class="roman">${{ memberships.price }}</h4>
+        <h4 class="roman">{{ memberships.price }}/mo</h4>
       </div>
       <div class="info">
-        <p class="italic">Includes {{ memberships.classes }} Classes</p>
+        <p class="italic">{{ memberships.classes }}</p>
         <p class="light">{{ memberships.description }}</p>
       </div>
       <div class="c2a interactive">

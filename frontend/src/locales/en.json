@@ -149,16 +149,59 @@
       "advisory": "Ideal for rest days, recovery, or as a complement to more intense sessions. Leave feeling grounded, open, and recharged."
     }
   },
-    "callToActions": {
+  "callToActions": {
     "joinUs": "Join us",
     "bookNow": "Book Now",
     "learnMore": "Learn more",
     "reviews": "See our reviews",
     "memberships": "Memberships",
     "packages": "Packages",
-    "signUp": "Sign Up →",
+    "signUp": "Sign up →",
     "getInTouch": "Let's get in touch",
     "login": "Sign in"
+  },
+  "pricing&packages": {
+    "memberships": {
+      "flow": {
+        "title": "The Flow",
+        "price": "$250",
+        "classes": "Includes 9 Classes per month",
+        "description": "Build a steady routine and start seeing tangible results. Ideal if you’re aiming for 2 classes/week.",
+        "benefits": [
+          "Consistent strength and core stability",
+          "Better posture and body awareness",
+          "Noticeable gains in mobility and control",
+          "A sustainable rhythm that fits a busy schedule",
+          "Perfect for building a solid foundation while keeping balance with the rest of your life"
+        ]
+      },
+      "rhythm": {
+        "title": "The Rhythm",
+        "price": "$300",
+        "classes": "Includes 12 Classes per month",
+        "description": "Make Pilates a pillar in your week with 3 classes/week—the sweet spot for clear adaptation and progression.",
+        "benefits": [
+          "Faster strength and endurance gains",
+          "Improved mobility and joint support",
+          "Technique that clicks (and sticks)",
+          "Momentum you can feel from week to week",
+          "If you want visible progress and a confident flow, this is your best balance of frequency and value."
+        ]
+      },
+      "fullCycle": {
+        "title": "The Full Cycle",
+        "price": "$350",
+        "classes": "Unlimited Access",
+        "description": "Enjoy the full variety of classes — Foundations, Form & Flow, Inferno, Restore & Stretch — to balance intensity and recovery for complete results.",
+        "benefits": [
+          "The freedom to train as often as you like",
+          "Smarter programming by cycling strength, cardio, and mobility",
+          "Train smarter, get better results.",
+          "The best value if you’re consistent (~$22–$18/class when training 4–5×/week)",
+          "For those ready to live in their practice and feel the full Nine Pilates effect."
+        ]
+      }
+    }
   },
   "footer": {
     "tagline": "Movement with Intention"

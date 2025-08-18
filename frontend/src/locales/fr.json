@@ -160,6 +160,49 @@
       "getInTouch": "Contactez-nous",
       "login": "Se connecter"
     },
+    "pricing&packages": {
+      "memberships": {
+      "flow": {
+        "title": "The Flow",
+        "price": "$250",
+        "classes": "Inclus 9 cours par mois",
+        "description": "Un abonnement idéal si vous voulez suivre 2 cours par semaine. Vous allez bâtir une vraie routine et commencer à ressentir des résultats concrets.",
+        "benefits": [
+          "Développer votre force et votre stabilité du centre du corps",
+          "Améliorer votre posture et votre conscience corporelle",
+          "Développer votre mobilité et votre contrôle",
+          "Adopter un rythme qui s’adapte à votre quotidien",
+          "Une formule qui vous aide à progresser tout en restant en équilibre avec votre quotidien"
+        ]
+      },
+      "rhythm": {
+        "title": "The Rhythm",
+        "price": "$300",
+        "classes": "Inclus 12 cours par mois",
+        "description": "Faites du Pilates une vraie habitude de votre semaine avec 3 cours hebdomadaires — le rythme parfait pour progresser de façon claire et régulière.",
+        "benefits": [
+          "Gagner plus rapidement en force et en endurance",
+          "Améliorer votre mobilité et soutenir vos articulations",
+          "Intégrer la technique de façon naturelle et durable",
+          "Ressentir un vrai élan de semaine en semaine",
+          "Si vous voulez des progrès visibles et une pratique fluide et assurée, c’est l’équilibre parfait entre fréquence et valeur."
+        ]
+      },
+      "fullCycle": {
+        "title": "The Full Cycle",
+        "price": "$350",
+        "classes": "Accès illimité",
+        "description": "Profitez de la variété complète des cours — Foundations, Form & Flow, Inferno, Restore & Stretch — pour équilibrer intensité et récupération et obtenir des résultats complets.",
+        "benefits": [
+          "La liberté de vous entraîner aussi souvent que vous le souhaitez",
+          "Une programmation intelligente qui combine force, cardio et mobilité",
+          "Des résultats optimaux sans prise de tête",
+          "Le meilleur rapport qualité-prix si vous êtes régulier (~21.8–18 $/cours en vous entraînant 4 à 5 fois par semaine)",
+          "Parfait pour celles et ceux qui veulent faire du Pilates une véritable pratique de vie et ressentir pleinement l’effet Nine Pilates."
+        ]
+      }
+    }
+    },
     "footer": {
       "tagline": "Mouvement avec Intention"
     }
