@@ -23,6 +23,10 @@
         "connection": "Développement de la connexion corps-esprit",
         "core": "Renforcement et stabilité du tronc"
       },
+      "classes": {
+        "heading": "Du Pilates pour chaque corps et chaque esprit",
+        "subheading": "Rejoignez-nous pour transformer votre corps et votre esprit grâce à nos programmes complets de groupe et nos cours spécialisés."
+      },
       "philosophy": {
         "title": "Découvrez la philosophie \"Nine\"",
         "description": "Notre philosophie part d’une certitude : le bien-être naît en vous. Avec nos neuf principes comme fil conducteur, nous vous aidons à renforcer à la fois votre corps, votre esprit et votre âme, pour rayonner de l’intérieur comme de l’extérieur.",
@@ -158,7 +162,8 @@
       "packages": "Forfaits",
       "signUp": "S'inscrire →",
       "getInTouch": "Contactez-nous",
-      "login": "Se connecter"
+      "login": "Se connecter",
+      "classes": "Voir nos offres"
     },
     "pricing&packages": {
       "memberships": {

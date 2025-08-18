@@ -6,6 +6,8 @@ import { useClassesStore } from '@/stores/classesStore'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger)
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 
 const classesStore = useClassesStore()
 onMounted(() => {
@@ -41,10 +43,9 @@ onMounted(() => {
 <template>
   <div id="classes-section">
     <div id="classes-heading" class="df-pad">
-      <h2 class="roman">Pilates for every body and every mind</h2>
+        <h2 class="roman">{{ t('home.classes.heading') }}</h2>
       <h5 class="light">
-        Join us in transforming your body and mind through our comprehensive group and specialized
-        programs.
+        {{ t('home.classes.subheading') }}
       </h5>
       <router-link to="/classes">
         <Button class="c2a roman interactive"></Button>

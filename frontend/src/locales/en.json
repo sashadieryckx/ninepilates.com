@@ -23,6 +23,10 @@
       "connection": "Mind Body Connection",
       "core": "Core Strength & Stability"
     },
+    "classes": {
+      "heading": "Pilates for every body and every mind",
+      "subheading": "Join us in transforming your body and mind through our comprehensive group and specialized programs."
+    },
     "philosophy": {
       "title": "Discover the “Nine” Philosophy",
       "description": "Nine principles. One philosophy. A path to move better, feel better, and live better.",
@@ -158,7 +162,8 @@
     "packages": "Packages",
     "signUp": "Sign up →",
     "getInTouch": "Let's get in touch",
-    "login": "Sign in"
+    "login": "Sign in",
+    "classes": "See our offerings"
   },
   "pricing&packages": {
     "memberships": {
