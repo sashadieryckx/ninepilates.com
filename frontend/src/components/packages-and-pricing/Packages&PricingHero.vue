@@ -1,10 +1,14 @@
-<script setup></script>
+<script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+</script>
 <template>
   <div class="hero-container">
     <div class="hero-heading df-pad">
-      <h2 class="roman">Pricing & Packages</h2>
+      <h2 class="roman">{{ t('pricing&packages.heading') }}</h2>
       <h5 class="light">
-        Choose the plan that's right for you. We offer monthly memberships and packages.
+        {{ t('pricing&packages.subheading') }}
       </h5>
     </div>
   </div>

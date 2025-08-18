@@ -166,6 +166,8 @@
       "classes": "Voir nos offres"
     },
     "pricing&packages": {
+      "heading": "Tarifs & Forfaits",
+      "subheading": "Choisissez le plan qui vous convient. Nous proposons des abonnements mensuels et des forfaits pour tous les niveaux.",
       "memberships": {
       "flow": {
         "title": "The Flow",

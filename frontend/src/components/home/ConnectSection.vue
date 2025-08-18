@@ -150,8 +150,7 @@ a {
     gap: 1rem;
     overflow: hidden;
     min-height: 100vh;
-    margin-left: 4rem;
-    margin-right: 4rem;
+    padding: 0 4rem;
   }
   .mobile-images {
     display: none;

@@ -71,7 +71,7 @@ const closeModal = () => {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    padding: 0 1rem 1rem 1rem;
+    padding: 0 1rem 0rem 1rem;
   }
   #founders-membership {
     height: 100%;

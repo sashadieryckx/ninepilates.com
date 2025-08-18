@@ -166,6 +166,8 @@
     "classes": "See our offerings"
   },
   "pricing&packages": {
+    "heading": "Pricing & Packages",
+    "subheading": "Choose the plan that's right for you. We offer monthly memberships and packages tailored to every level and all lifestyles.",
     "memberships": {
       "flow": {
         "title": "The Flow",

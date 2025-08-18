@@ -30,16 +30,17 @@ watch(
 )
 
 const logoColor = computed(() => {
-  // If on classes page or FAQ page, use light logo (which uses mocha color)
-  if (route.path === '/classes' || route.path === '/faq') {
+  // Footer section takes priority - always use logo-dark over footer
+  if (viewStore.activeSection === 'footer-section') {
+    return 'logo-dark'
+  }
+
+  // If on classes page, FAQ page, or schedule page, use light logo (which uses mocha color)
+  if (route.path === '/classes' || route.path === '/faq' || route.path === '/schedule') {
     return 'logo-light'
   }
 
   if (!viewStore.activeSection) {
-    return 'logo-dark'
-  }
-
-  if (viewStore.activeSection === 'footer-section') {
     return 'logo-dark'
   }
 
@@ -59,16 +60,17 @@ const logoColor = computed(() => {
 })
 
 const desktopLinkColor = computed(() => {
-  // If on classes page or FAQ page, use mocha color
-  if (route.path === '/classes' || route.path === '/faq') {
+  // Footer section takes priority - always use coral over footer
+  if (viewStore.activeSection === 'footer-section') {
+    return 'var(--coral)'
+  }
+
+  // If on classes page, FAQ page, or schedule page, use mocha color
+  if (route.path === '/classes' || route.path === '/faq' || route.path === '/schedule') {
     return 'var(--mocha)'
   }
 
   if (!viewStore.activeSection) {
-    return 'var(--coral)'
-  }
-
-  if (viewStore.activeSection === 'footer-section') {
     return 'var(--coral)'
   }
 
@@ -92,18 +94,18 @@ const desktopLinkColor = computed(() => {
 })
 
 const menuButtonLineColor = computed(() => {
-  // If on classes page or FAQ page, use mocha color
-  if (route.path === '/classes' || route.path === '/faq') {
+  // Footer section takes priority - always use coral over footer
+  if (viewStore.activeSection === 'footer-section') {
+    return 'var(--coral)'
+  }
+
+  // If on classes page, FAQ page, or schedule page, use mocha color
+  if (route.path === '/classes' || route.path === '/faq' || route.path === '/schedule') {
     return 'var(--mocha)'
   }
 
   // If not on home page or no active section, use coral
   if (!viewStore.activeSection) {
-    return 'var(--coral)'
-  }
-
-  // Footer should use coral color
-  if (viewStore.activeSection === 'footer-section') {
     return 'var(--coral)'
   }
 
