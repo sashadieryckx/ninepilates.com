@@ -111,6 +111,44 @@
       },
       "c2a": "Rejoignez-moi dans votre parcours bien-être!"
     },
+    "classes": {
+      "foundations": {
+        "name": "Les Fondations Nine",
+        "subheading": "Débutant – Requis pour les nouveaux",
+        "description": "Une introduction douce et conviviale au reformer, conçue pour vous mettre sur la voie du succès. Vous travaillerez sur l'alignement, la respiration et le contrôle, développant à la fois votre confiance avec l'équipement et une compréhension solide des principes de Nine Pilates.",
+        "advisory": "Première fois sur un reformer ? Nous vous recommandons vivement de commencer ici avant de passer à des cours plus avancés."
+      },
+      "form-flow": {
+        "name": "Forme & Flow",
+        "subheading": "Sculpture tous niveaux",
+        "description": "Un cours complet qui combine force, coordination et contrôle dans des enchaînements rythmés. Attendez-vous à des transitions fluides, un engagement profond du centre et des mouvements intentionnels qui sollicitent le corps de l’intérieur vers l’extérieur.",
+        "advisory": "Ouvert à tous les niveaux, avec des options pour adapter ou intensifier selon vos besoins."
+      },
+      "inferno": {
+        "name": "Inferno",
+        "subheading": "Burn & Endure – Advanced",
+        "description": "Un cours axé sur l’endurance qui augmente l’intensité grâce à un rythme plus lent, un grand nombre de répétitions et un engagement musculaire profond. Chaque séquence est conçue pour repousser vos limites avec peu de pauses, des maintiens plus longs et cette fameuse brûlure qui fait trembler.Vous travaillerez non seulement vos muscles, mais aussi votre concentration, votre patience et votre mental. Ce n’est pas un cours basé sur la vitesse, mais une brûlure de précision pour les pratiquants expérimentés prêts à aller jusqu’au bout.",
+        "advisory": "Une expérience préalable sur le reformer est fortement recommandée."
+      },
+      "glute-mode": {
+        "name": "Glute Mode",
+        "subheading": "Core & Glutes Focus",
+        "description": "Un cours axé sur le bas du corps, avec un travail précis et intense des fessiers et des abdos. Des enchaînements efficaces qui activent en profondeur, soulèvent, tonifient et renforcent toute la chaîne postérieure. Le rythme est contrôlé, chaque mouvement est intentionnel… et la brûlure, bien réelle. Une expérience préalable sur reformer est fortement recommandée pour profiter pleinement de ce cours.",
+        "advisory": "Une expérience préalable sur reformer est fortement recommandée."
+      },
+      "air-nine": {
+        "name": "Air Nine",
+        "subheading": "Planche de saut HIIT – Cardio et gainage",
+        "description": "Ce cours fait augmenter votre rythme cardiaque et engage intensément votre centre grâce au jumpboard, dans un format cardio à haute énergie et faible impact. Au programme : intervalles explosifs, travail d’endurance musculaire et enchaînements complets qui testent votre souffle et votre endurance. Un entraînement horizontal optimal, alliant force musculaire et performance cardiovasculaire, tout en ménageant vos articulations.",
+        "advisory": "Nous recommandons une expérience préalable sur reformer."
+      },
+      "restore": {
+        "name": "Mobilité & Récupération",
+        "subheading": "Récupération tous niveaux",
+        "description": "Un cours sur reformer, lent et guidé par la respiration, axé sur les étirements profonds, la mobilité et la détente du système nerveux. Vous enchaînerez des mouvements qui allongent, relâchent les tensions, rétablissent l’alignement et apportent un équilibre au corps comme à l’esprit. Parfait pour les journées de repos, la récupération ou en complément de séances plus intenses.",
+        "advisory": "On repart détendu·e, ouvert·e et rechargé·e."
+      }
+    },
     "callToActions": {
       "joinUs": "Rejoignez-nous",
       "bookNow": "Réservez",
@@ -119,7 +157,8 @@
       "memberships": "Adhésions",
       "packages": "Forfaits",
       "signUp": "S'inscrire →",
-      "getInTouch": "Contactez-nous"
+      "getInTouch": "Contactez-nous",
+      "login": "Se connecter"
     },
     "footer": {
       "tagline": "Mouvement avec Intention"

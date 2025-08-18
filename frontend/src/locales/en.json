@@ -98,15 +98,41 @@
     "c2a": "Join me on your wellness journey!"
   },
   "classes": {
-    "class-1": {
+    "foundations": {
       "name": "The Nine Foundations",
+      "subheading": "Beginner – Required for First-Timers",
       "description": "A gentle, beginner-friendly introduction to the reformer, designed to set you up for success. You’ll work on alignment, breathwork, and control, building both confidence with the equipment and a solid understanding of the Nine Pilates principles.",
       "advisory": "First time on a reformer? We highly recommend starting here before moving on to more advanced classes."
     },
-    "class-2": {
+    "form-flow": {
       "name": "Form & Flow",
+      "subheading": "All Levels Sculpt",
       "description": "A full-body flow that blends strength, coordination, and control into rhythmic sequences designed to sculpt, energize, and inspire. Expect dynamic transitions, deep core engagement, and intentional movement that challenges your body from the inside out.",
       "advisory": "Suitable for all levels, with options to modify or intensify as needed."
+    },
+    "inferno": {
+      "name": "Inferno",
+      "subheading": "Burn & Endure – Advanced",
+      "description": "A full-body flow that blends strength, coordination, and control into rhythmic sequences designed to sculpt, energize, and inspire. Expect dynamic transitions, deep core engagement, and intentional movement that challenges your body from the inside out.",
+      "advisory": "Prior reformer experience is strongly recommended."
+    },
+    "glute-mode": {
+      "name": "Glute Mode",
+      "subheading": "Core & Glutes Focus",
+      "description": "A lower-body focused sculpt class targeting your glutes and core with precision and intensity. Expect deep glute activation, core stabilization, and strong sequencing that lifts, tones, and strengthens your posterior chain.",
+      "advisory": "The tempo is controlled, the movements intentional — and the burn, undeniable. Prior reformer experience strongly recommended."
+    },
+    "air-nine": {
+      "name": "Air Nine",
+      "subheading": "Jumpboard HIIT – Cardio & Core",
+      "description": "Elevate your heart rate and fire up your core in this high-energy, low-impact cardio class using the jumpboard. Expect explosive intervals, muscular endurance work, and full-body sequences that challenge your breath and stamina. Horizontal training at its best — targeting muscular endurance while boosting cardiovascular performance on the reformer. Bounce, sculpt, and sweat — all while protecting your joints.",
+      "advisory": "Prior reformer experience is required."
+    },
+    "restore": {
+      "name": "Restore & Stretch",
+      "subheading": "All Levels Recovery",
+      "description": "A slow, breath-driven reformer class focused on deep stretching, mobility, and nervous system reset. Move intentionally through lengthening sequences that release tension, restore alignment, and bring balance to the body and mind.",
+      "advisory": "Ideal for rest days, recovery, or as a complement to more intense sessions. Leave feeling grounded, open, and recharged."
     }
   },
     "callToActions": {
@@ -117,7 +143,8 @@
     "memberships": "Memberships",
     "packages": "Packages",
     "signUp": "Sign Up →",
-    "getInTouch": "Let's get in touch"
+    "getInTouch": "Let's get in touch",
+    "login": "Log in"
   },
   "footer": {
     "tagline": "Movement with Intention"
