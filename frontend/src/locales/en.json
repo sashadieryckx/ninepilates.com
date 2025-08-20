@@ -168,6 +168,16 @@
   "pricing&packages": {
     "heading": "Pricing & Packages",
     "subheading": "Choose the plan that's right for you. We offer monthly memberships and packages tailored to every level and all lifestyles.",
+    "modal": {
+      "memberships": {
+        "title": "Memberships",
+        "subheading": "Choose a membership that supports your lifestyle and helps you stay consistent in your practice — with simple pricing and unlimited potential."
+      },
+      "packages": {
+        "title": "Packages",
+        "subheading": "Perfect for those new to Pilates or looking to supplement their routine — flexible packages that fit your schedule with no monthly commitment."
+      }
+    },
     "memberships": {
       "flow": {
         "title": "The Flow",
@@ -180,7 +190,8 @@
           "Noticeable gains in mobility and control",
           "A sustainable rhythm that fits a busy schedule",
           "Perfect for building a solid foundation while keeping balance with the rest of your life"
-        ]
+        ],
+        "c2a": "Join now"
       },
       "rhythm": {
         "title": "The Rhythm",
@@ -193,10 +204,11 @@
           "Technique that clicks (and sticks)",
           "Momentum you can feel from week to week",
           "If you want visible progress and a confident flow, this is your best balance of frequency and value."
-        ]
+        ],
+        "c2a": "Join now"
       },
-      "fullCycle": {
-        "title": "The Full Cycle",
+      "cloud9": {
+        "title": "Cloud 9",
         "price": "$350",
         "classes": "Unlimited Access",
         "description": "Enjoy the full variety of classes — Foundations, Form & Flow, Inferno, Restore & Stretch — to balance intensity and recovery for complete results.",
@@ -206,8 +218,12 @@
           "Train smarter, get better results.",
           "The best value if you’re consistent (~$22–$18/class when training 4–5×/week)",
           "For those ready to live in their practice and feel the full Nine Pilates effect."
-        ]
+        ],
+        "c2a": "Join now"
       }
+    },
+    "packages": {
+       
     }
   },
   "footer": {

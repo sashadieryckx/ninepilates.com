@@ -1,34 +1,40 @@
-import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { useI18n } from 'vue-i18n'
+import { computed } from 'vue'
 
 export const usePricingStore = defineStore('pricing', () => {
-  const memberships = ref([
+  const { t, locale, tm } = useI18n()
+
+  const memberships = computed(() => [
     {
       id: 1,
-      name: 'The Flow',
-      price: '220',
-      classes: '8 Classes / Month',
-      description: 'Find your balance and build your practice at a steady pace. The Flow is perfect for those who want a consistent Pilates routine without overcommitting. With eight classes a month, you’ll strengthen, lengthen, and connect, leaving room for life’s other rhythms.',
-      c2a: 'Join now'
+      name: t('pricing&packages.memberships.flow.title'),
+      price: '250',
+      classes: t('pricing&packages.memberships.flow.classes'),
+      description: t('pricing&packages.memberships.flow.description'),
+      benefits: tm('pricing&packages.memberships.flow.benefits'),
+      c2a: t('pricing&packages.memberships.flow.c2a')
     },
     {
       id: 2,
-      name: 'The Rhythm',
+      name: t('pricing&packages.memberships.rhythm.title'),
       price: '300',
-      classes: '12 Classes / Month',
-      description: 'Move to your own beat with The Rhythm. Designed for those ready to elevate their practice, this membership offers twelve classes a month to keep your body engaged and your mind in tune. A harmonious blend of challenge and flexibility for deeper transformation.',
-      c2a: 'Join now'
+      classes: t('pricing&packages.memberships.rhythm.classes'),
+      description: t('pricing&packages.memberships.rhythm.description'),
+      benefits: tm('pricing&packages.memberships.rhythm.benefits'),
+      c2a: t('pricing&packages.memberships.rhythm.c2a')
     },
     {
       id: 3,
-      name: 'Cloud 9',
-      price: '330',
-      classes: 'Unlimited Classes / Month',
-      description: 'Your all-access pass to mindful movement. With unlimited classes, Cloud 9 is for the committed Pilates enthusiast who wants the freedom to flow anytime. Immerse yourself in strength, control, and connection—whenever inspiration strikes.',
-      c2a: 'Join now'
+      name: t('pricing&packages.memberships.cloud9.title'),
+      price: '350',
+      classes: t('pricing&packages.memberships.cloud9.classes'),
+      description: t('pricing&packages.memberships.cloud9.description'),
+      benefits: tm('pricing&packages.memberships.cloud9.benefits'),
+      c2a: t('pricing&packages.memberships.cloud9.c2a')
     },
   ])
-  const packages = ref([
+  const packages = computed(() => [
     {
       id: 1,
       name: 'The Trio',
@@ -53,6 +59,7 @@ export const usePricingStore = defineStore('pricing', () => {
   ])
   return {
     memberships,
-    packages
+    packages,
+    locale
   }
 })

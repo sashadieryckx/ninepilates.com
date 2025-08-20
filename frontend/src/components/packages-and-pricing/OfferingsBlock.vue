@@ -20,7 +20,7 @@ const handleClick = () => {
 </template>
 <style scoped>
 #offering-block {
-  height: 50vh;
+  height: 70vh;
   border-radius: 50px;
   background-color: var(--soya);
   display: flex;

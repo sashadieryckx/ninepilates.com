@@ -168,6 +168,16 @@
     "pricing&packages": {
       "heading": "Tarifs & Forfaits",
       "subheading": "Choisissez le plan qui vous convient. Nous proposons des abonnements mensuels et des forfaits pour tous les niveaux.",
+      "modal": {
+        "memberships": {
+          "title": "Abonnements",
+          "subheading": "Choisissez un abonnement qui soutient votre style de vie et vous aide à rester régulier dans votre pratique — avec une tarification simple et un potentiel illimité."
+        },
+        "packages": {
+          "title": "Forfaits",
+          "subheading": "Parfait pour ceux qui découvrent le Pilates ou cherchent à compléter leur routine — des forfaits flexibles qui s'adaptent à votre horaire sans engagement mensuel."
+        }
+      },
       "memberships": {
       "flow": {
         "title": "The Flow",
@@ -195,8 +205,8 @@
           "Si vous voulez des progrès visibles et une pratique fluide et assurée, c’est l’équilibre parfait entre fréquence et valeur."
         ]
       },
-      "fullCycle": {
-        "title": "The Full Cycle",
+      "cloud9": {
+        "title": "Cloud 9",
         "price": "$350",
         "classes": "Accès illimité",
         "description": "Profitez de la variété complète des cours — Foundations, Form & Flow, Inferno, Restore & Stretch — pour équilibrer intensité et récupération et obtenir des résultats complets.",

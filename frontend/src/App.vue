@@ -279,7 +279,7 @@ footer {
 /* LANGUAGE BUTTON */
 #language-button-container {
   position: fixed;
-  bottom: 5rem;
+  bottom: 1rem;
   right: 1rem;
   z-index: 1000;
   pointer-events: auto;
@@ -388,6 +388,5 @@ footer {
 
 /* DESKTOP 1 [GLOBAL] */
 @media (min-width: 1280px) {
-
 }
 </style>

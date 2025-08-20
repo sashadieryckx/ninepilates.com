@@ -24,27 +24,14 @@ const closeModal = () => {
       <Hero />
     </section>
     <section class="section" id="offerings-section">
-      <OfferingsBlock
-        title="Memberships"
-        c2a="Explore Memberships"
-        @openModal="openModal"
-      />
-      <OfferingsBlock
-        title="Packages"
-        c2a="View Packages"
-        @openModal="openModal"
-      />
+      <OfferingsBlock title="Memberships" c2a="Explore Memberships" @openModal="openModal" />
+      <OfferingsBlock title="Packages" c2a="View Packages" @openModal="openModal" />
     </section>
     <section class="section" id="founders-membership">
       <FoundersMembership />
     </section>
 
-    <!-- Pricing Modal -->
-    <PricingModal
-      :isOpen="isModalOpen"
-      :modalType="modalType"
-      @close="closeModal"
-    />
+    <PricingModal :isOpen="isModalOpen" :modalType="modalType" @close="closeModal" />
   </div>
 </template>
 <style scoped>
@@ -56,6 +43,9 @@ const closeModal = () => {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  padding: 0 1rem 1rem 1rem;
+}
+#founders-membership {
   padding: 0 1rem 1rem 1rem;
 }
 /* TABLET 1 [GLOBAL] */
