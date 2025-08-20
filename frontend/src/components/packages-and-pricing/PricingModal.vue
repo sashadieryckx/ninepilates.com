@@ -95,9 +95,11 @@ onUnmounted(() => {
               </div>
 
               <div class="pricing-footer">
-                <button class="select-btn roman">
-                  <p class="roman">{{ item.c2a }}</p>
-                </button>
+                <a :href="item.link">
+                  <button class="select-btn roman">
+                    <p class="roman">{{ item.c2a }}</p>
+                  </button>
+                </a>
               </div>
             </div>
           </div>
@@ -489,9 +491,10 @@ onUnmounted(() => {
   }
   .modal-header h2 {
     font-size: 5rem;
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
   .modal-header p {
+    margin-top: 2rem;
     font-size: 1.5rem;
   }
   .subheading {

@@ -5,7 +5,6 @@ import LogoMark from './components/icons/LogoMark.vue'
 import CircleLoader from './components/icons/CircleLoader.vue'
 import ContactModal from './components/ContactModal.vue'
 import LanguageButton from './components/LanguageButton.vue'
-import AppNav from './components/AppNav.vue'
 
 import { RouterView } from 'vue-router'
 
@@ -190,8 +189,6 @@ watch(
     }
   },
 )
-
-const isMobile = window.innerWidth < 768
 </script>
 
 <template>
@@ -245,9 +242,6 @@ const isMobile = window.innerWidth < 768
     <div id="language-button-container">
       <LanguageButton />
     </div>
-    <div id="app-nav" v-if="isMobile">
-      <AppNav />
-    </div>
   </VueLenis>
 </template>
 
@@ -283,15 +277,6 @@ footer {
   right: 1rem;
   z-index: 1000;
   pointer-events: auto;
-}
-/* MOBILE APP NAV */
-#app-nav {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 8vh;
-  z-index: 20;
 }
 /* TABLET 1 [GLOBAL] */
 @media (min-width: 768px) {

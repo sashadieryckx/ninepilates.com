@@ -13,7 +13,8 @@ export const usePricingStore = defineStore('pricing', () => {
       classes: t('pricing&packages.memberships.flow.classes'),
       description: t('pricing&packages.memberships.flow.description'),
       benefits: tm('pricing&packages.memberships.flow.benefits'),
-      c2a: t('pricing&packages.memberships.flow.c2a')
+      c2a: t('pricing&packages.memberships.flow.c2a'),
+      link: 'https://momence.com/Nine-Pilates-Inc./membership/The-Flow---8-Classes-%2F-Month/491005'
     },
     {
       id: 2,
@@ -22,7 +23,8 @@ export const usePricingStore = defineStore('pricing', () => {
       classes: t('pricing&packages.memberships.rhythm.classes'),
       description: t('pricing&packages.memberships.rhythm.description'),
       benefits: tm('pricing&packages.memberships.rhythm.benefits'),
-      c2a: t('pricing&packages.memberships.rhythm.c2a')
+      c2a: t('pricing&packages.memberships.rhythm.c2a'),
+      link: 'https://momence.com/Nine-Pilates-Inc./membership/The-Rhythm---12-Classes-%2F-Month/491006'
     },
     {
       id: 3,
@@ -31,7 +33,8 @@ export const usePricingStore = defineStore('pricing', () => {
       classes: t('pricing&packages.memberships.cloud9.classes'),
       description: t('pricing&packages.memberships.cloud9.description'),
       benefits: tm('pricing&packages.memberships.cloud9.benefits'),
-      c2a: t('pricing&packages.memberships.cloud9.c2a')
+      c2a: t('pricing&packages.memberships.cloud9.c2a'),
+      link: 'https://momence.com/Nine-Pilates-Inc./membership/Cloud-9-%E2%80%93-Unlimited-%2F-Month/491008'
     },
   ])
   const packages = computed(() => [

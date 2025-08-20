@@ -190,7 +190,8 @@
           "Développer votre mobilité et votre contrôle",
           "Adopter un rythme qui s’adapte à votre quotidien",
           "Une formule qui vous aide à progresser tout en restant en équilibre avec votre quotidien"
-        ]
+        ],
+        "c2a": "S'inscrire"
       },
       "rhythm": {
         "title": "The Rhythm",
@@ -203,7 +204,8 @@
           "Intégrer la technique de façon naturelle et durable",
           "Ressentir un vrai élan de semaine en semaine",
           "Si vous voulez des progrès visibles et une pratique fluide et assurée, c’est l’équilibre parfait entre fréquence et valeur."
-        ]
+        ],
+        "c2a": "S'inscrire"
       },
       "cloud9": {
         "title": "Cloud 9",
@@ -216,7 +218,8 @@
           "Des résultats optimaux sans prise de tête",
           "Le meilleur rapport qualité-prix si vous êtes régulier (~21.8–18 $/cours en vous entraînant 4 à 5 fois par semaine)",
           "Parfait pour celles et ceux qui veulent faire du Pilates une véritable pratique de vie et ressentir pleinement l’effet Nine Pilates."
-        ]
+        ],
+        "c2a": "S'inscrire"
       }
     }
     },
