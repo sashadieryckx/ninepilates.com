@@ -29,10 +29,10 @@ export const useMembershipsStore = defineStore('memberships', () => {
         },
         {
             id: 3,
-            title: t('pricing&packages.memberships.fullCycle.title'),
-            description: t('pricing&packages.memberships.fullCycle.description'),
-            price: t('pricing&packages.memberships.fullCycle.price'),
-            classes: t('pricing&packages.memberships.fullCycle.classes'),
+            title: t('pricing&packages.memberships.cloud9.title'),
+            description: t('pricing&packages.memberships.cloud9.description'),
+            price: t('pricing&packages.memberships.cloud9.price'),
+            classes: t('pricing&packages.memberships.cloud9.classes'),
             image: Concentration,
             signUp: 'https://momence.com/Nine-Pilates-Inc./membership/Cloud-9-%E2%80%93-Unlimited-%2F-Month/491008'
         }
