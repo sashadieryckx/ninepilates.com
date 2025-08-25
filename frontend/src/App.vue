@@ -39,6 +39,7 @@ useHead({
 
 // GSAP and Lenis setup
 let rafCallback = null
+let resizeHandler = null
 const lenis = useLenis(() => {
   ScrollTrigger.update()
 })
@@ -79,10 +80,12 @@ onMounted(() => {
 
   resizeObserver.observe(document.body)
 
-  window.addEventListener('resize', () => {
+  resizeHandler = () => {
     updateLenis()
     ScrollTrigger.refresh()
-  })
+  }
+  
+  window.addEventListener('resize', resizeHandler)
 
   const loaderTimeline = gsap.timeline({
     ease: 'power2.inOut',
@@ -169,6 +172,11 @@ onUnmounted(() => {
   }
   if (rafCallback) {
     gsap.ticker.remove(rafCallback)
+  }
+  
+  // Clean up resize event listener
+  if (resizeHandler) {
+    window.removeEventListener('resize', resizeHandler)
   }
 })
 

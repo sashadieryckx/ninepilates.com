@@ -1,6 +1,6 @@
 <script setup>
 import { gsap, Expo } from 'gsap'
-import { onMounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import Logomark from '@/components/icons/LogomarkMain.vue'
 import NavC2A from '@/components/actions/C2ANav.vue'
 
@@ -130,6 +130,11 @@ const menuButtonLineColor = computed(() => {
   return darkSections.includes(viewStore.activeSection) ? 'var(--mocha)' : 'var(--coral)'
 })
 
+// Store event handlers for cleanup
+let menuBtnClickHandler1, menuBtnClickHandler2, menuBtnClickHandler3
+let menuBtnMouseEnterHandler, menuBtnMouseLeaveHandler
+let desktopMenuEventHandlers = []
+
 onMounted(() => {
   const dropMenu = new gsap.timeline({
     paused: true,
@@ -195,31 +200,41 @@ onMounted(() => {
     },
     0,
   )
-  document.addEventListener('click', function (event) {
+
+  // Store handlers for cleanup
+  menuBtnClickHandler1 = function (event) {
     if (event.target.matches('#menu-btn')) {
       dropMenu.reversed(!dropMenu.reversed())
     }
-  })
-  document.addEventListener('click', function (event) {
+  }
+  menuBtnClickHandler2 = function (event) {
     if (event.target === closeBtn || closeBtn.contains(event.target)) {
       dropMenu.reversed(!dropMenu.reversed())
     }
-  })
-  document.addEventListener('click', function (event) {
+  }
+  menuBtnClickHandler3 = function (event) {
     if (event.target.matches('.mobile-link')) {
       dropMenu.reversed(!dropMenu.reversed())
     }
-  })
-  menuBtn.addEventListener('mouseenter', () => {
+  }
+  menuBtnMouseEnterHandler = () => {
     if (dropMenu.reversed()) {
       btnTl.play()
     }
-  })
-  menuBtn.addEventListener('mouseleave', () => {
+  }
+  menuBtnMouseLeaveHandler = () => {
     if (dropMenu.reversed()) {
       btnTl.reverse()
     }
-  })
+  }
+
+  document.addEventListener('click', menuBtnClickHandler1)
+  document.addEventListener('click', menuBtnClickHandler2)
+  document.addEventListener('click', menuBtnClickHandler3)
+  if (menuBtn) {
+    menuBtn.addEventListener('mouseenter', menuBtnMouseEnterHandler)
+    menuBtn.addEventListener('mouseleave', menuBtnMouseLeaveHandler)
+  }
 
   // GSAP ANIMATION FOR THE NAV ITEMS HOVER
   const underLineWrapper = document.querySelectorAll('#desktop-menu li')
@@ -250,8 +265,46 @@ onMounted(() => {
       }
       el.addEventListener('mouseenter', mouseEnter)
       el.addEventListener('mouseleave', mouseLeave)
+      
+      // Store for cleanup
+      desktopMenuEventHandlers.push({
+        element: el,
+        mouseEnter,
+        mouseLeave
+      })
     }
   })
+})
+
+onUnmounted(() => {
+  // Clean up document event listeners
+  if (menuBtnClickHandler1) {
+    document.removeEventListener('click', menuBtnClickHandler1)
+  }
+  if (menuBtnClickHandler2) {
+    document.removeEventListener('click', menuBtnClickHandler2)
+  }
+  if (menuBtnClickHandler3) {
+    document.removeEventListener('click', menuBtnClickHandler3)
+  }
+
+  // Clean up menu button event listeners
+  const menuBtn = document.querySelector('#menu-btn')
+  if (menuBtn) {
+    if (menuBtnMouseEnterHandler) {
+      menuBtn.removeEventListener('mouseenter', menuBtnMouseEnterHandler)
+    }
+    if (menuBtnMouseLeaveHandler) {
+      menuBtn.removeEventListener('mouseleave', menuBtnMouseLeaveHandler)
+    }
+  }
+
+  // Clean up desktop menu event listeners
+  desktopMenuEventHandlers.forEach(({ element, mouseEnter, mouseLeave }) => {
+    element.removeEventListener('mouseenter', mouseEnter)
+    element.removeEventListener('mouseleave', mouseLeave)
+  })
+  desktopMenuEventHandlers = []
 })
 </script>
 <template>
