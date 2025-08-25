@@ -179,49 +179,77 @@
         }
       },
       "memberships": {
-      "flow": {
-        "title": "The Flow",
-        "price": "$250",
-        "classes": "Inclus 9 cours par mois",
-        "description": "Un abonnement idéal si vous voulez suivre 2 cours par semaine. Vous allez bâtir une vraie routine et commencer à ressentir des résultats concrets.",
-        "benefits": [
-          "Développer votre force et votre stabilité du centre du corps",
-          "Améliorer votre posture et votre conscience corporelle",
-          "Développer votre mobilité et votre contrôle",
-          "Adopter un rythme qui s’adapte à votre quotidien",
-          "Une formule qui vous aide à progresser tout en restant en équilibre avec votre quotidien"
-        ],
-        "c2a": "S'inscrire"
+        "flow": {
+          "title": "The Flow",
+          "price": "$250/mo",
+          "classes": "Inclus 9 cours par mois",
+          "description": "Un abonnement idéal si vous voulez suivre 2 cours par semaine. Vous allez bâtir une vraie routine et commencer à ressentir des résultats concrets.",
+          "benefits": [
+            "Développer votre force et votre stabilité du centre du corps",
+            "Améliorer votre posture et votre conscience corporelle",
+            "Développer votre mobilité et votre contrôle",
+            "Adopter un rythme qui s’adapte à votre quotidien",
+            "Une formule qui vous aide à progresser tout en restant en équilibre avec votre quotidien"
+          ],
+          "c2a": "S'inscrire"
+        },
+        "rhythm": {
+          "title": "The Rhythm",
+          "price": "$300/mo",
+          "classes": "Inclus 12 cours par mois",
+          "description": "Faites du Pilates une vraie habitude de votre semaine avec 3 cours hebdomadaires — le rythme parfait pour progresser de façon claire et régulière.",
+          "benefits": [
+            "Gagner plus rapidement en force et en endurance",
+            "Améliorer votre mobilité et soutenir vos articulations",
+            "Intégrer la technique de façon naturelle et durable",
+            "Progresser de façon visible et assurée",
+            "L'équilibre parfait entre fréquence et valeur" 
+          ],
+          "c2a": "S'inscrire"
+        },
+        "cloud9": {
+          "title": "Cloud 9",
+          "price": "$350/mo",
+          "classes": "Accès illimité",
+          "description": "Profitez de la variété complète des cours — Foundations, Form & Flow, Inferno, Restore & Stretch — pour équilibrer intensité et récupération et obtenir des résultats complets.",
+          "benefits": [
+            "La liberté de vous entraîner aussi souvent que vous le souhaitez",
+            "Une programmation intelligente qui combine force, cardio et mobilité",
+            "Des résultats optimaux sans prise de tête",
+            "Le meilleur rapport qualité-prix (~18-22$/cours)",
+            "Parfait pour faire du Pilates une pratique de vie quotidienne"
+          ],
+          "c2a": "S'inscrire"
+        }
       },
-      "rhythm": {
-        "title": "The Rhythm",
-        "price": "$300",
-        "classes": "Inclus 12 cours par mois",
-        "description": "Faites du Pilates une vraie habitude de votre semaine avec 3 cours hebdomadaires — le rythme parfait pour progresser de façon claire et régulière.",
-        "benefits": [
-          "Gagner plus rapidement en force et en endurance",
-          "Améliorer votre mobilité et soutenir vos articulations",
-          "Intégrer la technique de façon naturelle et durable",
-          "Ressentir un vrai élan de semaine en semaine",
-          "Si vous voulez des progrès visibles et une pratique fluide et assurée, c’est l’équilibre parfait entre fréquence et valeur."
-        ],
-        "c2a": "S'inscrire"
-      },
-      "cloud9": {
-        "title": "Cloud 9",
-        "price": "$350",
-        "classes": "Accès illimité",
-        "description": "Profitez de la variété complète des cours — Foundations, Form & Flow, Inferno, Restore & Stretch — pour équilibrer intensité et récupération et obtenir des résultats complets.",
-        "benefits": [
-          "La liberté de vous entraîner aussi souvent que vous le souhaitez",
-          "Une programmation intelligente qui combine force, cardio et mobilité",
-          "Des résultats optimaux sans prise de tête",
-          "Le meilleur rapport qualité-prix si vous êtes régulier (~21.8–18 $/cours en vous entraînant 4 à 5 fois par semaine)",
-          "Parfait pour celles et ceux qui veulent faire du Pilates une véritable pratique de vie et ressentir pleinement l’effet Nine Pilates."
-        ],
-        "c2a": "S'inscrire"
+      "packages": {
+        "dropIn":{
+          "title": "Séance à l’unité",
+          "price": "40",
+          "description": "Parfait pour ceux qui souhaitent essayer un cours sans engagement."  
+        },
+        "kickstart": {
+          "title": "Kickstart",
+          "price": "105",
+          "classes": "Inclus 3 cours",
+          "description": "Parfait pour les débutants ou ceux qui cherchent à rafraîchir leur pratique. Ce forfait comprend 3 cours pour vous aider à démarrer votre parcours Pilates.",
+          "c2a": "Commencer"
+        },
+        "momentum": {
+          "title": "Momentum",
+          "price": "165",
+          "classes": "Inclus 5 cours",
+          "description": "Parfait pour ceux qui cherchent à développer leur pratique. Ce forfait comprend 5 cours pour vous aider à trouver votre rythme.",
+          "c2a": "Commencer"
+        },
+        "elevate": {
+          "title": "Elevate",
+          "price": "270",
+          "classes": "Inclus 9 cours",
+          "description": "Parfait pour ceux qui cherchent à approfondir leur pratique. Ce forfait comprend 9 cours pour vous aider à élever votre parcours Pilates.",
+          "c2a": "Commencer"
+        }
       }
-    }
     },
     "footer": {
       "tagline": "Bouger avec Intention"

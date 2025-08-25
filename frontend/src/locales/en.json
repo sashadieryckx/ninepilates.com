@@ -181,7 +181,7 @@
     "memberships": {
       "flow": {
         "title": "The Flow",
-        "price": "$250",
+        "price": "$250/mo",
         "classes": "Includes 9 Classes per month",
         "description": "Build a steady routine and start seeing tangible results. Ideal if you’re aiming for 2 classes/week.",
         "benefits": [
@@ -195,7 +195,7 @@
       },
       "rhythm": {
         "title": "The Rhythm",
-        "price": "$300",
+        "price": "$300/mo",
         "classes": "Includes 12 Classes per month",
         "description": "Make Pilates a pillar in your week with 3 classes/week—the sweet spot for clear adaptation and progression.",
         "benefits": [
@@ -209,7 +209,7 @@
       },
       "cloud9": {
         "title": "Cloud 9",
-        "price": "$350",
+        "price": "$350/mo",
         "classes": "Unlimited Access",
         "description": "Enjoy the full variety of classes — Foundations, Form & Flow, Inferno, Restore & Stretch — to balance intensity and recovery for complete results.",
         "benefits": [
@@ -223,7 +223,33 @@
       }
     },
     "packages": {
-       
+      "dropIn":{
+        "title": "Drop-In",
+        "price": "40",
+        "classes": "1",
+        "description": "Perfect for those looking to try a class without commitment."
+      },
+      "kickstart": {
+        "title": "Kickstart",
+        "price": "105",
+        "classes": "Includes 3 classes",
+        "description": "Perfect for beginners or those looking to refresh their practice. This package includes 3 classes to get you started on your Pilates journey.",
+        "c2a": "Get Started"
+      },
+      "momentum": {
+        "title": "Momentum",
+        "price": "165",
+        "classes": "Includes 5 classes",
+        "description": "Perfect for those looking to build on their practice. This package includes 5 classes to help you find your flow.",
+        "c2a": "Get Started"
+      },
+      "elevate": {
+        "title": "Elevate",
+        "price": "270",
+        "classes": "Includes 9 classes",
+        "description": "Perfect for those looking to deepen their practice. This package includes 9 classes to help you elevate your Pilates journey.",
+        "c2a": "Get Started"
+      }
     }
   },
   "footer": {

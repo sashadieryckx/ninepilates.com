@@ -40,24 +40,27 @@ export const usePricingStore = defineStore('pricing', () => {
   const packages = computed(() => [
     {
       id: 1,
-      name: 'The Trio',
-      price: '100',
-      classes: '3',
-      description: ''
+      name: t('pricing&packages.packages.kickstart.title'),
+      price: t('pricing&packages.packages.kickstart.price'),
+      classes: t('pricing&packages.packages.kickstart.classes'),
+      description: t('pricing&packages.packages.kickstart.description'),
+      c2a: t('pricing&packages.packages.kickstart.c2a')
     },
     {
       id: 2,
-      name: 'The TBD',
-      price: '150',
-      classes: '5',
-      description: ''
+      name: t('pricing&packages.packages.momentum.title'),
+      price: t('pricing&packages.packages.momentum.price'),
+      classes: t('pricing&packages.packages.momentum.classes'),
+      description: t('pricing&packages.packages.momentum.description'),
+      c2a: t('pricing&packages.packages.momentum.c2a')
     },
     {
       id: 3,
-      name: 'One to Nine',
-      price: '252',
-      classes: '9',
-      description: ''
+      name: t('pricing&packages.packages.elevate.title'),
+      price: t('pricing&packages.packages.elevate.price'),
+      classes: t('pricing&packages.packages.elevate.classes'),
+      description: t('pricing&packages.packages.elevate.description'),
+      c2a: t('pricing&packages.packages.elevate.c2a')
     },
   ])
   return {

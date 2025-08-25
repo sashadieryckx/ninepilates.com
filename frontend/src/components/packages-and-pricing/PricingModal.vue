@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onMounted, onUnmounted } from 'vue'
+import CircleArrow from '@/components/icons/CircleArrow.vue'
 import { usePricingStore } from '@/stores/pricingStore.js'
 import { useI18n } from 'vue-i18n'
 
@@ -76,7 +77,7 @@ onUnmounted(() => {
               <div class="pricing-header">
                 <h3 class="roman">{{ item.name }}</h3>
                 <div class="price-info">
-                  <span class="price roman">${{ item.price }}/mo</span>
+                  <span class="price roman">${{ item.price }}</span>
                 </div>
                 <p class="classes-info light">{{ item.classes }}</p>
               </div>
@@ -86,12 +87,16 @@ onUnmounted(() => {
                   <li
                     v-for="(benefit, index) in item.benefits"
                     :key="index"
-                    class="benefit-item light"
+                    class="benefit-item"
                   >
-                    {{ benefit }}
+                    <CircleArrow class="benefit-icon" />
+                    <p class="light">{{ benefit }}</p>
                   </li>
                 </ul>
                 <p class="description light" v-else>{{ item.benefits }}</p>
+              </div>
+              <div class="description" v-if="item.description && modalType === 'packages'">
+                <p class="light">{{ item.description }}</p>
               </div>
 
               <div class="pricing-footer">
@@ -349,14 +354,28 @@ onUnmounted(() => {
   margin-bottom: 0.5rem;
   position: relative;
   padding-left: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+.benefit-item p {
+  transform: translateY(-6px);
 }
 .benefit-item:last-child {
   margin-bottom: 0;
+}
+.benefit-icon {
+  width: 1rem;
+  height: 1rem;
+  flex-shrink: 0;
+  color: var(--coral);
 }
 .description {
   color: var(--coral);
   line-height: 1.6;
   text-align: left;
+  padding-left: 1rem;
+  margin-bottom: 2rem;
 }
 .pricing-footer {
   text-align: center;
